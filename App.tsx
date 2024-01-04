@@ -16,7 +16,6 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
 import {
   Colors,
   DebugInstructions,
@@ -24,6 +23,11 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {
+  currentPlatform,
+  deviceWidth,
+  deviceHeight,
+} from './src/utils/DeviceUtils';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -78,6 +82,7 @@ function App(): React.JSX.Element {
           }}>
           <Section title="Step One">
             😡 <Text style={styles.highlight}>안재경</Text> 류채현 이종태
+            {currentPlatform} {deviceHeight} {deviceWidth}
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
