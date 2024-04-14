@@ -1,12 +1,20 @@
 import {Text} from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {AllBackground} from '../components/AllSrcComponets/AllBackground';
+import {
+  SignLogGrayButton,
+  SignLogGreenButton,
+} from '../components/AllSrcComponets/AllButtonCompo';
+import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
 
 const Ex1 = () => {
   return (
-    <SafeAreaView>
+    <AllBackground>
       <Text>Ex1adsadasdasads</Text>
-    </SafeAreaView>
+      <SignLogGreenButton text="다음" />
+      <SignLogGrayButton text="다음" />
+      <SignLogInput text="비밀번호" />
+    </AllBackground>
   );
 };
 

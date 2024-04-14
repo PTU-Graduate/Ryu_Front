@@ -16,11 +16,11 @@ export const serverConnector = async (
       endpoint,
       data,
     );
-
+    console.log(response.status);
     if (response.status === 200) {
-      console.log(response.data);
       return response;
     } else {
+      console.log(response.status);
       return null;
     }
   } catch (error) {
