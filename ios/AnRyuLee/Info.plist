@@ -30,6 +30,15 @@
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
+		<!-- 특정 도메인 http 요청 허용-->
+		<key>NSExceptionDomains</key>
+			<dict>
+  				<key>89.168.40.124</key>
+  					<dict>
+    				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+    				<true/>
+  					</dict>
+			</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
