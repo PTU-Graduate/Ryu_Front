@@ -7,6 +7,5 @@ export default StyleSheet.create({
     backgroundColor: '#ffffff',
     width: deviceWidth * 1,
     height: deviceHeight * 1,
-    alignItems: 'center',
   },
 });
