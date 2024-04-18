@@ -3,11 +3,12 @@ import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 
 export default StyleSheet.create({
   SignLogInputStyle: {
-    width: deviceWidth * 0.8,
-    height: deviceHeight * 0.08,
+    width: deviceWidth * 0.9,
+    height: deviceHeight * 0.05,
     backgroundColor: '#ffffff',
-    borderBottomColor: '#C9C6C6',
-    borderBottomWidth: 0.5,
-    paddingTop: 25,
+    borderBottomColor: '#000000',
+    borderBottomWidth: 1,
+    paddingBottom: deviceHeight * 0.0005,
+    fontWeight: 'bold',
   },
 });
