@@ -6,13 +6,18 @@ import {
   SignLogGreenButton,
 } from '../components/AllSrcComponets/AllButtonCompo';
 import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
-
-const Ex1 = () => {
+import {ScreenProps} from '../navigations/StackNavigator';
+const Ex1: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
-      <Text>Ex1adsadasdasads</Text>
-      <SignLogGreenButton text="다음" />
-      <SignLogGrayButton text="다음" />
+      <SignLogGreenButton
+        text="로그인 스크린 이동"
+        onPress={() => navigation.navigate('LoginScreen')}
+      />
+      <SignLogGrayButton
+        text="회원가입 스크린 이동"
+        onPress={() => navigation.navigate('RegiHakgua')}
+      />
       <SignLogInput text="비밀번호" />
     </AllBackground>
   );
