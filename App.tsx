@@ -9,7 +9,6 @@ function App(): React.JSX.Element {
   useEffect(() => {
     const fetchData = async () => {
       const response = await serverConnectorGet('/test');
-      console.log(response.data);
     };
     fetchData(); // 함수 호출
   }, []);
