@@ -1,12 +1,25 @@
-import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import {Alert, Text, View} from 'react-native';
+import React, {useState} from 'react';
 import {AllBackground} from '../components/AllSrcComponets/AllBackground';
 import {deviceWidth, deviceHeight} from '../utils/DeviceUtils';
 import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
 import {SignLogGreenButton} from '../components/AllSrcComponets/AllButtonCompo';
-import {Login} from '../services/_private/Login/LoginApi';
+import {loginApiCall} from '../services/_private/Login/LoginApi';
+import {ScreenProps} from '../navigations/StackNavigator';
 
-const LoginScreen = () => {
+const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
+  const [loginId, setLoginId] = useState<string>('');
+  const [loginPass, setLoginPass] = useState<string>('');
+
+  const handleLogin = async () => {
+    const result = await loginApiCall(loginId, loginPass);
+
+    if (result !== null && result.RSLT_CD === '00') {
+      navigation.navigate('Home');
+    } else {
+      Alert.alert('실패');
+    }
+  };
   return (
     <AllBackground>
       <View
@@ -34,7 +47,9 @@ const LoginScreen = () => {
       </View>
       <View style={{flex: 3, marginLeft: deviceWidth * 0.05}}>
         <Text style={{color: '#000', fontWeight: '300'}}>아이디</Text>
-        <SignLogInput></SignLogInput>
+        <SignLogInput
+          value={loginId}
+          onChangeText={text => setLoginId(text)}></SignLogInput>
         <Text
           style={{
             color: '#000',
@@ -43,10 +58,15 @@ const LoginScreen = () => {
           }}>
           비밀번호
         </Text>
-        <SignLogInput passsecure={true}></SignLogInput>
+        <SignLogInput
+          passsecure={true}
+          value={loginPass}
+          onChangeText={text => setLoginPass(text)}></SignLogInput>
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
-        <SignLogGreenButton text="로그인"></SignLogGreenButton>
+        <SignLogGreenButton
+          text="로그인"
+          onPress={handleLogin}></SignLogGreenButton>
       </View>
       <View
         style={{
