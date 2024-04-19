@@ -1,9 +1,9 @@
 import React from 'react';
-import {TextInput} from 'react-native';
+import {TextInput, TextInputProps} from 'react-native';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import AllInputStyles from '../../styles/AllSrcStyles/AllInputStyles';
 
-interface AllInputCompoProps {
+interface AllInputCompoProps extends TextInputProps {
   children?: React.ReactNode;
   text?: React.ReactNode;
   passsecure?: boolean;
@@ -15,6 +15,7 @@ interface AllInputCompoProps {
 export const SignLogInput: React.FC<AllInputCompoProps> = ({
   text,
   passsecure,
+  ...props
 }) => {
   const placeholderText = typeof text === 'string' ? text : undefined;
   return (
@@ -23,6 +24,7 @@ export const SignLogInput: React.FC<AllInputCompoProps> = ({
       style={[AllInputStyles.SignLogInputStyle, AllTextStyles.medium14]}
       placeholder={placeholderText}
       secureTextEntry={passsecure}
+      {...props}
     />
   );
 };
