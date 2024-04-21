@@ -2,7 +2,6 @@ import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import Ex1 from '../screens/Ex1';
-import Ex2 from '../screens/Ex2';
 import LoginScreen from '../screens/LoginScreen';
 import RegiHakgua from '../screens/RegiScreen/RegiHakgua';
 import RegiCodeConfig from '../screens/RegiScreen/RegiCodeConfig';
@@ -16,7 +15,6 @@ import Home from '../screens/homeScreen/Home';
 
 type RootStackParamList = {
   Ex1: undefined;
-  Ex2: undefined;
   LoginScreen: undefined;
   RegiHakgua: undefined;
   RegiCodeConfig: undefined;
@@ -49,7 +47,6 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiID" component={RegiID} />
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Ex2" component={Ex2} />
     </Stack.Navigator>
   );
 };
