@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {Alert, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {AllBackground} from '../components/AllSrcComponets/AllBackground';
@@ -47,9 +48,7 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
       </View>
       <View style={{flex: 3, marginLeft: deviceWidth * 0.05}}>
         <Text style={{color: '#000', fontWeight: '300'}}>아이디</Text>
-        <SignLogInput
-          value={loginId}
-          onChangeText={text => setLoginId(text)}></SignLogInput>
+        <SignLogInput value={loginId} onChangeText={text => setLoginId(text)} />
         <Text
           style={{
             color: '#000',
@@ -61,12 +60,11 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
         <SignLogInput
           passsecure={true}
           value={loginPass}
-          onChangeText={text => setLoginPass(text)}></SignLogInput>
+          onChangeText={text => setLoginPass(text)}
+        />
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
-        <SignLogGreenButton
-          text="로그인"
-          onPress={handleLogin}></SignLogGreenButton>
+        <SignLogGreenButton text="로그인" onPress={handleLogin} />
       </View>
       <View
         style={{

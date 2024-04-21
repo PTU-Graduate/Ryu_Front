@@ -1,4 +1,3 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {RegiCommonScreen} from '../../components/RegiCommonScreen/RegiCommonScreen';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
@@ -7,7 +6,9 @@ const RegiID: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <RegiCommonScreen
-        smalltext="아이디"
+        mediumtext="아이디"
+        smalltext="를 입력해주세요."
+        inputtext="아이디"
         onpress={() => navigation.navigate('RegiPass')}
       />
     </AllBackground>

@@ -1,4 +1,3 @@
-import {Text} from 'react-native';
 import React from 'react';
 import {AllBackground} from '../components/AllSrcComponets/AllBackground';
 import {
