@@ -3,8 +3,8 @@ import React from 'react';
 import {getUserData} from '../../utils/DataTableSet/LoginResultData';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
-import Icon from 'react-native-vector-icons/Ionicons';
-import MatIcon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Octicons';
+import MatIcon from 'react-native-vector-icons/SimpleLineIcons';
 import Swiper from 'react-native-swiper';
 import {
   HomeTapbutton,
@@ -38,7 +38,7 @@ const Home = () => {
               width: deviceWidth * 0.1,
               height: deviceHeight * 0.05,
             }}>
-            <Icon name="baseball-outline" size={20}></Icon>
+            <Icon name="unlock" size={20}></Icon>
           </TouchableOpacity>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
@@ -71,8 +71,9 @@ const Home = () => {
             style={{
               width: deviceWidth * 0.1,
               height: deviceHeight * 0.05,
+              justifyContent: 'flex-end',
             }}>
-            <MatIcon name="20mp" size={30}></MatIcon>
+            <MatIcon name="arrow-right" size={20}></MatIcon>
           </TouchableOpacity>
         </View>
         <View
