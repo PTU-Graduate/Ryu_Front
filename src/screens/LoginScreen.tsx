@@ -25,14 +25,31 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
     <AllBackground>
       <View
         style={{
-          flex: 2,
-          justifyContent: 'center',
+          flex: 1,
+          justifyContent: 'flex-end',
           alignItems: 'center',
         }}>
-        <Text style={{fontWeight: 'bold', fontSize: 16}}>로그인</Text>
+        <Text
+          style={{
+            fontWeight: 'bold',
+            fontSize: 18,
+          }}>
+          로그인
+        </Text>
       </View>
-      <View style={{flex: 2, marginLeft: deviceWidth * 0.05}}>
-        <Text style={{fontSize: 23, fontWeight: 'bold'}}>안녕하세요</Text>
+      <View
+        style={{
+          flex: 2,
+          marginLeft: deviceWidth * 0.05,
+        }}>
+        <Text
+          style={{
+            marginTop: deviceHeight * 0.08,
+            fontSize: 23,
+            fontWeight: 'bold',
+          }}>
+          안녕하세요
+        </Text>
         <Text
           style={{
             fontSize: 23,
@@ -46,14 +63,14 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
           style={{
             color: '#5c5c5c',
             fontSize: 12,
-            marginTop: deviceHeight * 0.008,
+            marginTop: deviceHeight * 0.01,
           }}>
           회원 서비스 이용을 위해 로그인 해주세요.
         </Text>
       </View>
       <View
         style={{
-          flex: 3,
+          flex: 4,
           alignItems: 'center',
         }}>
         <Text
@@ -61,7 +78,8 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
             color: '#000',
             fontWeight: '300',
             marginRight: deviceWidth * 0.81,
-            marginBottom: deviceHeight * -0.01,
+            marginBottom: deviceHeight * -0.005,
+            marginTop: deviceHeight * 0.08,
           }}>
           학번
         </Text>
@@ -71,7 +89,7 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
             color: '#000',
             fontWeight: '300',
             marginTop: deviceHeight * 0.05,
-            marginBottom: deviceHeight * -0.01,
+            marginBottom: deviceHeight * -0.005,
             marginRight: deviceWidth * 0.75,
           }}>
           비밀번호
@@ -90,11 +108,11 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
           flex: 1,
           alignItems: 'center',
         }}>
-        <Text style={{fontSize: 10, color: '#cdcdcd', fontWeight: 'bold'}}>
-          로그인정보는 포털과 동일합니다. (학생은 학번, 교직원은 사번입니다 :)
+        <Text style={{fontSize: 10.5, color: '#cdcdcd', fontWeight: 'bold'}}>
+          로그인정보는 포털과 동일합니다. (학생은 학번, 교직원은 사번입니다.
         </Text>
-        <Text style={{fontSize: 10, color: '#cdcdcd', fontWeight: 'bold'}}>
-          아이디 찾기 / 비밀번호 찾기는 PC에서 포털을 이용하시기 바랍니다.
+        <Text style={{fontSize: 10.5, color: '#cdcdcd', fontWeight: 'bold'}}>
+          아이디 찾기 / 비밀번호 찾기는 PC에서 포털을 이용하시기 바랍니다.)
         </Text>
       </View>
     </AllBackground>
