@@ -15,8 +15,12 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
   const handleLogin = async () => {
     const result = await loginApiCall(loginId, loginPass);
 
+    console.log(result);
     if (result !== null && result.RSLT_CD === '00') {
-      navigation.navigate('Home');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'BottomTabNavigations'}],
+      });
     } else {
       Alert.alert('실패');
     }
