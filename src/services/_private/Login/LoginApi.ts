@@ -7,7 +7,7 @@ export const loginApiCall = async (
   MEMB_ID: string,
   PASS: string,
 ): Promise<LoginResultDataType | any | null> => {
-  const endpoint = '/Login';
+  const endpoint = '/PTU/Login';
   const data = {MEMB_ID, PASS};
 
   try {
