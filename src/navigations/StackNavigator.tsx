@@ -12,6 +12,7 @@ import RegiID from '../screens/RegiScreen/RegiID';
 import RegiPass from '../screens/RegiScreen/RegiPass';
 import RegiName from '../screens/RegiScreen/RegiName';
 import Home from '../screens/homeScreen/Home';
+import BottomTabNavigations from './BottomTabNavigations';
 
 type RootStackParamList = {
   Ex1: undefined;
@@ -25,6 +26,7 @@ type RootStackParamList = {
   RegiPass: undefined;
   RegiName: undefined;
   Home: undefined;
+  BottomTabNavigations: undefined;
 };
 
 export type ScreenProps = {
@@ -47,6 +49,10 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiID" component={RegiID} />
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="BottomTabNavigations"
+        component={BottomTabNavigations}
+      />
     </Stack.Navigator>
   );
 };
