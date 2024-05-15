@@ -58,7 +58,8 @@ export const HomeIconbutton: React.FC<AllBackgroundProps> = ({
           height: deviceHeight * 0.1,
           resizeMode: 'contain',
         }}
-        source={require('../../assets/images/Vector.png')}></Image>
+        source={require('../../assets/images/Vector.png')}
+      />
       <Text style={{marginTop: deviceHeight * 0.05, color: '#cdcdcd'}}>
         {text}
       </Text>
