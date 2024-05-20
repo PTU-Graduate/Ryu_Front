@@ -36,7 +36,7 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
           source={require('../../assets/images/PtuLogo.png')}
           style={{
             resizeMode: 'contain',
-            opacity: 0.08,
+            opacity: 0.15,
             width: deviceWidth * 0.75,
             height: deviceHeight * 0.65,
           }}

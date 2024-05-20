@@ -17,6 +17,10 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
         text="회원가입 스크린 이동"
         onPress={() => navigation.navigate('RegiHakgua')}
       />
+      <SignLogGrayButton
+        text="공지사항 스크린 이동"
+        onPress={() => navigation.navigate('Notice')}
+      />
       <SignLogInput text="비밀번호" />
     </AllBackground>
   );
