@@ -11,6 +11,11 @@ export default StyleSheet.create({
     fontSize: 14,
   },
 
+  SemiBold13: {
+    fontWeight: 'bold',
+    fontSize: 13,
+  },
+
   SemiBold14: {
     fontWeight: 'bold',
     fontSize: 14,
@@ -18,6 +23,6 @@ export default StyleSheet.create({
 
   SemiBold17: {
     fontWeight: 'bold',
-    fontSize: 25,
+    fontSize: 17,
   },
 });
