@@ -100,7 +100,7 @@ const CustomTabBar = (props: CustomBottomTabBarProps) => {
       <View style={styles.centralIconContainer}>
         <TouchableOpacity onPress={handlePressHome}>
           <Image
-            source={require('../assets/images/PTULOGO.png')}
+            source={require('../assets/images/PtuLogo.png')}
             style={styles.centralIcon}
           />
         </TouchableOpacity>
