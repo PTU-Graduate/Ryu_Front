@@ -62,7 +62,7 @@ const CustomTabBar = (props: CustomBottomTabBarProps) => {
             break;
           case 'Search':
             iconName = isFocused ? 'search' : 'search-outline';
-            // eslint-disable-next-line
+
             // @ts-ignore
             buttonStyle = {...buttonStyle, marginRight: deviceWidth * 0.05}; // Search 오른쪽으로 조금 더 이동
             break;
@@ -71,7 +71,7 @@ const CustomTabBar = (props: CustomBottomTabBarProps) => {
             break;
           case 'Profile':
             iconName = isFocused ? 'person' : 'person-outline';
-            // eslint-disable-next-line
+
             // @ts-ignore
             buttonStyle = {...buttonStyle, marginLeft: deviceWidth * 0.05}; // Profile 왼쪽으로 조금 더 이동
             break;
@@ -100,7 +100,7 @@ const CustomTabBar = (props: CustomBottomTabBarProps) => {
       <View style={styles.centralIconContainer}>
         <TouchableOpacity onPress={handlePressHome}>
           <Image
-            source={require('../assets/images/PTUlogo.png')}
+            source={require('../assets/images/PTULOGO.png')}
             style={styles.centralIcon}
           />
         </TouchableOpacity>
