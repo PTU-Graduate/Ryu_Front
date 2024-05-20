@@ -13,6 +13,8 @@ import RegiPass from '../screens/RegiScreen/RegiPass';
 import RegiName from '../screens/RegiScreen/RegiName';
 import Home from '../screens/homeScreen/Home';
 import BottomTabNavigations from './BottomTabNavigations';
+import DrawerNavigation from './Drawer';
+import {Button, TouchableOpacity} from 'react-native';
 
 type RootStackParamList = {
   Ex1: undefined;
@@ -27,6 +29,7 @@ type RootStackParamList = {
   RegiName: undefined;
   Home: undefined;
   BottomTabNavigations: undefined;
+  DrawerNavigation: undefined;
 };
 
 export type ScreenProps = {
@@ -53,6 +56,7 @@ const StackNavigator = () => {
         name="BottomTabNavigations"
         component={BottomTabNavigations}
       />
+      <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
     </Stack.Navigator>
   );
 };

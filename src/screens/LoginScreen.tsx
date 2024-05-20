@@ -7,6 +7,7 @@ import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
 import {SignLogGreenButton} from '../components/AllSrcComponets/AllButtonCompo';
 import {loginApiCall} from '../services/_private/Login/LoginApi';
 import {ScreenProps} from '../navigations/StackNavigator';
+import {DrawerActions} from '@react-navigation/native';
 
 const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
@@ -14,8 +15,6 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
 
   const handleLogin = async () => {
     const result = await loginApiCall(loginId, loginPass);
-
-    console.log(result);
     if (result !== null && result.RSLT_CD === '00') {
       navigation.reset({
         index: 0,

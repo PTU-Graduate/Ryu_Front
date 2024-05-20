@@ -48,19 +48,19 @@ export const HomeIconbutton: React.FC<AllBackgroundProps> = ({
     <TouchableOpacity
       style={{
         alignItems: 'center',
-        height: deviceHeight * 0.2,
+        height: deviceHeight * 0.15,
         width: deviceWidth * 0.2,
         marginLeft: deviceWidth * 0.02,
       }}>
       <Image
         style={{
-          width: deviceWidth * 0.2,
-          height: deviceHeight * 0.1,
+          width: deviceWidth * 0.15,
+          height: deviceHeight * 0.15,
           resizeMode: 'contain',
         }}
         source={require('../../assets/images/Vector.png')}
       />
-      <Text style={{marginTop: deviceHeight * 0.05, color: '#cdcdcd'}}>
+      <Text style={{marginTop: deviceHeight * 0.005, color: '#cdcdcd'}}>
         {text}
       </Text>
     </TouchableOpacity>
