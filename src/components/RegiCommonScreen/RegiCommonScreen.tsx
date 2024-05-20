@@ -33,7 +33,7 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
           marginTop: deviceHeight * 0.063,
         }}>
         <Image
-          source={require('../../assets/images/PTULOGO.png')}
+          source={require('../../assets/images/PtuLogo.png')}
           style={{
             resizeMode: 'contain',
             opacity: 0.15,
