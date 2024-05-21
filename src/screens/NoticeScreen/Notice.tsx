@@ -15,7 +15,10 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
       <View style={{flex: 1, alignItems: 'center'}}>
         <Text>공지사항</Text>
       </View>
-      <NoticeCategoryCompo />
+      <NoticeCategoryCompo
+        selectedCategory={selectedCategory} // 상태 공유
+        setSelectedCategory={setSelectedCategory} // 상태 공유
+      />
       <View style={{flex: 7}} />
     </AllBackground>
   );
