@@ -5,7 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import AllButtonStyles from '../../styles/AllSrcStyles/AllButtonStyles';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import Icon from 'react-native-vector-icons/Entypo';
-import {deviceHeight} from '../../utils/DeviceUtils';
+import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 interface AllButtonCompoProps {
   children?: React.ReactNode; // 부모, 자식 관계를 선언해주는 것 touchableopacity나 textinput안의 text를 선언할 때
   title?: string;
@@ -16,7 +16,7 @@ interface AllButtonCompoProps {
 /**
  * 로그인 및 회원가입 화면에 사용되는 초록색 공통 버튼
  */
-export const SignLogBlackButton: React.FC<AllButtonCompoProps> = ({
+export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
   children,
   title,
   date,
@@ -24,7 +24,7 @@ export const SignLogBlackButton: React.FC<AllButtonCompoProps> = ({
 }) => {
   return (
     <TouchableOpacity
-      style={AllButtonStyles.SignLogBlackButtonStyle}
+      style={AllButtonStyles.NoticeListButtonStyle}
       onPress={onPress}>
       {children}
       <View
@@ -32,25 +32,52 @@ export const SignLogBlackButton: React.FC<AllButtonCompoProps> = ({
           flex: 3,
           flexDirection: 'row',
         }}>
-        <View style={{flex: 7, alignItems: 'center', justifyContent: 'center'}}>
-          <Text style={[AllTextStyles.SemiBold17, {color: '#009b64'}]}>
+        <View
+          style={{
+            flex: 7,
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: deviceWidth * 0.8,
+          }}>
+          <Text
+            style={[
+              AllTextStyles.SemiBold16,
+              {color: '#009b64', lineHeight: 22},
+            ]}>
             {'[공지]  '}
-            <Text style={[AllTextStyles.SemiBold17, {color: '#000'}]}>
-              2024학년도 2학기 중국 자매대학 파견 교환학생 모집 공고{title}
+            <Text style={[AllTextStyles.SemiBold16, {color: '#000000'}]}>
+              {title}
             </Text>
           </Text>
         </View>
-        <View
-          style={{
-            alignItems: 'flex-end',
-            justifyContent: 'center',
-            marginTop: deviceHeight * 0.02,
-          }}>
-          <Icon name="chevron-right" size={30}></Icon>
+        <View>
+          <Icon
+            style={{
+              marginTop: deviceHeight * 0.016,
+              marginLeft: deviceWidth * 0.02,
+              color: '#666666',
+            }}
+            name="chevron-right"
+            size={25}
+          />
         </View>
       </View>
-      <View style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center'}}>
-        <Text style={AllTextStyles.SemiThin}>2024.03.27{date}</Text>
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'flex-end',
+          justifyContent: 'center',
+        }}>
+        <Text
+          style={[
+            AllTextStyles.SemiThin10,
+            {
+              marginBottom: deviceHeight * 0.01,
+              marginRight: deviceWidth * 0.02,
+            },
+          ]}>
+          {date}
+        </Text>
       </View>
     </TouchableOpacity>
   );
