@@ -15,9 +15,6 @@ import Home from '../screens/homeScreen/Home';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
-import AcademicInfo from '../screens/NoticeScreen/AcademicInfo';
-import AdmissionInfo from '../screens/NoticeScreen/AdmissionInfo';
-import ScholarshipInfo from '../screens/NoticeScreen/ScholarshipInfo';
 
 type RootStackParamList = {
   Ex1: undefined;
@@ -34,9 +31,6 @@ type RootStackParamList = {
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
   Notice: undefined;
-  AcademicInfo: undefined;
-  AdmissionInfo: undefined;
-  ScholarShipInfo: undefined;
 };
 
 export type ScreenProps = {
@@ -65,9 +59,6 @@ const StackNavigator = () => {
       />
       <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       <Stack.Screen name="Notice" component={Notice} />
-      <Stack.Screen name="AcademicInfo" component={AcademicInfo} />
-      <Stack.Screen name="AdmissionInfo" component={AdmissionInfo} />
-      <Stack.Screen name="ScholarShipInfo" component={ScholarshipInfo} />
     </Stack.Navigator>
   );
 };

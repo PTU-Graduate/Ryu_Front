@@ -1,13 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
-interface CategoryProps {}
+interface CategoryProps {
+  selectedCategory: string; // 상태 공유
+  setSelectedCategory: (category: string) => void; // 상태 공유 를 위한 props 설정
+}
 
-export const NoticeCategoryCompo: React.FC<CategoryProps> = ({}) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
+export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
+  selectedCategory,
+  setSelectedCategory,
+}) => {
   // useState는 상태관리 Hook 즉, setSelectedCategory를 이용하여 어떤 값을 가지고 오는 지 selectedCategory에 저장한다.
   useEffect(() => {
     console.log(selectedCategory);
@@ -18,6 +23,7 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({}) => {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         width: deviceWidth * 0.9,
         marginLeft: deviceWidth * 0.05,
       }}>
