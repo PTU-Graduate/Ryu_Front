@@ -23,6 +23,7 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         width: deviceWidth * 0.9,
         marginLeft: deviceWidth * 0.05,
       }}>
