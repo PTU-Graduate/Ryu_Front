@@ -18,4 +18,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  SignLogBlackButtonStyle: {
+    width: deviceWidth * 0.9,
+    height: deviceHeight * 0.1,
+    borderBottomColor: '#000',
+    borderBottomWidth: 1,
+  },
 });
