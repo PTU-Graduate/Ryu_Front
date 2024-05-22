@@ -7,6 +7,7 @@ import {ScreenProps} from '../../navigations/StackNavigator';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceWidth} from '../../utils/DeviceUtils';
 import {NoticeCategoryCompo} from '../../components/NoticeSrcComponets/NoticeCategoryCompo';
+import {SignLogBlackButton} from '../../components/NoticeSrcComponets/NoticePostCompo';
 
 const Notice: React.FC<ScreenProps> = ({navigation}) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('공지사항');
@@ -19,7 +20,11 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
         selectedCategory={selectedCategory} // 상태 공유
         setSelectedCategory={setSelectedCategory} // 상태 공유
       />
-      <View style={{flex: 7}} />
+      <View style={{flex: 7, alignItems: 'center'}}>
+        <SignLogBlackButton
+          title="궁시렁궁시렁"
+          date="2024.04.07"></SignLogBlackButton>
+      </View>
     </AllBackground>
   );
 };
