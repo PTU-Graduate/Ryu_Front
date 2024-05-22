@@ -1,6 +1,6 @@
 // DrawerNavigation.js
 
-import React, {useEffect} from 'react';
+import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerScreen from '../screens/BottomTabScreens/DrawerBurgur';
 
