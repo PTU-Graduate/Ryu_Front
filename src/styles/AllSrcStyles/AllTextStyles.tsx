@@ -25,4 +25,8 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 17,
   },
+  SemiThin: {
+    fontSize: 10,
+    fontWeight: '300',
+  },
 });
