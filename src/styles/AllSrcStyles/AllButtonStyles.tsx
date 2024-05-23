@@ -18,4 +18,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  NoticeListButtonStyle: {
+    width: deviceWidth * 0.9,
+    height: deviceHeight * 0.1,
+    borderBottomColor: '#C9C6C6',
+    borderBottomWidth: 1,
+  },
 });

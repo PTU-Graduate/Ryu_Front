@@ -1,6 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  SemiThin10: {
+    fontSize: 10,
+    fontWeight: '300',
+  },
+
   medium11: {
     fontWeight: '500',
     fontSize: 11,
@@ -11,13 +16,23 @@ export default StyleSheet.create({
     fontSize: 14,
   },
 
+  SemiBold13: {
+    fontWeight: 'bold',
+    fontSize: 13,
+  },
+
   SemiBold14: {
     fontWeight: 'bold',
     fontSize: 14,
   },
 
+  SemiBold16: {
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+
   SemiBold17: {
     fontWeight: 'bold',
-    fontSize: 25,
+    fontSize: 17,
   },
 });
