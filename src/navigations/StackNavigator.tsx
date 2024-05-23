@@ -15,6 +15,7 @@ import Home from '../screens/homeScreen/Home';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
+import PointScreen from '../screens/PointScreen.tsx';
 
 type RootStackParamList = {
   Ex1: undefined;
@@ -31,6 +32,7 @@ type RootStackParamList = {
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
   Notice: undefined;
+  PointScreen: undefined;
 };
 
 export type ScreenProps = {
@@ -53,6 +55,7 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiID" component={RegiID} />
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="PointScreen" component={PointScreen} />
       <Stack.Screen
         name="BottomTabNavigations"
         component={BottomTabNavigations}
