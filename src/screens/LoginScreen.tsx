@@ -18,7 +18,7 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
     if (result !== null && result.RSLT_CD === '00') {
       navigation.reset({
         index: 0,
-        routes: [{name: 'BottomTabNavigations'}],
+        routes: [{name: 'DrawerNavigation'}],
       });
     } else {
       Alert.alert('실패');
