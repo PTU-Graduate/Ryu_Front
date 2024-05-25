@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {Image, Text, View} from 'react-native';
+import {Image, View} from 'react-native';
 import {ScreenProps} from '../../navigations/StackNavigator';
 import {NoticeCategoryCompo} from '../../components/NoticeSrcComponets/NoticeCategoryCompo';
 import {NoticeListButton} from '../../components/NoticeSrcComponets/NoticePostCompo';
@@ -17,22 +17,26 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
         {selectedCategory === '공지' && (
           <AllTitleTopBarCompo
             text="공 지 사 항"
-            onpress={() => navigation.goBack()}></AllTitleTopBarCompo>
+            onPress={() => navigation.goBack()}
+          />
         )}
         {selectedCategory === '학사' && (
           <AllTitleTopBarCompo
             text="학 사 안 내"
-            onpress={() => navigation.goBack()}></AllTitleTopBarCompo>
+            onPress={() => navigation.goBack()}
+          />
         )}
         {selectedCategory === '장학' && (
           <AllTitleTopBarCompo
             text="장 학 안 내"
-            onpress={() => navigation.goBack()}></AllTitleTopBarCompo>
+            onPress={() => navigation.goBack()}
+          />
         )}
         {selectedCategory === '입학' && (
           <AllTitleTopBarCompo
-            text="입 학 안내"
-            onpress={() => navigation.goBack()}></AllTitleTopBarCompo>
+            text="입 학 안 내"
+            onPress={() => navigation.goBack()}
+          />
         )}
       </View>
       <View style={{flex: 1}}>

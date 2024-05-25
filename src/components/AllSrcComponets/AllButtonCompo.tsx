@@ -4,6 +4,7 @@ import {Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import AllButtonStyles from '../../styles/AllSrcStyles/AllButtonStyles';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {deviceHeight} from '../../utils/DeviceUtils';
 
 interface AllButtonCompoProps {
   children?: React.ReactNode; // 부모, 자식 관계를 선언해주는 것 touchableopacity나 textinput안의 text를 선언할 때
@@ -12,16 +13,19 @@ interface AllButtonCompoProps {
 }
 
 /**
- * 로그인 및 회원가입 화면에 사용되는 초록색 공통 버튼
+ * 회원가입 화면에 사용되는 초록색 공통 버튼
  */
-export const SignLogGreenButton: React.FC<AllButtonCompoProps> = ({
+export const SignGreenButton: React.FC<AllButtonCompoProps> = ({
   children,
   text,
   onPress,
 }) => {
   return (
     <TouchableOpacity
-      style={AllButtonStyles.SignLogGreenButtonStyle}
+      style={[
+        AllButtonStyles.SignLogGreenButtonStyle,
+        {marginTop: deviceHeight * 0.04},
+      ]}
       onPress={onPress}>
       <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
       {children}
@@ -30,16 +34,16 @@ export const SignLogGreenButton: React.FC<AllButtonCompoProps> = ({
 };
 
 /**
- * 로그인 및 회원가입 화면에 사용되는 회색 공통 버튼
+ * 로그인 화면에 사용되는 초록색 공통 버튼
  */
-export const SignLogGrayButton: React.FC<AllButtonCompoProps> = ({
+export const LoginGreenButton: React.FC<AllButtonCompoProps> = ({
   children,
   text,
   onPress,
 }) => {
   return (
     <TouchableOpacity
-      style={AllButtonStyles.SignLogGrayButtonStyle}
+      style={AllButtonStyles.SignLogGreenButtonStyle}
       onPress={onPress}>
       <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
       {children}
