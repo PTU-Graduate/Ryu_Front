@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {View, TouchableOpacity, Image, StyleSheet} from 'react-native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -13,12 +12,9 @@ type CustomBottomTabBarProps = BottomTabBarProps & {
 
 const CustomTabBar = (props: CustomBottomTabBarProps) => {
   const {state, descriptors, navigation} = props;
-
   if (!state.routes || state.routes.length === 0) {
     return null; // routes가 없거나 비어있을 경우 null 반환
   }
-
-  const Drawer = createDrawerNavigator(); // 드로어 네비게이터 생성
 
   const handlePressHome = () => {
     navigation.navigate('Home'); // 'Home'은 홈 스크린의 라우트 이름
@@ -36,7 +32,7 @@ const CustomTabBar = (props: CustomBottomTabBarProps) => {
         const isFocused = state.index === index;
 
         const onPress = () => {
-          if (route.name === 'DrawerNavigation') {
+          if (route.name === 'DrawerBurgur') {
             // DrawerNavigation을 눌렀을 때 실행할 동작
             navigation.dispatch(DrawerActions.openDrawer());
             // 여기에 원하는 작업을 추가하세요.
@@ -57,26 +53,29 @@ const CustomTabBar = (props: CustomBottomTabBarProps) => {
         let iconName;
         let buttonStyle = styles.tabButton;
         switch (route.name) {
-          case 'DrawerNavigation':
+          case 'DrawerBurgur':
             iconName = isFocused ? 'menu' : 'menu-outline';
             break;
           case 'Search':
             iconName = isFocused ? 'search' : 'search-outline';
-
-            // @ts-ignore
-            buttonStyle = {...buttonStyle, marginRight: deviceWidth * 0.05}; // Search 오른쪽으로 조금 더 이동
+            //@ts-ignore
+            buttonStyle = {...buttonStyle, marginRight: deviceWidth * 0.1}; // Search 오른쪽으로 조금 더 이동
             break;
           case 'Setting':
             iconName = isFocused ? 'settings' : 'settings-outline';
             break;
           case 'Profile':
             iconName = isFocused ? 'person' : 'person-outline';
-
-            // @ts-ignore
-            buttonStyle = {...buttonStyle, marginLeft: deviceWidth * 0.05}; // Profile 왼쪽으로 조금 더 이동
+            //@ts-ignore
+            buttonStyle = {...buttonStyle, marginLeft: deviceWidth * 0.1}; // Profile 왼쪽으로 조금 더 이동
             break;
           default:
-            iconName = 'alert-circle-outline';
+            iconName = ''; // 아이콘이 없는 경우
+        }
+
+        // iconName이 없는 경우 렌더링하지 않음
+        if (!iconName) {
+          return null;
         }
 
         return (
