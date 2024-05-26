@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
@@ -6,7 +5,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 interface AllBackgroundProps {
   children?: React.ReactNode;
   text?: string;
-  onpress?: () => void;
+  onPress?: () => void;
 }
 
 /**
@@ -14,12 +13,12 @@ interface AllBackgroundProps {
  */
 export const AllTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
   text,
-  onpress,
+  onPress,
 }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={onpress}>
-        <Icon name="chevron-back" size={25} color="blak"></Icon>
+      <TouchableOpacity onPress={onPress}>
+        <Icon name="chevron-back" size={25} color="blak" />
       </TouchableOpacity>
       <Text style={styles.title}>{text}</Text>
     </View>
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
     marginRight: 10, // 아이콘과 텍스트 사이의 간격
   },
   title: {
-    flex: 0.95, // 남은 공간을 차지하여 중앙 정렬에 기여
+    flex: 0.93, // 남은 공간을 차지하여 중앙 정렬에 기여
     fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
