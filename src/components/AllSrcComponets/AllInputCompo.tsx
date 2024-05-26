@@ -1,8 +1,14 @@
 import React from 'react';
-import {Alert, Text, TextInput, TextInputProps, View} from 'react-native';
+import {
+  Alert,
+  Text,
+  TextInput,
+  TextInputProps,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import AllInputStyles from '../../styles/AllSrcStyles/AllInputStyles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 
 interface AllInputCompoProps extends TextInputProps {
@@ -47,8 +53,13 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
     <View
       style={{
         alignItems: 'center',
-        backgroundColor: '#456',
       }}>
+      <TextInput
+        placeholderTextColor="#C9C6C6"
+        style={[AllInputStyles.SignLogInputStyle, AllTextStyles.medium14]}
+        placeholder={placeholderText}
+        secureTextEntry={passsecure}
+        {...props}></TextInput>
       <TouchableOpacity
         style={{
           backgroundColor: '#626262',
@@ -58,21 +69,14 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1,
+          position: 'absolute',
           marginLeft: deviceWidth * 0.35,
+          top: 5,
+          right: 10,
         }}
         onPress={onPress}>
         <Text style={{color: '#ffffff', fontWeight: 'bold'}}>중복확인</Text>
       </TouchableOpacity>
-      <TextInput
-        placeholderTextColor="#C9C6C6"
-        style={[
-          AllInputStyles.SignLogInputStyle,
-          AllTextStyles.medium14,
-          {position: 'absolute'},
-        ]}
-        placeholder={placeholderText}
-        secureTextEntry={passsecure}
-        {...props}></TextInput>
     </View>
   );
 };
