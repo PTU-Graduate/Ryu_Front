@@ -11,6 +11,8 @@ interface RegiCommonScreen {
   inputtext: string;
   onPress?: () => void;
   CheckonPress?: () => void;
+  value?: string;
+  onChangeText?: (text: string) => void;
 }
 
 export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
@@ -19,6 +21,8 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
   inputtext,
   onPress,
   CheckonPress,
+  value,
+  onChangeText,
 }) => {
   return (
     <SafeAreaView
@@ -65,6 +69,8 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
       </View>
       <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
         <SignLogCheckInput
+          value={value}
+          onChangeText={onChangeText}
           placeholderTextColor="#979797"
           placeholder={inputtext}
           onPress={CheckonPress}
