@@ -1,15 +1,17 @@
 import React from 'react';
-import {RegiCommonScreen} from '../../components/RegiCommonScreen/RegiCommonScreen';
+import {RegiCkeckCommonScreen} from '../../components/RegiCommonScreen/RegiCheckCommonScreen';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {ScreenProps} from '../../navigations/StackNavigator';
+
 const RegiHakbun: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
-      <RegiCommonScreen
+      <RegiCkeckCommonScreen
         mediumtext="학번"
         smalltext="을 입력해주세요."
         inputtext="학번"
-        onpress={() => navigation.navigate('RegiName')}
+        CheckonPress={() => navigation.navigate('Ex1')}
+        onPress={() => navigation.navigate('RegiName')}
       />
     </AllBackground>
   );

@@ -4,7 +4,7 @@ import AllTextStyles from '../styles/AllSrcStyles/AllTextStyles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Entypo';
 import {deviceHeight, deviceWidth} from '../utils/DeviceUtils';
-import AllBackgroundStyles from '../styles/AllSrcStyles/AllBackgroundStyles';
+
 const PointScreen = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
