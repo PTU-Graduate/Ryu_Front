@@ -1,21 +1,30 @@
 import React from 'react';
 import {AllBackground} from '../components/AllSrcComponets/AllBackground';
-import {
-  SignLogGrayButton,
-  SignLogGreenButton,
-} from '../components/AllSrcComponets/AllButtonCompo';
+import {LoginGreenButton} from '../components/AllSrcComponets/AllButtonCompo';
 import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
 import {ScreenProps} from '../navigations/StackNavigator';
 const Ex1: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
-      <SignLogGreenButton
+      <LoginGreenButton
         text="로그인 스크린 이동"
         onPress={() => navigation.navigate('LoginScreen')}
       />
-      <SignLogGrayButton
+      <LoginGreenButton
         text="회원가입 스크린 이동"
         onPress={() => navigation.navigate('RegiHakgua')}
+      />
+      <LoginGreenButton
+        text="공지사항 스크린 이동"
+        onPress={() => navigation.navigate('Notice')}
+      />
+      <LoginGreenButton
+        text="안정연의 작업공간"
+        onPress={() => navigation.navigate('PointScreen')}
+      />
+      <LoginGreenButton
+        text="박미현의 작업공간"
+        onPress={() => navigation.navigate('Mimi')}
       />
       <SignLogInput text="비밀번호" />
     </AllBackground>

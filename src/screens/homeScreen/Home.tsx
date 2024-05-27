@@ -1,11 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Text, TouchableOpacity, View, Image} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import React from 'react';
 import {getUserData} from '../../utils/DataTableSet/LoginResultData';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
-import Icon from 'react-native-vector-icons/Octicons';
-import MatIcon from 'react-native-vector-icons/SimpleLineIcons';
 import Swiper from 'react-native-swiper';
 import {
   HomeTapbutton,
@@ -25,23 +23,10 @@ const Home = () => {
         <View
           style={{
             flex: 2,
-            flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
           }}>
-          <Image
-            source={require('../../assets/images/HomeTopLogo.png')}
-            style={{
-              marginLeft: deviceWidth * 0.25,
-            }}
-          />
-          <TouchableOpacity
-            style={{
-              width: deviceWidth * 0.1,
-              height: deviceHeight * 0.05,
-            }}>
-            <Icon name="unlock" size={20} />
-          </TouchableOpacity>
+          <Image source={require('../../assets/images/HomeTopLogo.png')} />
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <HomeTapbutton text="공지사항" />
@@ -65,25 +50,15 @@ const Home = () => {
         <View
           style={{
             flex: 1,
-            alignItems: 'flex-end',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
+            justifyContent: 'flex-end',
           }}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>즐겨찾기</Text>
-          <TouchableOpacity
-            style={{
-              width: deviceWidth * 0.1,
-              height: deviceHeight * 0.05,
-              justifyContent: 'flex-end',
-            }}>
-            <MatIcon name="arrow-right" size={20} />
-          </TouchableOpacity>
         </View>
         <View
           style={{
             flex: 3,
             flexDirection: 'row',
-            alignItems: 'center',
+            marginTop: deviceHeight * 0.035,
           }}>
           <HomeIconbutton text="검색하기" />
           <HomeIconbutton text="검색하기" />
