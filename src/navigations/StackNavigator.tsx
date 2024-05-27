@@ -11,10 +11,13 @@ import RegiHakbun from '../screens/RegiScreen/RegiHakbun';
 import RegiID from '../screens/RegiScreen/RegiID';
 import RegiPass from '../screens/RegiScreen/RegiPass';
 import RegiName from '../screens/RegiScreen/RegiName';
-import Home from '../screens/homeScreen/Home';
+import Home from '../screens/HomeScreen/Home';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
+import PointScreen from '../screens/PointScreen';
+import Mimi from '../screens/Mimi';
+import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
 
 type RootStackParamList = {
   Ex1: undefined;
@@ -31,6 +34,9 @@ type RootStackParamList = {
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
   Notice: undefined;
+  PointScreen: undefined;
+  Mimi: undefined;
+  DrawerBurgur: undefined;
 };
 
 export type ScreenProps = {
@@ -53,12 +59,15 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiID" component={RegiID} />
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="PointScreen" component={PointScreen} />
       <Stack.Screen
         name="BottomTabNavigations"
         component={BottomTabNavigations}
       />
       <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       <Stack.Screen name="Notice" component={Notice} />
+      <Stack.Screen name="Mimi" component={Mimi} />
+      <Stack.Screen name="DrawerBurgur" component={DrawerBurgur} />
     </Stack.Navigator>
   );
 };

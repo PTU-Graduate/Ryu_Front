@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import {AllBackground} from '../components/AllSrcComponets/AllBackground';
 import {deviceWidth, deviceHeight} from '../utils/DeviceUtils';
 import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
-import {SignLogGreenButton} from '../components/AllSrcComponets/AllButtonCompo';
+import {LoginGreenButton} from '../components/AllSrcComponets/AllButtonCompo';
 import {loginApiCall} from '../services/_private/Login/LoginApi';
 import {ScreenProps} from '../navigations/StackNavigator';
 import {DrawerActions} from '@react-navigation/native';
@@ -18,7 +18,7 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
     if (result !== null && result.RSLT_CD === '00') {
       navigation.reset({
         index: 0,
-        routes: [{name: 'BottomTabNavigations'}],
+        routes: [{name: 'DrawerNavigation'}],
       });
     } else {
       Alert.alert('실패');
@@ -104,7 +104,7 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
         />
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
-        <SignLogGreenButton text="로그인" onPress={handleLogin} />
+        <LoginGreenButton text="로그인" onPress={handleLogin} />
       </View>
       <View
         style={{

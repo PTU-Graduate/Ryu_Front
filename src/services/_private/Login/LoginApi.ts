@@ -15,6 +15,7 @@ export const loginApiCall = async (
       LoginResultDataType | any
     >;
     if (result && result.data && result.data.RSLT_CD === '00') {
+      // RSLT_CD는 응답코드를 의미
       setUserData(result.data);
       return result.data;
     } else {

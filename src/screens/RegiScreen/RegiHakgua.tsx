@@ -10,7 +10,7 @@ const RegiHakgua: React.FC<ScreenProps> = ({navigation}) => {
         mediumtext="학과"
         smalltext="를 입력해주세요."
         inputtext="학과"
-        onpress={() => navigation.navigate('RegiHakbun')}
+        onPress={() => navigation.navigate('RegiHakbun')}
       />
     </AllBackground>
   );
