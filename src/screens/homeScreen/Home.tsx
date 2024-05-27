@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Text, TouchableOpacity, View, Image} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import React from 'react';
 import {getUserData} from '../../utils/DataTableSet/LoginResultData';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';

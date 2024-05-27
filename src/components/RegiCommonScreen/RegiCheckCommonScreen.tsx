@@ -3,20 +3,26 @@ import {View, Text, SafeAreaView, Image} from 'react-native';
 import React from 'react';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
 import {SignGreenButton} from '../AllSrcComponets/AllButtonCompo';
-import {SignLogInput} from '../AllSrcComponets/AllInputCompo';
+import {SignLogCheckInput} from '../AllSrcComponets/AllInputCompo';
 
 interface RegiCommonScreen {
   mediumtext: string;
   smalltext: string;
   inputtext: string;
   onPress?: () => void;
+  CheckonPress?: () => void;
+  value?: string;
+  onChangeText?: (text: string) => void;
 }
 
-export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
+export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
   mediumtext,
   smalltext,
   inputtext,
   onPress,
+  CheckonPress,
+  value,
+  onChangeText,
 }) => {
   return (
     <SafeAreaView
@@ -27,6 +33,7 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
       }}>
       <View
         style={{
+          flex: 1,
           position: 'absolute',
           marginLeft: deviceWidth * 0.035,
           marginTop: deviceHeight * 0.14,
@@ -61,7 +68,13 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
         </Text>
       </View>
       <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
-        <SignLogInput placeholderTextColor="#979797" placeholder={inputtext} />
+        <SignLogCheckInput
+          value={value}
+          onChangeText={onChangeText}
+          placeholderTextColor="#979797"
+          placeholder={inputtext}
+          onPress={CheckonPress}
+        />
       </View>
       <View
         style={{

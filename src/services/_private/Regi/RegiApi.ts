@@ -1,25 +1,22 @@
 import {serverConnector} from '../Api.config';
 import {AxiosResponse} from 'axios';
 import {LoginResultDataType} from '../../../utils/DataTableSet/LoginResultData';
-import {setUserData} from '../../../utils/DataTableSet/LoginResultData';
 
-export const loginApiCall = async (
-  MEMB_ID: string,
-  PASS: string,
+export const regiApiCall = async (
+  STD_NUM: string,
 ): Promise<LoginResultDataType | any | null> => {
-  const endpoint = '/PTU/Login';
-  const data = {MEMB_ID, PASS};
+  const endpoint = '/PTU/STDregister';
+  const data = {STD_NUM};
 
   try {
+    console.log('Calling API with STD_NUM:', STD_NUM);
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<
       LoginResultDataType | any
     >;
     if (result && result.data && result.data.RSLT_CD === '00') {
-      // RSLT_CD는 응답코드를 의미
-      setUserData(result.data);
       return result.data;
     } else {
-      return null;
+      return result.data;
     }
   } catch (error) {
     return null;
