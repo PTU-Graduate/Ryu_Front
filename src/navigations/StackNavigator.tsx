@@ -11,14 +11,13 @@ import RegiHakbun from '../screens/RegiScreen/RegiHakbun';
 import RegiID from '../screens/RegiScreen/RegiID';
 import RegiPass from '../screens/RegiScreen/RegiPass';
 import RegiName from '../screens/RegiScreen/RegiName';
-import Home from '../screens/HomeScreen/Home.tsx';
+import Home from '../screens/homeScreen/Home';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
-import PointScreen from '../screens/PointScreen.tsx';
-import Mimi from '../screens/Mimi.tsx';
-('');
-import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur.tsx';
+import PointScreen from '../screens/PointScreen';
+import Mimi from '../screens/Mimi';
+import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
 
 type RootStackParamList = {
   Ex1: undefined;
