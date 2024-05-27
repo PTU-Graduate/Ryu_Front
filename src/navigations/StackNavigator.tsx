@@ -11,7 +11,7 @@ import RegiHakbun from '../screens/RegiScreen/RegiHakbun';
 import RegiID from '../screens/RegiScreen/RegiID';
 import RegiPass from '../screens/RegiScreen/RegiPass';
 import RegiName from '../screens/RegiScreen/RegiName';
-import Home from '../screens/homeScreen/Home';
+import Home from '../screens/HomeScreen/Home';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
