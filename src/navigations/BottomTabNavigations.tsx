@@ -3,7 +3,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {useNavigation} from '@react-navigation/native';
-import Home from '../screens/homeScreen/Home';
+import Home from '../screens/HomeScreen/Home';
 import CustomTabBar from './CustomTabBar';
 import Search from '../screens/BottomTabScreens/Search';
 import Setting from '../screens/BottomTabScreens/Setting';
