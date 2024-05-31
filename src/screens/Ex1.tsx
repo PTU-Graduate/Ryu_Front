@@ -26,6 +26,10 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
         text="박미현의 작업공간"
         onPress={() => navigation.navigate('Mimi')}
       />
+      <LoginGreenButton
+        text="메인"
+        onPress={() => navigation.navigate('DrawerNavigation')}
+      />
       <SignLogInput text="비밀번호" />
     </AllBackground>
   );
