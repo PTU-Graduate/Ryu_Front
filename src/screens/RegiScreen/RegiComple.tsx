@@ -1,17 +1,14 @@
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {SignGreenButton} from '../../components/AllSrcComponets/AllButtonCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {ScreenProps} from '../../navigations/StackNavigator';
-import LoginScreen from '../LoginScreen';
+import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 
 const RegiComple: React.FC<ScreenProps> = ({navigation}) => {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-      }}>
+    <AllBackground>
       <View
         style={{
           flex: 4,
@@ -44,7 +41,7 @@ const RegiComple: React.FC<ScreenProps> = ({navigation}) => {
           onPress={() => navigation.navigate('LoginScreen')}
           text="완료"></SignGreenButton>
       </View>
-    </SafeAreaView>
+    </AllBackground>
   );
 };
 

@@ -1,16 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  Image,
-  Keyboard,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
-import AllBackgroundStyles from '../../styles/AllSrcStyles/AllBackgroundStyles';
-import {ScrollView} from 'react-native-gesture-handler';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 
 interface AllBackgroundProps {
@@ -21,10 +11,7 @@ interface AllBackgroundProps {
 /**
  * 가장 기본 베이스 백그라운드 화면
  */
-export const HomeTapbutton: React.FC<AllBackgroundProps> = ({
-  children,
-  text,
-}) => {
+export const MainTapbutton: React.FC<AllBackgroundProps> = ({text}) => {
   return (
     <TouchableOpacity
       style={{
@@ -40,10 +27,7 @@ export const HomeTapbutton: React.FC<AllBackgroundProps> = ({
   );
 };
 
-export const HomeIconbutton: React.FC<AllBackgroundProps> = ({
-  children,
-  text,
-}) => {
+export const MainIconbutton: React.FC<AllBackgroundProps> = ({text}) => {
   return (
     <TouchableOpacity
       style={{

@@ -27,10 +27,10 @@ export const AllTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
+    height: 75,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
     paddingHorizontal: 10, //container와 아이콘사이의 간격조정
     marginTop: 8, //container자체를 밑으로 내림
   },
