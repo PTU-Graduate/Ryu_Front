@@ -17,12 +17,12 @@ const CustomTabBar = (props: CustomBottomTabBarProps) => {
   }
 
   const handlePressHome = () => {
-    navigation.navigate('Home'); // 'Home'은 홈 스크린의 라우트 이름
+    navigation.navigate('Main'); // 'Home'은 홈 스크린의 라우트 이름
   };
 
   useEffect(() => {
     // 컴포넌트가 처음 마운트될 때 "Home" 라우트로 이동
-    navigation.navigate('Home');
+    navigation.navigate('Main');
   }, []); // 빈 배열을 전달하여 컴포넌트가 처음 마운트될 때만 실행되도록 설정
 
   return (
