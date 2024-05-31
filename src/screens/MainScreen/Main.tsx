@@ -6,11 +6,11 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import Swiper from 'react-native-swiper';
 import {
-  HomeTapbutton,
-  HomeIconbutton,
-} from '../../components/homeSrcCompo/HomeSrcButton';
+  MainIconbutton,
+  MainTapbutton,
+} from '../../components/MainSrcCompo/MainSrcButton';
 
-const Home = () => {
+const Main = () => {
   const userData = getUserData();
   return (
     <AllBackground>
@@ -22,16 +22,16 @@ const Home = () => {
         }}>
         <View
           style={{
-            flex: 2,
+            flex: 1,
             alignItems: 'center',
             justifyContent: 'center',
           }}>
           <Image source={require('../../assets/images/HomeTopLogo.png')} />
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
-          <HomeTapbutton text="공지사항" />
-          <HomeTapbutton text="이슈" />
-          <HomeTapbutton text="추천" />
+          <MainTapbutton text="공지사항" />
+          <MainTapbutton text="이슈" />
+          <MainTapbutton text="추천" />
         </View>
         <View
           style={{
@@ -60,14 +60,14 @@ const Home = () => {
             flexDirection: 'row',
             marginTop: deviceHeight * 0.035,
           }}>
-          <HomeIconbutton text="검색하기" />
-          <HomeIconbutton text="검색하기" />
-          <HomeIconbutton text="검색하기" />
-          <HomeIconbutton text="검색하기" />
+          <MainIconbutton text="검색하기" />
+          <MainIconbutton text="검색하기" />
+          <MainIconbutton text="검색하기" />
+          <MainIconbutton text="검색하기" />
         </View>
       </View>
     </AllBackground>
   );
 };
 
-export default Home;
+export default Main;
