@@ -3,7 +3,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {useNavigation} from '@react-navigation/native';
-import Home from '../screens/HomeScreen/Home';
+import Main from '../screens/MainScreen/Main';
 import CustomTabBar from './CustomTabBar';
 import Search from '../screens/BottomTabScreens/Search';
 import Setting from '../screens/BottomTabScreens/Setting';
@@ -20,7 +20,7 @@ const BottomTabNavigations = () => {
       tabBar={props => <CustomTabBar {...props} />}>
       <Tab.Screen name="DrawerBurgur" component={DrawerBurgur} />
       <Tab.Screen name="Search" component={Search} />
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Main" component={Main} />
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Setting" component={Setting} />
     </Tab.Navigator>

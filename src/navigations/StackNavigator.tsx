@@ -11,7 +11,7 @@ import RegiHakbun from '../screens/RegiScreen/RegiHakbun';
 import RegiID from '../screens/RegiScreen/RegiID';
 import RegiPass from '../screens/RegiScreen/RegiPass';
 import RegiName from '../screens/RegiScreen/RegiName';
-import Home from '../screens/HomeScreen/Home';
+import Main from '../screens/MainScreen/Main';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
@@ -30,7 +30,7 @@ type RootStackParamList = {
   RegiID: undefined;
   RegiPass: undefined;
   RegiName: undefined;
-  Home: undefined;
+  Main: undefined;
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
   Notice: undefined;
@@ -58,7 +58,7 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiHakbun" component={RegiHakbun} />
       <Stack.Screen name="RegiID" component={RegiID} />
       <Stack.Screen name="RegiPass" component={RegiPass} />
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Main" component={Main} />
       <Stack.Screen name="PointScreen" component={PointScreen} />
       <Stack.Screen
         name="BottomTabNavigations"

@@ -1,14 +1,15 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import AllTextStyles from '../styles/AllSrcStyles/AllTextStyles';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {deviceHeight, deviceWidth} from '../utils/DeviceUtils';
-import {AllTitleTopBarCompo} from '../components/homeSrcCompo/TopBarCompo';
+import {AllTitleTopBarCompo} from '../components/MainSrcCompo/TopBarCompo';
+import {AllBackground} from '../components/AllSrcComponets/AllBackground';
+
 const PointScreen = () => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="i + 솔선수범 포인트" />
+        <AllTitleTopBarCompo text="i + 솔선수범 포인트 조회" />
       </View>
       <View style={{flex: 2}}>
         <Text
@@ -16,58 +17,58 @@ const PointScreen = () => {
             AllTextStyles.SemiBold16,
             {
               color: '#009b64',
-              marginLeft: deviceWidth * 0.05,
-              lineHeight: deviceHeight * 0.03,
+              marginLeft: deviceWidth * 0.055,
+              lineHeight: deviceHeight * 0.04,
             },
           ]}>
           2024년 1학기
         </Text>
         <Text
           style={[
-            AllTextStyles.SemiBold16,
+            AllTextStyles.SemiBold14,
             {
               color: '#000000',
-              marginLeft: deviceWidth * 0.05,
-              lineHeight: deviceHeight * 0.03,
+              marginLeft: deviceWidth * 0.055,
             },
           ]}>
           포인트 목록
         </Text>
         <View
           style={{
-            height: deviceHeight * 0.15,
-            backgroundColor: '#009b64',
             width: deviceWidth * 0.9,
-            marginLeft: deviceWidth * 0.05,
+            height: deviceHeight * 0.15,
+            backgroundColor: '#49B08C',
             borderRadius: 10,
+            marginLeft: deviceWidth * 0.05,
+            marginTop: deviceHeight * 0.012,
             justifyContent: 'center',
           }}>
           <Text
             style={[
-              AllTextStyles.SemiBold16,
+              AllTextStyles.SemiBold13,
               {
                 color: '#ffffff',
                 marginLeft: deviceWidth * 0.05,
-                lineHeight: deviceHeight * 0.03,
+                marginBottom: deviceWidth * 0.015,
               },
             ]}>
-            2024년 1학기 총 포인트
+            포인트 합계
           </Text>
           <Text
             style={[
-              AllTextStyles.SemiBold16,
+              AllTextStyles.SemiBold19,
               {
                 color: '#ffffff',
                 marginLeft: deviceWidth * 0.05,
               },
             ]}>
-            25,000P
+            25,000 P
           </Text>
         </View>
       </View>
       <View style={{flex: 2, backgroundColor: '#789'}}></View>
       <View style={{flex: 3, backgroundColor: '#CDCDCD'}}></View>
-    </SafeAreaView>
+    </AllBackground>
   );
 };
 export default PointScreen;
