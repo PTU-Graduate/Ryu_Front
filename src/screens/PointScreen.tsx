@@ -4,6 +4,7 @@ import AllTextStyles from '../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight, deviceWidth} from '../utils/DeviceUtils';
 import {AllTitleTopBarCompo} from '../components/MainSrcCompo/TopBarCompo';
 import {AllBackground} from '../components/AllSrcComponets/AllBackground';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const PointScreen = () => {
   return (
@@ -66,8 +67,55 @@ const PointScreen = () => {
           </Text>
         </View>
       </View>
-      <View style={{flex: 2, backgroundColor: '#789'}}></View>
-      <View style={{flex: 3, backgroundColor: '#CDCDCD'}}></View>
+      <View style={{flex: 2}}>
+        <Text
+          style={[
+            AllTextStyles.SemiBold19,
+            {marginLeft: deviceWidth * 0.05, marginTop: deviceHeight * 0.04},
+          ]}>
+          한 눈에 보는 인출 가능한 포인트 내역 조회
+        </Text>
+        <View
+          style={{
+            backgroundColor: '#BCD5AC',
+            width: deviceWidth * 0.9,
+            height: deviceHeight * 0.08,
+            borderRadius: 10,
+            marginLeft: deviceWidth * 0.05,
+            marginTop: deviceHeight * 0.012,
+            justifyContent: 'center',
+          }}></View>
+        <Text
+          style={[
+            AllTextStyles.SemiBold13,
+            {marginLeft: deviceWidth * 0.13, marginTop: deviceHeight * 0.02},
+          ]}>
+          이번 학기에 모은 포인트 금액
+        </Text>
+        <Text
+          style={[AllTextStyles.SemiBold13, {marginLeft: deviceWidth * 0.13}]}>
+          인출 가능한 솔선수번 포인트 최소 금액
+        </Text>
+      </View>
+      <View style={{flex: 3}}>
+        <Text
+          style={[
+            AllTextStyles.SemiBold19,
+            {margin: deviceWidth * 0.05, marginTop: deviceHeight * 0.02},
+          ]}>
+          솔선수범 관련 공지
+        </Text>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#D9D9D9',
+            width: deviceWidth * 0.9,
+            height: deviceHeight * 0.1,
+            borderRadius: 10,
+            marginLeft: deviceWidth * 0.05,
+            marginTop: deviceHeight * 0.012,
+            justifyContent: 'center',
+          }}></TouchableOpacity>
+      </View>
     </AllBackground>
   );
 };
