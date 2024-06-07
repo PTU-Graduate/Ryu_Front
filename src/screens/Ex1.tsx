@@ -31,6 +31,11 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
         onPress={() => navigation.navigate('DrawerNavigation')}
       />
       <SignLogInput text="비밀번호" />
+     
+      <LoginGreenButton
+        text="안정연의 작업공간2"
+        onPress={() => navigation.navigate('StudentInfo')}
+      />
     </AllBackground>
   );
 };
