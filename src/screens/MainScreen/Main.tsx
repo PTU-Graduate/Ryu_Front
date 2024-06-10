@@ -9,6 +9,8 @@ import {
   MainIconbutton,
   MainTapbutton,
 } from '../../components/MainSrcCompo/MainSrcButton';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Main = () => {
   const userData = getUserData();
@@ -17,54 +19,62 @@ const Main = () => {
       <View
         style={{
           flex: 1,
-          marginLeft: deviceWidth * 0.05,
-          marginRight: deviceWidth * 0.05,
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
-        <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Image source={require('../../assets/images/HomeTopLogo.png')} />
+        <Image source={require('../../assets/images/HomeTopLogo.png')} />
+      </View>
+      <View
+        style={{
+          flex: 3,
+        }}>
+        <Swiper>
+          <Image
+            style={{
+              flex: 1,
+              marginTop: deviceWidth * 0.06,
+              marginBottom: deviceWidth * 0.08,
+              width: deviceWidth * 1,
+            }}
+            source={require('../../assets/images/testImage.png')}
+          />
+        </Swiper>
+      </View>
+      <View style={{flex: 2}}>
+        <Text style={AllTextStyles.SemiBold18}>스마트 서비스</Text>
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity
+            style={{
+              width: deviceWidth * 0.2,
+              height: deviceHeight * 0.14,
+              borderRadius: 50,
+              backgroundColor: '#123',
+            }}></TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: deviceWidth * 0.2,
+              height: deviceHeight * 0.14,
+              borderRadius: 50,
+              backgroundColor: '#123',
+            }}></TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: deviceWidth * 0.2,
+              height: deviceHeight * 0.14,
+              borderRadius: 50,
+              backgroundColor: '#123',
+            }}></TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: deviceWidth * 0.2,
+              height: deviceHeight * 0.14,
+              borderRadius: 50,
+              backgroundColor: '#123',
+            }}></TouchableOpacity>
         </View>
-        <View style={{flex: 1, flexDirection: 'row'}}>
-          <MainTapbutton text="공지사항" />
-          <MainTapbutton text="이슈" />
-          <MainTapbutton text="추천" />
-        </View>
-        <View
-          style={{
-            flex: 3,
-            marginLeft: deviceWidth * 0.025,
-            marginRight: deviceWidth * 0.025,
-          }}>
-          <Swiper>
-            <Image
-              resizeMode="contain"
-              style={{flex: 1, width: undefined, height: undefined}}
-              source={require('../../assets/images/testImage.png')}
-            />
-          </Swiper>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'flex-end',
-          }}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>즐겨찾기</Text>
-        </View>
-        <View
-          style={{
-            flex: 3,
-            flexDirection: 'row',
-            marginTop: deviceHeight * 0.035,
-          }}>
-          <MainIconbutton text="검색하기" />
-          <MainIconbutton text="검색하기" />
-          <MainIconbutton text="검색하기" />
-          <MainIconbutton text="검색하기" />
-        </View>
+      </View>
+      <View style={{flex: 2}}>
+        <Text style={AllTextStyles.SemiBold18}>종합정보 바로가기 서비스</Text>
       </View>
     </AllBackground>
   );
