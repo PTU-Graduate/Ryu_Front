@@ -3,6 +3,7 @@ import {AllBackground} from '../components/AllSrcComponets/AllBackground';
 import {LoginGreenButton} from '../components/AllSrcComponets/AllButtonCompo';
 import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
 import {ScreenProps} from '../navigations/StackNavigator';
+import { GreenViewBar } from '../components/AllSrcComponets/AllViewBar';
 const Ex1: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
@@ -20,7 +21,7 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
       />
       <LoginGreenButton
         text="안정연의 작업공간"
-        onPress={() => navigation.navigate('PointScreen')}
+        onPress={() => navigation.navigate('StudentInfo')}
       />
       <LoginGreenButton
         text="박미현의 작업공간"
@@ -31,6 +32,12 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
         onPress={() => navigation.navigate('DrawerNavigation')}
       />
       <SignLogInput text="비밀번호" />
+     
+      <LoginGreenButton
+        text="이하윤의 작업공간"
+        onPress={() => navigation.navigate('GradeScreen')}
+      />
+      <GreenViewBar></GreenViewBar>
     </AllBackground>
   );
 };

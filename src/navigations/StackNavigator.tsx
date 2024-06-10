@@ -18,6 +18,8 @@ import Notice from '../screens/NoticeScreen/Notice';
 import PointScreen from '../screens/PointScreen';
 import Mimi from '../screens/Mimi';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
+import StudentInfo from '../screens/RegiScreen/StudentInfo';
+import GradeScreen from '../screens/GradeScren';
 
 type RootStackParamList = {
   Ex1: undefined;
@@ -37,6 +39,8 @@ type RootStackParamList = {
   PointScreen: undefined;
   Mimi: undefined;
   DrawerBurgur: undefined;
+  StudentInfo: undefined;
+  GradeScreen:undefined;
 };
 
 export type ScreenProps = {
@@ -60,6 +64,7 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Main" component={Main} />
       <Stack.Screen name="PointScreen" component={PointScreen} />
+      <Stack.Screen name="StudentInfo" component={StudentInfo} />
       <Stack.Screen
         name="BottomTabNavigations"
         component={BottomTabNavigations}
@@ -68,6 +73,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Notice" component={Notice} />
       <Stack.Screen name="Mimi" component={Mimi} />
       <Stack.Screen name="DrawerBurgur" component={DrawerBurgur} />
+      <Stack.Screen name="GradeScreen"component={GradeScreen} />
     </Stack.Navigator>
   );
 };
