@@ -31,6 +31,30 @@ export default StyleSheet.create({
     fontWeight: '300',
   },
 
+  SemiThin16: {
+    fontSize: 16,
+    fontWeight: '300',
+  },
+
+  SemiThin17: {
+    fontSize: 17,
+    fontWeight: '300',
+  },
+
+  SemiThin18: {
+    fontSize: 18,
+    fontWeight: '300',
+  },
+
+  SemiThin19: {
+    fontSize: 19,
+    fontWeight: '300',
+  },
+
+  SemiThin20: {
+    fontSize: 20,
+    fontWeight: '300',
+  },
   // ------------------------------------------------------------------------------------------------------------
 
   medium10: {
