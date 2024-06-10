@@ -5,6 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {StudentInfoTextbar} from '../../components/StudentInfoComponents/StudentInfoComponents';
 
 const StudentInfo = () => {
   return (
@@ -42,9 +43,10 @@ const StudentInfo = () => {
           </View>
           <Text
             style={[
-              AllTextStyles.SemiBold14,
+              AllTextStyles.SemiBold15,
               {
-                marginLeft: deviceWidth * 0.7,
+                marginLeft: deviceWidth * 0.6,
+                marginTop: deviceHeight * 0.05,
                 position: 'absolute',
               },
             ]}>
@@ -54,28 +56,52 @@ const StudentInfo = () => {
             style={[
               AllTextStyles.SemiBold14,
               {
-                marginLeft: deviceWidth * 0.7,
+                marginLeft: deviceWidth * 0.6,
                 position: 'absolute',
-                marginTop: deviceHeight * 0.02,
+                marginTop: deviceHeight * 0.08,
               },
             ]}>
             커뮤니케이션디자인학과
           </Text>
           <Text
             style={[
-              AllTextStyles.SemiBold14,
+              AllTextStyles.SemiBold15,
               {
-                marginLeft: deviceWidth * 0.7,
+                marginLeft: deviceWidth * 0.6,
                 position: 'absolute',
-                marginTop: deviceHeight * 0.06,
+                marginTop: deviceHeight * 0.11,
               },
             ]}>
             류채현
           </Text>
+          <Text
+            style={[
+              AllTextStyles.SemiThin12,
+              {
+                marginLeft: deviceWidth * 0.6,
+                position: 'absolute',
+                marginTop: deviceHeight * 0.15,
+              },
+            ]}>
+            연락쳐: 010-3934-2106
+          </Text>
+          <Text
+            style={[
+              AllTextStyles.SemiThin12,
+              {
+                marginLeft: deviceWidth * 0.6,
+                position: 'absolute',
+                marginTop: deviceHeight * 0.17,
+              },
+            ]}>
+            주민번호:020816 - 4******
+          </Text>
         </View>
       </View>
 
-      <View style={{flex: 4}}></View>
+      <View style={{flex: 4}}>
+        <StudentInfoTextbar></StudentInfoTextbar>
+      </View>
     </AllBackground>
   );
 };
