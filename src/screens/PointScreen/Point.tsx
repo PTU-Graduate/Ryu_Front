@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import AllTextStyles from '../styles/AllSrcStyles/AllTextStyles';
-import {deviceHeight, deviceWidth} from '../utils/DeviceUtils';
-import {AllTitleTopBarCompo} from '../components/MainSrcCompo/TopBarCompo';
-import {AllBackground} from '../components/AllSrcComponets/AllBackground';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
+import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
+import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
-const PointScreen = () => {
+const Point = () => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
@@ -119,4 +119,4 @@ const PointScreen = () => {
     </AllBackground>
   );
 };
-export default PointScreen;
+export default Point;
