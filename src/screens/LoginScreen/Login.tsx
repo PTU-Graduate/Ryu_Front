@@ -1,15 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
 import {Alert, Text, View} from 'react-native';
 import React, {useState} from 'react';
-import {AllBackground} from '../components/AllSrcComponets/AllBackground';
-import {deviceWidth, deviceHeight} from '../utils/DeviceUtils';
-import {SignLogInput} from '../components/AllSrcComponets/AllInputCompo';
-import {LoginGreenButton} from '../components/AllSrcComponets/AllButtonCompo';
-import {loginApiCall} from '../services/_private/Login/LoginApi';
-import {ScreenProps} from '../navigations/StackNavigator';
 import {DrawerActions} from '@react-navigation/native';
+import {ScreenProps} from '../../navigations/StackNavigator';
+import {loginApiCall} from '../../services/_private/Login/LoginApi';
+import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
+import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import {SignLogInput} from '../../components/AllSrcComponets/AllInputCompo';
+import {LoginGreenButton} from '../../components/AllSrcComponets/AllButtonCompo';
 
-const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
+const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
   const [loginPass, setLoginPass] = useState<string>('');
 
@@ -122,4 +122,4 @@ const LoginScreen: React.FC<ScreenProps> = ({navigation}) => {
   );
 };
 
-export default LoginScreen;
+export default Login;
