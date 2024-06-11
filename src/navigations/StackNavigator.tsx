@@ -2,7 +2,6 @@ import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import Ex1 from '../screens/Ex1';
-import LoginScreen from '../screens/LoginScreen';
 import RegiHakgua from '../screens/RegiScreen/RegiHakgua';
 import RegiCodeConfig from '../screens/RegiScreen/RegiCodeConfig';
 import RegiComple from '../screens/RegiScreen/RegiComple';
@@ -11,17 +10,20 @@ import RegiHakbun from '../screens/RegiScreen/RegiHakbun';
 import RegiID from '../screens/RegiScreen/RegiID';
 import RegiPass from '../screens/RegiScreen/RegiPass';
 import RegiName from '../screens/RegiScreen/RegiName';
+import Login from '../screens/LoginScreen/Login';
 import Main from '../screens/MainScreen/Main';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
-import PointScreen from '../screens/PointScreen';
+import Point from '../screens/PointScreen/Point';
 import Mimi from '../screens/Mimi';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
+import StudentInfo from '../screens/SutdentInfoScreen/StudentInfo';
+import Grade from '../screens/GradeScreens/Grade';
 
 type RootStackParamList = {
   Ex1: undefined;
-  LoginScreen: undefined;
+  Login: undefined;
   RegiHakgua: undefined;
   RegiCodeConfig: undefined;
   RegiComple: undefined;
@@ -34,9 +36,11 @@ type RootStackParamList = {
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
   Notice: undefined;
-  PointScreen: undefined;
+  Point: undefined;
   Mimi: undefined;
   DrawerBurgur: undefined;
+  StudentInfo: undefined;
+  Grade: undefined;
 };
 
 export type ScreenProps = {
@@ -50,7 +54,7 @@ const StackNavigator = () => {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Ex1" component={Ex1} />
       <Stack.Screen name="RegiHakgua" component={RegiHakgua} />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="RegiCodeConfig" component={RegiCodeConfig} />
       <Stack.Screen name="RegiComple" component={RegiComple} />
       <Stack.Screen name="RegiEmail" component={RegiEmail} />
@@ -59,7 +63,8 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiID" component={RegiID} />
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Main" component={Main} />
-      <Stack.Screen name="PointScreen" component={PointScreen} />
+      <Stack.Screen name="Point" component={Point} />
+      <Stack.Screen name="StudentInfo" component={StudentInfo} />
       <Stack.Screen
         name="BottomTabNavigations"
         component={BottomTabNavigations}
@@ -68,6 +73,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Notice" component={Notice} />
       <Stack.Screen name="Mimi" component={Mimi} />
       <Stack.Screen name="DrawerBurgur" component={DrawerBurgur} />
+      <Stack.Screen name="Grade" component={Grade} />
     </Stack.Navigator>
   );
 };

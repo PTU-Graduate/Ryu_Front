@@ -1,12 +1,12 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
+import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
-import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {StudentInfoTextbar} from '../../components/StudentInfoComponents/StudentInfoComponents';
 
-const Profile = () => {
+const StudentInfo = () => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
@@ -16,59 +16,60 @@ const Profile = () => {
         <View
           style={{
             width: deviceWidth * 1,
-            height: deviceHeight * 0.25,
+            height: deviceHeight * 0.3,
+            marginTop: deviceHeight * 0.01,
             backgroundColor: '#F0F0F0',
+            justifyContent: 'center',
             position: 'absolute',
           }}>
           <View
             style={{
-              width: deviceWidth * 0.5,
-              height: deviceHeight * 0.2,
+              width: deviceWidth * 0.38,
+              height: deviceHeight * 0.24,
+              marginLeft: deviceWidth * 0.07,
               backgroundColor: '#D9D9D9',
-              borderRadius: 10,
-              top: deviceHeight * 0.025,
-              marginLeft: deviceWidth * 0.04,
+              borderRadius: 12,
               justifyContent: 'center',
               alignItems: 'center',
+              position: 'absolute',
             }}>
             <Image
               style={{
-                width: deviceWidth * 0.4,
-                height: deviceHeight * 0.2,
-                resizeMode: 'contain',
+                width: deviceWidth * 0.38,
+                height: deviceHeight * 0.24,
+                borderRadius: 12,
+                position: 'absolute',
               }}
-              source={require('../../assets/images/PtuLogo.png')}
+              source={require('../../assets/images/Person.jpeg')}
             />
           </View>
           <Text
             style={[
-              AllTextStyles.SemiBold15,
+              AllTextStyles.SemiBold16,
               {
-                marginLeft: deviceWidth * 0.6,
-                marginTop: deviceHeight * 0.05,
-                position: 'absolute',
+                marginLeft: deviceWidth * 0.51,
+                marginBottom: deviceHeight * 0.01,
+                marginTop: deviceHeight * 0.008,
               },
             ]}>
             문화예술대학
           </Text>
           <Text
             style={[
-              AllTextStyles.SemiBold14,
+              AllTextStyles.SemiBold16,
               {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.08,
+                marginLeft: deviceWidth * 0.51,
+                marginBottom: deviceHeight * 0.03,
               },
             ]}>
             커뮤니케이션디자인학과
           </Text>
           <Text
             style={[
-              AllTextStyles.SemiBold15,
+              AllTextStyles.SemiBold17,
               {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.11,
+                marginLeft: deviceWidth * 0.51,
+                marginBottom: deviceHeight * 0.05,
               },
             ]}>
             류채현
@@ -77,9 +78,8 @@ const Profile = () => {
             style={[
               AllTextStyles.SemiThin12,
               {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.15,
+                marginLeft: deviceWidth * 0.51,
+                marginBottom: deviceHeight * 0.008,
               },
             ]}>
             연락쳐: 010-3934-2106
@@ -88,12 +88,10 @@ const Profile = () => {
             style={[
               AllTextStyles.SemiThin12,
               {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.17,
+                marginLeft: deviceWidth * 0.51,
               },
             ]}>
-            주민번호:020816 - 4******
+            주민번호: 020816 - 4******
           </Text>
         </View>
       </View>
@@ -104,5 +102,4 @@ const Profile = () => {
     </AllBackground>
   );
 };
-
-export default Profile;
+export default StudentInfo;
