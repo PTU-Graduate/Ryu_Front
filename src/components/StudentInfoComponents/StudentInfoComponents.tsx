@@ -12,10 +12,10 @@ export const StudentInfoTextbar: React.FC<StudentInfoProps> = ({
   children,
 }) => {
   return (
-    <View style={{flex: 4, flexDirection: 'row'}}>
+    <View style={{alignItems: 'center', flexDirection: 'row'}}>
       <Text
         style={[
-          AllTextStyles.SemiBold20,
+          AllTextStyles.SemiBold17,
           {color: '#009B64', marginLeft: deviceWidth * 0.05},
         ]}>
         학적구분
@@ -23,12 +23,12 @@ export const StudentInfoTextbar: React.FC<StudentInfoProps> = ({
       <View
         style={{
           marginLeft: deviceWidth * 0.05,
-          width: deviceWidth * 0.005,
-          height: deviceHeight * 0.03,
+          width: deviceWidth * 0.004,
+          height: deviceHeight * 0.032,
           backgroundColor: '#000000',
         }}></View>
       <Text
-        style={[AllTextStyles.SemiThin15, {marginLeft: deviceWidth * 0.05}]}>
+        style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.05}]}>
         휴학
       </Text>
     </View>
