@@ -16,8 +16,8 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
         onPress={() => navigation.navigate('RegiHakgua')}
       />
       <LoginGreenButton
-        text="공지사항 스크린 이동"
-        onPress={() => navigation.navigate('Notice')}
+        text="류채채 작업공간임당"
+        onPress={() => navigation.navigate('Point')}
       />
       <LoginGreenButton
         text="안정연의 작업공간"
