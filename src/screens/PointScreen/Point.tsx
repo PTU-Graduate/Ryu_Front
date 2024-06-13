@@ -10,7 +10,7 @@ const Point = () => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="i + 솔선수범 포인트 조회" />
+        <AllTitleTopBarCompo text="i + 솔 선 수 범 포 인 트 조 회" />
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
         <Text

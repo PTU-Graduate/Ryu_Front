@@ -20,6 +20,7 @@ import Mimi from '../screens/Mimi';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
 import StudentInfo from '../screens/SutdentInfoScreen/StudentInfo';
 import Grade from '../screens/GradeScreens/Grade';
+import SelfGraduate from '../screens/SelfGraduateScreens/SelfGraduate';
 
 type RootStackParamList = {
   Ex1: undefined;
@@ -41,6 +42,7 @@ type RootStackParamList = {
   DrawerBurgur: undefined;
   StudentInfo: undefined;
   Grade: undefined;
+  SelfGraduate: undefined;
 };
 
 export type ScreenProps = {
@@ -74,6 +76,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Mimi" component={Mimi} />
       <Stack.Screen name="DrawerBurgur" component={DrawerBurgur} />
       <Stack.Screen name="Grade" component={Grade} />
+      <Stack.Screen name="SelfGraduate" component={SelfGraduate} />
     </Stack.Navigator>
   );
 };
