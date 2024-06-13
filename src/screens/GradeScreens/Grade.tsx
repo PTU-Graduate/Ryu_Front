@@ -10,7 +10,9 @@ import {
 const Grade = () => {
   return (
     <AllBackground>
-      <AllTitleTopBarCompo text="성적조회"></AllTitleTopBarCompo>
+      <View style={{flex: 1}}>
+        <AllTitleTopBarCompo text="성 적 조 회"></AllTitleTopBarCompo>
+      </View>
       <View
         style={{
           flex: 2,

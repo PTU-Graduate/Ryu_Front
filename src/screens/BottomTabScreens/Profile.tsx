@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="학생정보" />
+        <AllTitleTopBarCompo text="학 생 정 보" />
       </View>
       <View style={{flex: 3}}>
         <View
