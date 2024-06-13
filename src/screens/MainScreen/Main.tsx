@@ -20,10 +20,14 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
       <View
         style={{
           flex: 1,
-          alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Image source={require('../../assets/images/HomeTopLogo.png')} />
+        <Image
+          style={{
+            resizeMode: 'center',
+            marginTop: 10,
+          }}
+          source={require('../../assets/images/MainTopLogo.jpeg')}></Image>
       </View>
       <View
         style={{
@@ -33,7 +37,7 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
           <Image
             style={{
               flex: 1,
-              marginTop: deviceWidth * 0.06,
+              marginTop: deviceWidth * 0.04,
               marginBottom: deviceWidth * 0.08,
               width: deviceWidth * 1,
             }}
