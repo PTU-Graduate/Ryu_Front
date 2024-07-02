@@ -57,9 +57,9 @@ export const GreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
 };
 
 /**
- * 조회기능에 들어가는 상세내용 초록색 내용바
+ * 성적조회 페이지 -> 전체 성적목록 상세바
  */
-export const GreenRoundBar: React.FC<AllViewBarProps> = ({
+export const AllScoreDetailBar: React.FC<AllViewBarProps> = ({
   titletext1,
   titletext2,
   titletext3,
@@ -109,30 +109,138 @@ export const GreenRoundBar: React.FC<AllViewBarProps> = ({
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
-          paddingLeft: deviceWidth * 0.091,
-          paddingRight: deviceWidth * 0.043,
-          paddingTop: deviceHeight * 0.005,
+          paddingLeft: deviceWidth * 0.06,
+          paddingRight: deviceWidth * 0.045,
         }}>
-        <Text style={[AllTextStyles.SemiBold15, {color: '#000000'}]}>
-          {detailtext1}
-        </Text>
-        <Text
-          style={[
-            AllTextStyles.SemiBold15,
-            {color: '#000000', marginLeft: deviceWidth * 0.088},
-          ]}>
-          {detailtext2}
-        </Text>
-        <Text
-          style={[
-            AllTextStyles.SemiBold15,
-            {color: '#000000', marginLeft: deviceWidth * 0.042},
-          ]}>
-          {detailtext3}
-        </Text>
-        <Text style={[AllTextStyles.SemiBold15, {color: '#000000'}]}>
-          {detailtext4}
-        </Text>
+        <View
+          style={{
+            width: deviceWidth * 0.13,
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold15]}>{detailtext1}</Text>
+        </View>
+        <View
+          style={{
+            width: deviceWidth * 0.13,
+            alignItems: 'center',
+            marginLeft: deviceWidth * 0.02,
+          }}>
+          <Text style={[AllTextStyles.SemiBold15]}>{detailtext2}</Text>
+        </View>
+        <View
+          style={{
+            width: deviceWidth * 0.09,
+            alignItems: 'center',
+            marginLeft: deviceWidth * 0.012,
+          }}>
+          <Text style={[AllTextStyles.SemiBold15]}>{detailtext3}</Text>
+        </View>
+        <View
+          style={{
+            width: deviceWidth * 0.12,
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold15]}>{detailtext4}</Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+/**
+ * 성적조회 페이지 ->  성적목록 상세바
+ */
+export const ScoreSemesterDetailBar: React.FC<AllViewBarProps> = ({
+  titletext1,
+  titletext2,
+  titletext3,
+  detailtext1,
+  detailtext2,
+  detailtext3,
+}) => {
+  return (
+    <View
+      style={{
+        alignItems: 'center',
+      }}>
+      <View
+        style={{
+          backgroundColor: '#009b64',
+          width: deviceWidth * 0.9,
+          height: deviceHeight * 0.05,
+          borderRadius: 6,
+          marginTop: deviceHeight * 0.035,
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          flexDirection: 'row',
+        }}>
+        <View
+          style={{
+            width: deviceWidth * 0.25,
+            height: deviceHeight * 0.06,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>
+            {titletext1}
+          </Text>
+        </View>
+        <View
+          style={{
+            width: deviceWidth * 0.25,
+            height: deviceHeight * 0.06,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>
+            {titletext2}
+          </Text>
+        </View>
+        <View
+          style={{
+            width: deviceWidth * 0.25,
+            height: deviceHeight * 0.06,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>
+            {titletext3}
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{
+          borderBottomColor: '#000000',
+          borderBottomWidth: 0.3,
+          width: deviceWidth * 0.9,
+          height: deviceHeight * 0.05,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingLeft: deviceWidth * 0.025,
+          paddingRight: deviceWidth * 0.025,
+        }}>
+        <View
+          style={{
+            width: deviceWidth * 0.25,
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold15]}>{detailtext1}</Text>
+        </View>
+        <View
+          style={{
+            width: deviceWidth * 0.25,
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold15]}>{detailtext2}</Text>
+        </View>
+        <View
+          style={{
+            width: deviceWidth * 0.25,
+            alignItems: 'center',
+          }}>
+          <Text style={[AllTextStyles.SemiBold15]}>{detailtext3}</Text>
+        </View>
       </View>
     </View>
   );

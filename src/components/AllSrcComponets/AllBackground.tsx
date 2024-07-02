@@ -1,8 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Keyboard, SafeAreaView, TouchableWithoutFeedback} from 'react-native';
+import {
+  Keyboard,
+  SafeAreaView,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import AllBackgroundStyles from '../../styles/AllSrcStyles/AllBackgroundStyles';
-import {ScrollView} from 'react-native-gesture-handler';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
