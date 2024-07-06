@@ -14,14 +14,18 @@ export const loginApiCall = async (
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<
       LoginResultDataType | any
     >;
+    console.log(data);
     if (result && result.data && result.data.RSLT_CD === '00') {
       // RSLT_CD는 응답코드를 의미
       setUserData(result.data);
+      console.log(result.data);
       return result.data;
     } else {
+      console.log(result.data);
       return null;
     }
   } catch (error) {
+    console.log('0');
     return null;
   }
 };
