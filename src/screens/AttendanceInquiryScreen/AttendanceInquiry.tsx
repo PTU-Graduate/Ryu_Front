@@ -1,10 +1,11 @@
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import Icon from 'react-native-vector-icons/Entypo';
+import {DetailBar} from '../../components/AttendanceInquiryComponet/AttendanceInquiryCompo';
 
 const AttendanceInquiry = () => {
   return (
@@ -34,12 +35,14 @@ const AttendanceInquiry = () => {
             ]}>
             2024년 1학기
           </Text>
-          <Icon
-            style={{marginRight: deviceWidth * 0.02}}
-            name="chevron-down"
-            size={27}
-            color="white"
-          />
+          <TouchableOpacity>
+            <Icon
+              style={{marginRight: deviceWidth * 0.02}}
+              name="chevron-down"
+              size={27}
+              color="white"
+            />
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -48,6 +51,9 @@ const AttendanceInquiry = () => {
             height: deviceHeight * 0.05,
             marginRight: deviceWidth * 0.87,
           }}></View>
+      </View>
+      <View>
+        <DetailBar />
       </View>
     </AllBackground>
   );
