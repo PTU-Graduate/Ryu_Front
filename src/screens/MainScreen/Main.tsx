@@ -141,7 +141,10 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
               height: deviceHeight * 0.1,
               borderRadius: 50,
               backgroundColor: '#123',
-            }}></TouchableOpacity>
+            }}
+            onPress={() =>
+              navigation.navigate('AttendanceInquiry')
+            }></TouchableOpacity>
           <TouchableOpacity
             style={{
               width: deviceWidth * 0.18,
