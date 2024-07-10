@@ -6,11 +6,13 @@ import {regiHakbunApiCall} from '../../services/_private/Regi/RegiApi';
 
 const RegiHakbun: React.FC<ScreenProps> = ({navigation}) => {
   const [std_num, setStd_num] = useState<string>(''); // 초기값은 아무것도 없어야함 -> 사용자가 입력한 값이 들어가야하기에 (메모리 낭비 방지)
+  const [butOnOff, setButOnOff] = useState<boolean>(true); // 초기값이 true
 
   const handleRegi = async () => {
     console.log(std_num);
     const result = await regiHakbunApiCall(std_num);
     if (result !== null && result.RSLT_CD === '00') {
+      setButOnOff(false);
     } else {
     }
   };
@@ -24,6 +26,7 @@ const RegiHakbun: React.FC<ScreenProps> = ({navigation}) => {
         inputtext="학번"
         CheckonPress={handleRegi}
         onPress={() => navigation.navigate('RegiName')}
+        disable={butOnOff}
       />
     </AllBackground>
   );
