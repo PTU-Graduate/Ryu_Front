@@ -97,10 +97,6 @@ const Profile = () => {
           </Text>
         </View>
       </View>
-
-      <View style={{flex: 4}}>
-        <StudentInfoTextbar></StudentInfoTextbar>
-      </View>
     </AllBackground>
   );
 };
