@@ -33,15 +33,17 @@ const CourseCheck = () => {
           2024년도 1학기
         </Text>
       </View>
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, flexDirection: 'column'}}>
         <Text
           style={[
             AllTextStyles.SemiBold17,
             {marginLeft: deviceWidth * 0.05, marginBottom: deviceWidth * 0.12},
           ]}>
-          리더쉽
+          리더쉽{' '}
+          <Text style={[AllTextStyles.SemiThin15, {}]}>
+            건병하 교수님, 9:30~11:30,이108
+          </Text>
         </Text>
-        <Text>건병하 교수님</Text>
       </View>
       <View style={{flex: 1, backgroundColor: '#009b6c'}}></View>
       <View style={{flex: 1, backgroundColor: '#ffffff'}}></View>
