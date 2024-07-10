@@ -11,6 +11,8 @@ import Profile from '../screens/BottomTabScreens/Profile';
 import DrawerNavigation from './Drawer';
 import {DrawerActions} from '@react-navigation/native';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
+import CourseCheck from '../screens/CourseCheckScreen/CourseCheck';
+import Point from '../screens/PointScreen/Point';
 
 const Tab = createBottomTabNavigator();
 const BottomTabNavigations = () => {
@@ -21,8 +23,9 @@ const BottomTabNavigations = () => {
       <Tab.Screen name="DrawerBurgur" component={DrawerBurgur} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Main" component={Main} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="CourseChesck" component={CourseCheck} />
       <Tab.Screen name="Setting" component={Setting} />
+      <Tab.Screen name="Point" component={Point} />
     </Tab.Navigator>
   );
 };
