@@ -13,6 +13,7 @@ interface RegiCommonScreen {
   CheckonPress?: () => void;
   value?: string;
   onChangeText?: (text: string) => void;
+  disable?: boolean;
 }
 
 export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
@@ -23,6 +24,7 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
   CheckonPress,
   value,
   onChangeText,
+  disable,
 }) => {
   return (
     <SafeAreaView
@@ -81,7 +83,7 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
           flex: 2,
           marginLeft: deviceWidth * 0.05,
         }}>
-        <SignGreenButton text="다음" onPress={onPress} />
+        <SignGreenButton text="다음" onPress={onPress} disable={disable} />
       </View>
       <View style={{flex: 3}} />
     </SafeAreaView>
