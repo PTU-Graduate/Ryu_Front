@@ -4,7 +4,10 @@ import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
-import {StudentInfoTextbar} from '../../components/StudentInfoComponents/StudentInfoComponents';
+import {
+  StudentInfoFDTextbar,
+  StudentInfoTextbar,
+} from '../../components/StudentInfoComponents/StudentInfoComponents';
 
 const StudentInfo = () => {
   return (
@@ -97,7 +100,23 @@ const StudentInfo = () => {
       </View>
 
       <View style={{flex: 4}}>
-        <StudentInfoTextbar></StudentInfoTextbar>
+        <StudentInfoFDTextbar
+          titletext1="학적구분"
+          detailtext1="휴학"
+          titletext2="지도교수"
+          detailtext2="이경희"
+        />
+        <StudentInfoFDTextbar
+          titletext1="학년"
+          detailtext1="3학년"
+          titletext2="전공유형"
+          detailtext2="전공심화"
+        />
+        <StudentInfoTextbar titletext1="졸업일자" detailtext1="-" />
+        <StudentInfoTextbar
+          titletext1="은행명"
+          detailtext1="352-1095-5772-23 농협은행"
+        />
       </View>
     </AllBackground>
   );
