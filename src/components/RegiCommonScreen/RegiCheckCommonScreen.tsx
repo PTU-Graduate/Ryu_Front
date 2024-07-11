@@ -2,7 +2,7 @@
 import {View, Text, SafeAreaView, Image} from 'react-native';
 import React from 'react';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
-import {SignGreenButton} from '../AllSrcComponets/AllButtonCompo';
+import {SignCheckGreenButton} from '../AllSrcComponets/AllButtonCompo';
 import {SignLogCheckInput} from '../AllSrcComponets/AllInputCompo';
 
 interface RegiCommonScreen {
@@ -83,7 +83,7 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
           flex: 2,
           marginLeft: deviceWidth * 0.05,
         }}>
-        <SignGreenButton text="다음" onPress={onPress} disable={disable} />
+        <SignCheckGreenButton text="다음" onPress={onPress} disable={disable} />
       </View>
       <View style={{flex: 3}} />
     </SafeAreaView>
