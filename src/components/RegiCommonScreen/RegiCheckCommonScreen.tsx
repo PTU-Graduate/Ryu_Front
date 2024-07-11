@@ -1,30 +1,25 @@
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image, TextInputProps} from 'react-native';
 import React from 'react';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
 import {SignCheckGreenButton} from '../AllSrcComponets/AllButtonCompo';
 import {SignLogCheckInput} from '../AllSrcComponets/AllInputCompo';
 
-interface RegiCommonScreen {
+interface RegiCommonScreen extends TextInputProps {
   mediumtext: string;
   smalltext: string;
-  inputtext: string;
   onPress?: () => void;
   CheckonPress?: () => void;
-  value?: string;
-  onChangeText?: (text: string) => void;
   disable?: boolean;
 }
 
 export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
   mediumtext,
   smalltext,
-  inputtext,
   onPress,
   CheckonPress,
-  value,
-  onChangeText,
   disable,
+  ...props
 }) => {
   return (
     <SafeAreaView
@@ -70,13 +65,7 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
         </Text>
       </View>
       <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
-        <SignLogCheckInput
-          value={value}
-          onChangeText={onChangeText}
-          placeholderTextColor="#979797"
-          placeholder={inputtext}
-          onPress={CheckonPress}
-        />
+        <SignLogCheckInput onPress={CheckonPress} {...props} />
       </View>
       <View
         style={{

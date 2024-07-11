@@ -1,11 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image, TextInputProps} from 'react-native';
 import React from 'react';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
 import {SignGreenButton} from '../AllSrcComponets/AllButtonCompo';
 import {SignLogInput} from '../AllSrcComponets/AllInputCompo';
 
-interface RegiCommonScreen {
+interface RegiCommonScreen extends TextInputProps {
   mediumtext: string;
   smalltext: string;
   inputtext: string;
@@ -17,6 +17,7 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
   smalltext,
   inputtext,
   onPress,
+  ...props
 }) => {
   return (
     <SafeAreaView
@@ -61,7 +62,11 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
         </Text>
       </View>
       <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
-        <SignLogInput placeholderTextColor="#979797" placeholder={inputtext} />
+        <SignLogInput
+          placeholderTextColor="#979797"
+          placeholder={inputtext}
+          {...props}
+        />
       </View>
       <View
         style={{
