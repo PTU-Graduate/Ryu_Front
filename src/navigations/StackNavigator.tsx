@@ -23,14 +23,16 @@ import SelfGraduate from '../screens/SelfGraduateScreens/SelfGraduate';
 import AttendanceInquiry from '../screens/AttendanceInquiryScreen/AttendanceInquiry';
 import CourseCheck from '../screens/CourseCheckScreen/CourseCheck';
 
-type RootStackParamList = {
+export type RootStackParamList = {
   Ex1: undefined;
   Login: undefined;
   RegiHakgua: undefined;
   RegiCodeConfig: undefined;
   RegiComple: undefined;
   RegiEmail: undefined;
-  RegiHakbun: undefined;
+  RegiHakbun: {
+    STD_DEC_CD: string;
+  };
   RegiID: undefined;
   RegiPass: undefined;
   RegiName: undefined;
