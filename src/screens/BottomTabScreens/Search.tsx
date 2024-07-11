@@ -7,7 +7,6 @@ import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import Icon from 'react-native-vector-icons/Fontisto';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {TouchableOpacity} from 'react-native';
-import AllInputStyles from '../../styles/AllSrcStyles/AllInputStyles';
 import {SearchGraybar} from '../../components/MainSrcCompo/SerachCompo.tsx/SearchCompo';
 
 const Search = () => {
