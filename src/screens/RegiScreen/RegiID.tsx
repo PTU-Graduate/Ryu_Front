@@ -23,7 +23,7 @@ const RegiID: React.FC<ScreenProps> = ({navigation}) => {
         onChangeText={text => setStd_id(text)}
         mediumtext="아이디"
         smalltext="를 입력해주세요."
-        inputtext="아이디"
+        placeholder="아이디"
         CheckonPress={handleRegi}
         disable={butOnOff}
         onPress={() => navigation.navigate('RegiPass')}
