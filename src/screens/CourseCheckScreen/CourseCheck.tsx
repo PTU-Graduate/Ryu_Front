@@ -5,33 +5,14 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {GreenViewBar} from '../../components/AllSrcComponets/AllViewBar';
 
 const CourseCheck = () => {
   return (
     <AllBackground>
-      <AllTitleTopBarCompo text="수강조회" />
-      <View
-        style={{
-          flex: 1,
-          marginLeft: deviceWidth * 0.05,
-          marginRight: deviceWidth * 0.05,
-          marginBottom: deviceHeight * 0.1,
-          backgroundColor: '#49b08c',
-        }}>
-        <Text
-          style={[
-            AllTextStyles.SemiBold20,
-            {
-              color: '#ffffff',
-              alignContent: 'center',
-              justifyContent: 'center',
-              marginTop: deviceHeight * 0.03,
-              marginLeft: deviceWidth * 0.06,
-              fontSize: 20,
-            },
-          ]}>
-          2024년도 1학기
-        </Text>
+      <AllTitleTopBarCompo text="수 강 조 회" />
+      <View style={{flex: 1}}>
+        <GreenViewBar text="2024년도 1학기" />
       </View>
       <View style={{flex: 1, flexDirection: 'column'}}>
         <Text
@@ -39,7 +20,7 @@ const CourseCheck = () => {
             AllTextStyles.SemiBold17,
             {marginLeft: deviceWidth * 0.05, marginBottom: deviceWidth * 0.12},
           ]}>
-          리더쉽{' '}
+          리더쉽
           <Text style={[AllTextStyles.SemiThin15, {}]}>
             건병하 교수님, 9:30~11:30,이108
           </Text>

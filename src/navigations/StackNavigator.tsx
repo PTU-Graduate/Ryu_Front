@@ -18,7 +18,6 @@ import Notice from '../screens/NoticeScreen/Notice';
 import Point from '../screens/PointScreen/Point';
 import Mimi from '../screens/Mimi';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
-import StudentInfo from '../screens/SutdentInfoScreen/StudentInfo';
 import Grade from '../screens/GradeScreens/Grade';
 import SelfGraduate from '../screens/SelfGraduateScreens/SelfGraduate';
 import AttendanceInquiry from '../screens/AttendanceInquiryScreen/AttendanceInquiry';
@@ -42,7 +41,6 @@ type RootStackParamList = {
   Point: undefined;
   Mimi: undefined;
   DrawerBurgur: undefined;
-  StudentInfo: undefined;
   Grade: undefined;
   SelfGraduate: undefined;
   AttendanceInquiry: undefined;
@@ -70,7 +68,6 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Main" component={Main} />
       <Stack.Screen name="Point" component={Point} />
-      <Stack.Screen name="StudentInfo" component={StudentInfo} />
       <Stack.Screen name="CourseCheck" component={CourseCheck} />
       <Stack.Screen
         name="BottomTabNavigations"
