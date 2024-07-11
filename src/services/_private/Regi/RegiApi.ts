@@ -5,7 +5,7 @@ import {CommonResultDataType} from '../../../utils/DataTableSet/CommonResultData
 export const regiHakbunApiCall = async (
   STD_NUM: string,
 ): Promise<CommonResultDataType | any | null> => {
-  const endpoint = '/PTU/STDregister';
+  const endpoint = '/PTU/Register/StdNum';
   const data = {STD_NUM};
 
   try {
@@ -28,7 +28,7 @@ export const regiHakbunApiCall = async (
 export const regiIDApiCall = async (
   STD_NUM: string,
 ): Promise<CommonResultDataType | any | null> => {
-  const endpoint = '/PTU/IDregister';
+  const endpoint = '/PTU/Register/ID';
   const data = {STD_NUM};
 
   try {

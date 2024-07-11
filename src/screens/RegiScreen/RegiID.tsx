@@ -6,11 +6,13 @@ import {regiIDApiCall} from '../../services/_private/Regi/RegiApi';
 
 const RegiID: React.FC<ScreenProps> = ({navigation}) => {
   const [std_id, setStd_id] = useState<string>('');
+  const [butOnOff, setButOnOff] = useState<boolean>(true);
 
   const handleRegi = async () => {
     console.log(std_id);
     const result = await regiIDApiCall(std_id);
     if (result !== null && result.RSLT_CD === '00') {
+      setButOnOff(false);
     } else {
     }
   };
@@ -23,6 +25,7 @@ const RegiID: React.FC<ScreenProps> = ({navigation}) => {
         smalltext="를 입력해주세요."
         inputtext="아이디"
         CheckonPress={handleRegi}
+        disable={butOnOff}
         onPress={() => navigation.navigate('RegiPass')}
       />
     </AllBackground>
