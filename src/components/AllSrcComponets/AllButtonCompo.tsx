@@ -35,6 +35,27 @@ export const SignGreenButton: React.FC<AllButtonCompoProps> = ({
   );
 };
 
+export const SignCheckGreenButton: React.FC<AllButtonCompoProps> = ({
+  children,
+  text,
+  onPress,
+  disable,
+}) => {
+  return (
+    <TouchableOpacity
+      style={[
+        disable
+          ? AllButtonStyles.SignLogGrayButtonStyle
+          : AllButtonStyles.SignLogGreenButtonStyle,
+        {marginTop: deviceHeight * 0.04},
+      ]}
+      onPress={onPress}
+      disabled={disable}>
+      <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
+      {children}
+    </TouchableOpacity>
+  );
+};
 /**
  * 로그인 화면에 사용되는 초록색 공통 버튼
  */
