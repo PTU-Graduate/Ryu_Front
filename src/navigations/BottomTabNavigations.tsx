@@ -23,9 +23,8 @@ const BottomTabNavigations = () => {
       <Tab.Screen name="DrawerBurgur" component={DrawerBurgur} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Main" component={Main} />
-      <Tab.Screen name="CourseChesck" component={CourseCheck} />
+      <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Setting" component={Setting} />
-      <Tab.Screen name="Point" component={Point} />
     </Tab.Navigator>
   );
 };
