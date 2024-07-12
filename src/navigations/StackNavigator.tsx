@@ -22,6 +22,7 @@ import Grade from '../screens/GradeScreens/Grade';
 import SelfGraduate from '../screens/SelfGraduateScreens/SelfGraduate';
 import AttendanceInquiry from '../screens/AttendanceInquiryScreen/AttendanceInquiry';
 import CourseCheck from '../screens/CourseCheckScreen/CourseCheck';
+import TuitionInquiry from '../screens/TuitionInquiryScreen/TuitionInquiry';
 
 export type RootStackParamList = {
   Ex1: undefined;
@@ -47,6 +48,7 @@ export type RootStackParamList = {
   SelfGraduate: undefined;
   AttendanceInquiry: undefined;
   CourseCheck: undefined;
+  TuitionInquiry: undefined;
 };
 
 export type ScreenProps = {
@@ -82,6 +84,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Grade" component={Grade} />
       <Stack.Screen name="SelfGraduate" component={SelfGraduate} />
       <Stack.Screen name="AttendanceInquiry" component={AttendanceInquiry} />
+      <Stack.Screen name="TuitionInquiry" component={TuitionInquiry} />
     </Stack.Navigator>
   );
 };
