@@ -13,11 +13,11 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
       />
       <LoginGreenButton
         text="회원가입 스크린 이동"
-        onPress={() => navigation.navigate('RegiHakgua',)}
+        onPress={() => navigation.navigate('RegiHakgua')}
       />
       <LoginGreenButton
         text="류채채 작업공간임당"
-        onPress={() => navigation.navigate('AttendanceInquiry')}
+        onPress={() => navigation.navigate('TuitionInquiry')}
       />
       <LoginGreenButton
         text="안정연의 작업공간"
