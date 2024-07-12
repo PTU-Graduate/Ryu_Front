@@ -38,7 +38,7 @@ const RegiComple: React.FC<ScreenProps> = ({navigation}) => {
           alignItems: 'center',
         }}>
         <SignGreenButton
-          onPress={() => navigation.navigate('LoginScreen')}
+          onPress={() => navigation.navigate('Login')}
           text="완료"></SignGreenButton>
       </View>
     </AllBackground>
