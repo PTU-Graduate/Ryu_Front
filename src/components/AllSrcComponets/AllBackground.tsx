@@ -5,7 +5,6 @@ import {
   SafeAreaView,
   ScrollView,
   TouchableWithoutFeedback,
-  View,
 } from 'react-native';
 import AllBackgroundStyles from '../../styles/AllSrcStyles/AllBackgroundStyles';
 

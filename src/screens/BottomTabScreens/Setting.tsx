@@ -8,8 +8,9 @@ import {
   DetailSettingArrow,
   DetailSettingButton,
 } from '../../components/SettingComponets/SettingCompo';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const Setting = () => {
+const Setting: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <AllTitleTopBarCompo text="설 정" />
@@ -31,7 +32,10 @@ const Setting = () => {
             marginTop: deviceHeight * 0.01,
           }}></View>
         <DetailSettingButton text="자동로그인" />
-        <DetailSettingArrow text="비밀번호 변경" />
+        <DetailSettingArrow
+          text="비밀번호 변경"
+          onPress={() => navigation.navigate('ChangePassword')}
+        />
         <DetailSettingArrow text="로그아웃" />
         <DetailSettingButton text="생체인증 설정" />
         <View

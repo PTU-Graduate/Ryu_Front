@@ -17,7 +17,7 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
       />
       <LoginGreenButton
         text="류채채 작업공간임당"
-        onPress={() => navigation.navigate('TuitionInquiry')}
+        onPress={() => navigation.navigate('Schedule')}
       />
       <LoginGreenButton
         text="안정연의 작업공간"

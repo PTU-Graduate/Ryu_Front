@@ -2,7 +2,6 @@ import {View, Text} from 'react-native';
 import React from 'react';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 interface CourseCheckProps {
   titleText?: string;
@@ -13,13 +12,11 @@ interface CourseCheckProps {
   gradeText?: string; // 학년
   creditText?: string; // 학점
   coursetext?: string; // 수강
-  children?: React.ReactNode;
 }
 
 export const CCDetailBar: React.FC<CourseCheckProps> = ({
   titleText,
   detailText,
-  children,
   refinText,
   dateText,
   stdnumText,

@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 interface SettingProps {
   children?: React.ReactNode;
   text?: string;
+  onPress?: () => void;
 }
 
 export const DetailSettingButton: React.FC<SettingProps> = ({text}) => {
@@ -48,7 +49,7 @@ export const DetailSettingButton: React.FC<SettingProps> = ({text}) => {
   );
 };
 
-export const DetailSettingArrow: React.FC<SettingProps> = ({text}) => {
+export const DetailSettingArrow: React.FC<SettingProps> = ({text, onPress}) => {
   return (
     <View
       style={{
@@ -64,9 +65,11 @@ export const DetailSettingArrow: React.FC<SettingProps> = ({text}) => {
         style={[AllTextStyles.SemiBold13, {marginLeft: deviceWidth * 0.02}]}>
         {text}
       </Text>
-      <View style={{marginRight: deviceWidth * 0.02}}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={{marginRight: deviceWidth * 0.02}}>
         <Icon style={{color: '#949494'}} name="right" size={16} />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
