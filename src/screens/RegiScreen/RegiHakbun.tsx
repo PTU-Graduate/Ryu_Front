@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {RegiCkeckCommonScreen} from '../../components/RegiCommonScreen/RegiCheckCommonScreen';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {ScreenProps} from '../../navigations/StackNavigator';
 import {RegiHakbunProps} from '../../utils/navigationProps/RegiNavigationProps';
 import {regiHakbunApiCall} from '../../services/_private/Regi/RegiApi';
 
@@ -28,7 +27,12 @@ const RegiHakbun: React.FC<RegiHakbunProps> = ({navigation, route}) => {
         smalltext="을 입력해주세요."
         placeholder="학번"
         CheckonPress={handleRegi}
-        onPress={() => navigation.navigate('RegiName')}
+        onPress={() =>
+          navigation.navigate('RegiName', {
+            STD_DEC_CD: STD_DEC_CD,
+            STD_NUM: std_num,
+          })
+        }
         disable={butOnOff}
       />
     </AllBackground>
