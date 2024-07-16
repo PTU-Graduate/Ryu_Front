@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {RegiCkeckCommonScreen} from '../../components/RegiCommonScreen/RegiCheckCommonScreen';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {ScreenProps} from '../../navigations/StackNavigator';
 import {regiIDApiCall} from '../../services/_private/Regi/RegiApi';
-
-const RegiID: React.FC<ScreenProps> = ({navigation}) => {
+import {RegiIDProps} from '../../utils/navigationProps/RegiNavigationProps';
+const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
   const [std_id, setStd_id] = useState<string>('');
   const [butOnOff, setButOnOff] = useState<boolean>(true);
+
+  const {STD_DEC_CD, STD_NUM, NAME} = route.params;
+
+  useEffect(() => {
+    console.log(STD_DEC_CD, STD_NUM, NAME);
+  }, []);
 
   const handleRegi = async () => {
     console.log(std_id);
