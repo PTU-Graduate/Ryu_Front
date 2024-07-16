@@ -34,9 +34,12 @@ export type RootStackParamList = {
   RegiHakbun: {
     STD_DEC_CD: string;
   };
-  RegiID: undefined;
+  RegiID: {STD_DEC_CD: string; STD_NUM: string; NAME: string};
   RegiPass: undefined;
-  RegiName: undefined;
+  RegiName: {
+    STD_DEC_CD: string;
+    STD_NUM: string;
+  };
   Main: undefined;
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
