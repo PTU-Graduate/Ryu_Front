@@ -8,14 +8,17 @@ import {
   DetailSettingArrow,
   DetailSettingButton,
 } from '../../components/SettingComponets/SettingCompo';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const Setting = () => {
+const Setting: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
-      <AllTitleTopBarCompo text="설 정" />
+      <View style={{flex: 1}}>
+        <AllTitleTopBarCompo text="설 정" />
+      </View>
       <View
         style={{
-          flex: 3,
+          flex: 4,
           width: deviceWidth * 0.9,
           marginLeft: deviceWidth * 0.05,
         }}>
@@ -31,7 +34,10 @@ const Setting = () => {
             marginTop: deviceHeight * 0.01,
           }}></View>
         <DetailSettingButton text="자동로그인" />
-        <DetailSettingArrow text="비밀번호 변경" />
+        <DetailSettingArrow
+          text="비밀번호 변경"
+          onPress={() => navigation.navigate('ChangePassword')}
+        />
         <DetailSettingArrow text="로그아웃" />
         <DetailSettingButton text="생체인증 설정" />
         <View
@@ -52,18 +58,19 @@ const Setting = () => {
           <View
             style={{
               width: deviceWidth * 0.1,
-              height: deviceHeight * 0.03,
+              height: deviceHeight * 0.028,
               backgroundColor: '#C9C6C6',
               borderRadius: 10,
               marginRight: deviceWidth * 0.02,
+              justifyContent: 'center',
             }}>
             <TouchableOpacity
               style={{
                 width: deviceWidth * 0.055,
-                height: deviceHeight * 0.03,
+                height: deviceHeight * 0.027,
                 backgroundColor: '#ffffff',
                 borderColor: '#C9C6C6',
-                borderWidth: 1,
+                borderWidth: 0.5,
                 borderRadius: 10,
               }}
             />
@@ -72,12 +79,15 @@ const Setting = () => {
       </View>
       <View
         style={{
-          flex: 4,
+          flex: 6,
           width: deviceWidth * 0.9,
           marginLeft: deviceWidth * 0.05,
         }}>
         <Text
-          style={[AllTextStyles.SemiBold14, {marginLeft: deviceWidth * 0.02}]}>
+          style={[
+            AllTextStyles.SemiBold14,
+            {marginLeft: deviceWidth * 0.02, marginTop: deviceHeight * 0.025},
+          ]}>
           약관 및 정책
         </Text>
         <View
