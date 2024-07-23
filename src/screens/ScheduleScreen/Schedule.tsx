@@ -41,8 +41,10 @@ LocaleConfig.defaultLocale = 'kr';
 const Schedule = () => {
   return (
     <AllBackground>
-      <AllTitleTopBarCompo text="학 사 일 정" />
-      <View style={{alignItems: 'center'}}>
+      <View style={{flex: 1}}>
+        <AllTitleTopBarCompo text="학 사 일 정" />
+      </View>
+      <View style={{flex: 5, alignItems: 'center', justifyContent: 'center'}}>
         <Calendar
           style={{
             width: deviceWidth * 0.9,
@@ -80,7 +82,7 @@ const Schedule = () => {
             )
           }></Calendar>
       </View>
-      <View>
+      <View style={{flex: 5}}>
         <View style={{alignItems: 'center'}}>
           <TouchableOpacity>
             <Icon2

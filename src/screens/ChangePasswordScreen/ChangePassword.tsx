@@ -12,10 +12,12 @@ import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 const ChangePassword = () => {
   return (
     <AllBackground>
-      <AllTitleTopBarCompo text="비 밀 번 호 변 경" />
+      <View style={{flex: 1}}>
+        <AllTitleTopBarCompo text="비 밀 번 호 변 경" />
+      </View>
       <View
         style={{
-          flex: 3,
+          flex: 5,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
@@ -34,7 +36,7 @@ const ChangePassword = () => {
             width: deviceWidth * 0.21,
             height: deviceHeight * 0.025,
             marginRight: deviceWidth * 0.64,
-            marginTop: deviceHeight * 0.07,
+            marginTop: deviceHeight * 0.075,
             marginBottom: deviceHeight * -0.015,
           }}>
           <Text style={[AllTextStyles.SemiBold12]}>새 비밀번호</Text>
@@ -54,28 +56,28 @@ const ChangePassword = () => {
       </View>
       <View
         style={{
-          flex: 4,
+          flex: 5,
           flexDirection: 'row',
           justifyContent: 'space-evenly',
         }}>
         <TouchableOpacity
           style={{
             width: deviceWidth * 0.35,
-            height: deviceHeight * 0.065,
+            height: deviceHeight * 0.062,
             backgroundColor: '#009B64',
             borderRadius: 5,
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: deviceHeight * 0.04,
           }}>
-          <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>
             비밀번호 변경하기
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
             width: deviceWidth * 0.35,
-            height: deviceHeight * 0.065,
+            height: deviceHeight * 0.062,
             borderColor: '#009B64',
             borderWidth: 1,
             borderRadius: 5,
@@ -83,7 +85,7 @@ const ChangePassword = () => {
             alignItems: 'center',
             marginTop: deviceHeight * 0.04,
           }}>
-          <Text style={[AllTextStyles.SemiBold13, {color: '#009B64'}]}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#009B64'}]}>
             다음에 변경하기
           </Text>
         </TouchableOpacity>

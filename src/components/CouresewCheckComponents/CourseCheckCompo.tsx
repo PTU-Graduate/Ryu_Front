@@ -29,93 +29,73 @@ export const CCDetailBar: React.FC<CourseCheckProps> = ({
       style={{
         justifyContent: 'center',
         flexDirection: 'row',
-
-        marginBottom: deviceHeight * 0.01,
+        marginBottom: deviceHeight * 0.04,
       }}>
       <View
         style={{
-          width: deviceWidth * 0.89,
+          width: deviceWidth * 0.9,
           borderBottomColor: '#898A8D',
           borderBottomWidth: deviceWidth * 0.001,
           justifyContent: 'center',
         }}>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{marginBottom: deviceWidth * 0.025}}>
           <Text
             style={[
-              AllTextStyles.SemiBold16,
-              {marginBottom: deviceWidth * 0.03},
+              AllTextStyles.SemiBold15,
+              {marginBottom: deviceHeight * 0.008},
             ]}>
             {titleText}
           </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin14,
-              {marginLeft: deviceWidth * 0.03},
-            ]}>
-            {detailText}
-          </Text>
+          <Text style={[AllTextStyles.SemiThin12]}>{detailText}</Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
-          <Text
-            style={[
-              AllTextStyles.SemiThin11,
-              {
-                marginLeft: deviceWidth * 0.035,
-                marginBottom: deviceWidth * 0.03,
-              },
-            ]}>
-            {refinText}
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin11,
-              {
-                marginLeft: deviceWidth * 0.06,
-                marginBottom: deviceWidth * 0.03,
-              },
-            ]}>
-            {dateText}
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin11,
-              {
-                marginLeft: deviceWidth * 0.06,
-                marginBottom: deviceWidth * 0.03,
-              },
-            ]}>
-            {stdnumText}
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin13,
-              {
-                marginLeft: deviceWidth * 0.06,
-                marginBottom: deviceWidth * 0.03,
-              },
-            ]}>
-            {gradeText}
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin11,
-              {
-                marginLeft: deviceWidth * 0.06,
-                marginBottom: deviceWidth * 0.03,
-              },
-            ]}>
-            {creditText}
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin11,
-              {
-                marginLeft: deviceWidth * 0.06,
-                marginBottom: deviceWidth * 0.03,
-              },
-            ]}>
-            {coursetext}
-          </Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            marginBottom: deviceHeight * 0.003,
+          }}>
+          <Text style={[AllTextStyles.SemiThin11]}>{refinText}</Text>
+          <View
+            style={{
+              width: deviceWidth * 0.0015,
+              height: deviceHeight * 0.02,
+              backgroundColor: '#000000',
+            }}
+          />
+          <Text style={[AllTextStyles.SemiThin11]}>{dateText}</Text>
+          <View
+            style={{
+              width: deviceWidth * 0.0015,
+              height: deviceHeight * 0.02,
+              backgroundColor: '#000000',
+            }}
+          />
+          <Text style={[AllTextStyles.SemiThin11]}>{stdnumText}</Text>
+          <View
+            style={{
+              width: deviceWidth * 0.0015,
+              height: deviceHeight * 0.02,
+              backgroundColor: '#000000',
+            }}
+          />
+          <Text style={[AllTextStyles.SemiThin11]}>{gradeText}</Text>
+          <View
+            style={{
+              width: deviceWidth * 0.0015,
+              height: deviceHeight * 0.02,
+              backgroundColor: '#000000',
+            }}
+          />
+          <Text style={[AllTextStyles.SemiThin11]}>{creditText}</Text>
+          <View
+            style={{
+              width: deviceWidth * 0.0015,
+              height: deviceHeight * 0.02,
+              backgroundColor: '#000000',
+            }}
+          />
+          <Text style={[AllTextStyles.SemiThin11]}>{coursetext}</Text>
         </View>
       </View>
     </View>

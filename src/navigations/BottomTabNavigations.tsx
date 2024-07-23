@@ -11,6 +11,7 @@ import Profile from '../screens/BottomTabScreens/Profile';
 import DrawerNavigation from './Drawer';
 import {DrawerActions} from '@react-navigation/native';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
+import SelfGraduate from '../screens/SelfGraduateScreens/SelfGraduate';
 
 const Tab = createBottomTabNavigator();
 const BottomTabNavigations = () => {

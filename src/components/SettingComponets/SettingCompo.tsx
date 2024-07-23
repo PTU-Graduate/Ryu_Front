@@ -18,7 +18,7 @@ export const DetailSettingButton: React.FC<SettingProps> = ({text}) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         width: deviceWidth * 0.9,
-        height: deviceHeight * 0.06,
+        height: deviceHeight * 0.055,
         borderBottomColor: '#C9C6C6',
         borderBottomWidth: 1,
       }}>
@@ -29,18 +29,19 @@ export const DetailSettingButton: React.FC<SettingProps> = ({text}) => {
       <View
         style={{
           width: deviceWidth * 0.1,
-          height: deviceHeight * 0.03,
+          height: deviceHeight * 0.028,
           backgroundColor: '#C9C6C6',
           borderRadius: 10,
           marginRight: deviceWidth * 0.02,
+          justifyContent: 'center',
         }}>
         <TouchableOpacity
           style={{
             width: deviceWidth * 0.055,
-            height: deviceHeight * 0.03,
+            height: deviceHeight * 0.027,
             backgroundColor: '#ffffff',
             borderColor: '#C9C6C6',
-            borderWidth: 1,
+            borderWidth: 0.5,
             borderRadius: 10,
           }}
         />
