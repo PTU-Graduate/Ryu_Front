@@ -12,10 +12,10 @@ import {
 const Profile = () => {
   return (
     <AllBackground>
-      <View style={{flex: 1, backgroundColor: '#345'}}>
+      <View style={{flex: 1}}>
         <AllTitleTopBarCompo text="학 생 정 보" />
       </View>
-      <View style={{flex: 3, backgroundColor: '#345'}}>
+      <View style={{flex: 3}}>
         <View
           style={{
             width: deviceWidth * 1,

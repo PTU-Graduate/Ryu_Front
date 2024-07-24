@@ -35,7 +35,7 @@ const Ex1: React.FC<ScreenProps> = ({navigation}) => {
 
       <LoginGreenButton
         text="이하윤의 작업공간"
-        onPress={() => navigation.navigate('Grade')}
+        onPress={() => navigation.navigate('FreeShuttleBus')}
       />
       <GreenViewBar></GreenViewBar>
     </AllBackground>

@@ -25,6 +25,7 @@ import CourseCheck from '../screens/CourseCheckScreen/CourseCheck';
 import TuitionInquiry from '../screens/TuitionInquiryScreen/TuitionInquiry';
 import ChangePassword from '../screens/ChangePasswordScreen/ChangePassword';
 import Schedule from '../screens/ScheduleScreen/Schedule';
+import FreeShuttleBus from '../screens/FreeShuttleBusScreen/FreeShuttleBus';
 
 export type RootStackParamList = {
   Ex1: undefined;
@@ -56,6 +57,7 @@ export type RootStackParamList = {
   TuitionInquiry: undefined;
   ChangePassword: undefined;
   Schedule: undefined;
+  FreeShuttleBus : undefined;
 };
 
 export type ScreenProps = {
@@ -94,6 +96,7 @@ const StackNavigator = () => {
       <Stack.Screen name="TuitionInquiry" component={TuitionInquiry} />
       <Stack.Screen name="ChangePassword" component={ChangePassword} />
       <Stack.Screen name="Schedule" component={Schedule} />
+      <Stack.Screen name="FreeShuttleBus"component={FreeShuttleBus}/>
     </Stack.Navigator>
   );
 };

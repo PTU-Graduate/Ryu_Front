@@ -18,7 +18,7 @@ export const AllTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress}>
-        <Icon name="chevron-back" size={25} color="blak" />
+        <Icon name="chevron-back" size={25} color="#000000" />
       </TouchableOpacity>
       <Text style={styles.title}>{text}</Text>
     </View>
