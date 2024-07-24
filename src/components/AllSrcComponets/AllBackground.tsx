@@ -7,9 +7,11 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import AllBackgroundStyles from '../../styles/AllSrcStyles/AllBackgroundStyles';
+import {deviceHeight} from '../../utils/DeviceUtils';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
+  srcbottom: number;
 }
 
 /**
@@ -27,11 +29,13 @@ export const AllBackground: React.FC<AllBackgroundProps> = ({children}) => {
 
 export const AllScrollBackground: React.FC<AllBackgroundProps> = ({
   children,
+  srcbottom,
 }) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
+        contentInset={{bottom: deviceHeight * srcbottom}}
         keyboardShouldPersistTaps="handled">
         <SafeAreaView style={AllBackgroundStyles.AllBackground}>
           {children}
