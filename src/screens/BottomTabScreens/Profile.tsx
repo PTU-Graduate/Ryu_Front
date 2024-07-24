@@ -20,27 +20,26 @@ const Profile = () => {
           style={{
             width: deviceWidth * 1,
             height: deviceHeight * 0.3,
-            marginTop: deviceHeight * 0.01,
             backgroundColor: '#F0F0F0',
             justifyContent: 'center',
             position: 'absolute',
           }}>
           <View
             style={{
-              width: deviceWidth * 0.38,
+              width: deviceWidth * 0.39,
               height: deviceHeight * 0.24,
               marginLeft: deviceWidth * 0.07,
               backgroundColor: '#D9D9D9',
-              borderRadius: 12,
+              borderRadius: 15,
               justifyContent: 'center',
               alignItems: 'center',
               position: 'absolute',
             }}>
             <Image
               style={{
-                width: deviceWidth * 0.38,
+                width: deviceWidth * 0.39,
                 height: deviceHeight * 0.24,
-                borderRadius: 12,
+                borderRadius: 15,
                 position: 'absolute',
               }}
               source={require('../../assets/images/Person.jpeg')}
@@ -51,8 +50,8 @@ const Profile = () => {
               style={[
                 AllTextStyles.SemiBold16,
                 {
+                  marginTop: deviceHeight * 0.01,
                   marginBottom: deviceHeight * 0.01,
-                  marginTop: deviceHeight * 0.008,
                 },
               ]}>
               문화예술대학
@@ -68,7 +67,7 @@ const Profile = () => {
             </Text>
             <Text
               style={[
-                AllTextStyles.SemiBold17,
+                AllTextStyles.medium16,
                 {
                   marginBottom: deviceHeight * 0.05,
                 },
@@ -91,24 +90,26 @@ const Profile = () => {
         </View>
       </View>
 
-      <View style={{flex: 4}}>
-        <StudentInfoFDTextbar
-          titletext1="학적구분"
-          detailtext1="휴학"
-          titletext2="지도교수"
-          detailtext2="이경희"
-        />
-        <StudentInfoFDTextbar
-          titletext1="학년"
-          detailtext1="3학년"
-          titletext2="전공유형"
-          detailtext2="전공심화"
-        />
-        <StudentInfoTextbar titletext1="졸업일자" detailtext1="-" />
-        <StudentInfoTextbar
-          titletext1="은행명"
-          detailtext1="352-1095-5772-23 농협은행"
-        />
+      <View style={{flex: 7}}>
+        <View style={{marginTop: deviceHeight * 0.07}}>
+          <StudentInfoFDTextbar
+            titletext1="학적구분"
+            detailtext1="휴학"
+            titletext2="지도교수"
+            detailtext2="이경희"
+          />
+          <StudentInfoFDTextbar
+            titletext1="학년"
+            detailtext1="3학년"
+            titletext2="전공유형"
+            detailtext2="전공심화"
+          />
+          <StudentInfoTextbar titletext1="졸업일자" detailtext1="-" />
+          <StudentInfoTextbar
+            titletext1="은행명"
+            detailtext1="352-1095-5772-23 농협은행"
+          />
+        </View>
       </View>
     </AllBackground>
   );
