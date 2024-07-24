@@ -12,7 +12,7 @@ import {ScreenProps} from '../../navigations/StackNavigator';
 
 const SelfGraduate: React.FC<ScreenProps> = ({navigation}) => {
   return (
-    <AllScrollBackground>
+    <AllScrollBackground srcbottom={0.4}>
       <View style={{flex: 1}}>
         <AllTitleTopBarCompo text="졸 업 자 가 진 단" />
       </View>
