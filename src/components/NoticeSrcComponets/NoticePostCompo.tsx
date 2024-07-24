@@ -50,15 +50,14 @@ export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
             </Text>
           </Text>
         </View>
-        <View>
+        <View style={{justifyContent: 'center'}}>
           <Icon
             style={{
-              marginTop: deviceHeight * 0.016,
               marginLeft: deviceWidth * 0.02,
-              color: '#666666',
+              color: '#979797',
             }}
             name="chevron-right"
-            size={25}
+            size={30}
           />
         </View>
       </View>

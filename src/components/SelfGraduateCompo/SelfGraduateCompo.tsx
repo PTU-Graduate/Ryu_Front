@@ -19,7 +19,7 @@ export const SelfGraduatetTextbar: React.FC<SelfGraduateProps> = ({
 }) => {
   return (
     <View style={{alignItems: 'center', flexDirection: 'row'}}>
-      <Text style={[AllTextStyles.SemiBold16]}>{titletext}</Text>
+      <Text style={[AllTextStyles.SemiBold15]}>{titletext}</Text>
       <View
         style={{
           marginLeft: deviceWidth * 0.03,
@@ -28,7 +28,7 @@ export const SelfGraduatetTextbar: React.FC<SelfGraduateProps> = ({
           backgroundColor: '#000000',
         }}></View>
       <Text
-        style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.05}]}>
+        style={[AllTextStyles.SemiThin15, {marginLeft: deviceWidth * 0.05}]}>
         {detailtext}
       </Text>
     </View>
@@ -61,23 +61,23 @@ export const SelfGraduateDetailBar: React.FC<SelfGraduateProps> = ({
           style={{
             backgroundColor: '#009b64',
             width: deviceWidth * 0.9,
-            height: deviceHeight * 0.045,
+            height: deviceHeight * 0.042,
             borderRadius: 6,
             marginTop: deviceHeight * 0.015,
             justifyContent: 'space-around',
             alignItems: 'center',
             flexDirection: 'row',
           }}>
-          <Text style={[AllTextStyles.SemiBold11, {color: '#ffffff'}]}>
+          <Text style={[AllTextStyles.SemiBold12, {color: '#ffffff'}]}>
             졸업기준학점(횟수)
           </Text>
-          <Text style={[AllTextStyles.SemiBold11, {color: '#ffffff'}]}>
+          <Text style={[AllTextStyles.SemiBold12, {color: '#ffffff'}]}>
             취득학점(횟수)
           </Text>
-          <Text style={[AllTextStyles.SemiBold11, {color: '#ffffff'}]}>
+          <Text style={[AllTextStyles.SemiBold12, {color: '#ffffff'}]}>
             결과
           </Text>
-          <Text style={[AllTextStyles.SemiBold11, {color: '#ffffff'}]}>
+          <Text style={[AllTextStyles.SemiBold12, {color: '#ffffff'}]}>
             부족학점(횟수)
           </Text>
         </View>
@@ -86,7 +86,7 @@ export const SelfGraduateDetailBar: React.FC<SelfGraduateProps> = ({
             borderBottomColor: '#666666',
             borderBottomWidth: 0.3,
             width: deviceWidth * 0.9,
-            height: deviceHeight * 0.05,
+            height: deviceHeight * 0.043,
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -98,30 +98,30 @@ export const SelfGraduateDetailBar: React.FC<SelfGraduateProps> = ({
               width: deviceWidth * 0.23,
               alignItems: 'center',
             }}>
-            <Text style={[AllTextStyles.medium11]}>{detailtext1}</Text>
+            <Text style={[AllTextStyles.medium12]}>{detailtext1}</Text>
           </View>
           <View
             style={{
               width: deviceWidth * 0.2,
               alignItems: 'center',
             }}>
-            <Text style={[AllTextStyles.medium11]}>{detailtext2}</Text>
+            <Text style={[AllTextStyles.medium12]}>{detailtext2}</Text>
           </View>
           <View
             style={{
-              width: deviceWidth * 0.055,
+              width: deviceWidth * 0.06,
               alignItems: 'center',
             }}>
-            <Text style={[AllTextStyles.medium11, {color: '#2C0FDE'}]}>
+            <Text style={[AllTextStyles.medium12, {color: '#2C0FDE'}]}>
               {detailtext3}
             </Text>
           </View>
           <View
             style={{
-              width: deviceWidth * 0.19,
+              width: deviceWidth * 0.185,
               alignItems: 'center',
             }}>
-            <Text style={[AllTextStyles.medium11]}>{detailtext4}</Text>
+            <Text style={[AllTextStyles.medium12]}>{detailtext4}</Text>
           </View>
         </View>
       </View>

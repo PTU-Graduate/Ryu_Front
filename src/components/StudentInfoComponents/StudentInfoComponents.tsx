@@ -22,7 +22,7 @@ export const StudentInfoFDTextbar: React.FC<StudentInfoProps> = ({
         justifyContent: 'space-between',
         marginLeft: deviceWidth * 0.08,
         marginRight: deviceWidth * 0.1,
-        marginBottom: deviceHeight * 0.045,
+        marginBottom: deviceHeight * 0.04,
       }}>
       <View
         style={{
@@ -34,13 +34,13 @@ export const StudentInfoFDTextbar: React.FC<StudentInfoProps> = ({
         </Text>
         <View
           style={{
-            marginLeft: deviceWidth * 0.05,
+            marginLeft: deviceWidth * 0.04,
             width: deviceWidth * 0.004,
-            height: deviceHeight * 0.032,
+            height: deviceHeight * 0.03,
             backgroundColor: '#000000',
           }}></View>
         <Text
-          style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.05}]}>
+          style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.04}]}>
           {detailtext1}
         </Text>
       </View>
@@ -54,13 +54,13 @@ export const StudentInfoFDTextbar: React.FC<StudentInfoProps> = ({
         </Text>
         <View
           style={{
-            marginLeft: deviceWidth * 0.05,
+            marginLeft: deviceWidth * 0.04,
             width: deviceWidth * 0.004,
-            height: deviceHeight * 0.032,
+            height: deviceHeight * 0.03,
             backgroundColor: '#000000',
           }}></View>
         <Text
-          style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.05}]}>
+          style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.04}]}>
           {detailtext2}
         </Text>
       </View>
@@ -77,7 +77,7 @@ export const StudentInfoTextbar: React.FC<StudentInfoProps> = ({
       style={{
         alignItems: 'center',
         flexDirection: 'row',
-        marginBottom: deviceHeight * 0.045,
+        marginBottom: deviceHeight * 0.04,
         marginLeft: deviceWidth * 0.08,
       }}>
       <Text style={[AllTextStyles.SemiBold17, {color: '#009B64'}]}>
@@ -85,13 +85,13 @@ export const StudentInfoTextbar: React.FC<StudentInfoProps> = ({
       </Text>
       <View
         style={{
-          marginLeft: deviceWidth * 0.05,
+          marginLeft: deviceWidth * 0.04,
           width: deviceWidth * 0.004,
-          height: deviceHeight * 0.032,
+          height: deviceHeight * 0.03,
           backgroundColor: '#000000',
         }}></View>
       <Text
-        style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.05}]}>
+        style={[AllTextStyles.SemiThin16, {marginLeft: deviceWidth * 0.04}]}>
         {detailtext1}
       </Text>
     </View>
