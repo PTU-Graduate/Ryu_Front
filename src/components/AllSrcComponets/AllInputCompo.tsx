@@ -38,6 +38,26 @@ export const SignLogInput: React.FC<AllInputCompoProps> = ({
 };
 
 /**
+ * 비밀번호 변경 화면에 사용되는 인풋
+ */
+export const ChangePasswordInput: React.FC<AllInputCompoProps> = ({
+  text,
+  passsecure,
+  ...props
+}) => {
+  const placeholderText = typeof text === 'string' ? text : undefined;
+  return (
+    <TextInput
+      placeholderTextColor="#C9C6C6"
+      style={[AllInputStyles.ChangePasswordInputStyle, AllTextStyles.medium14]}
+      placeholder={placeholderText}
+      secureTextEntry={passsecure}
+      {...props}
+    />
+  );
+};
+
+/**
  * 회원가입 화면에 사용되는 중복확인 인풋
  */
 export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({

@@ -33,11 +33,12 @@ export const SearchGraybar: React.FC<SearchCompoProps> = ({
 
 const styles = StyleSheet.create({
   ViewStyles: {
+    marginBottom: deviceHeight * 0.008,
     width: deviceWidth * 0.8,
-    height: deviceHeight * 0.05,
+    height: deviceHeight * 0.042,
     borderBottomColor: '#C9C6C6',
-    borderBottomWidth: 1,
-    paddingTop: deviceHeight * 0.017,
+    borderBottomWidth: 0.5,
+    paddingTop: deviceHeight * 0.015,
     paddingLeft: deviceWidth * 0.02,
   },
   textStyles: {

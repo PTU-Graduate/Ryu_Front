@@ -35,7 +35,7 @@ const Search = () => {
             position: 'absolute',
             zIndex: 1,
             left: deviceWidth * 0.85,
-            bottom: deviceHeight * 0.065,
+            bottom: deviceHeight * 0.095,
           }}>
           <Icon size={21} name="search" />
         </TouchableOpacity>
@@ -47,7 +47,7 @@ const Search = () => {
           최근에 찾아본 검색어 입니다.
         </Text>
       </View>
-      <View style={{flex: 6, alignItems: 'center'}}>
+      <View style={{flex: 9, alignItems: 'center'}}>
         <SearchGraybar text="수강조회"></SearchGraybar>
         <SearchGraybar text="졸업자가진단"></SearchGraybar>
         <SearchGraybar text="출석조회"></SearchGraybar>

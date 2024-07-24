@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, View} from 'react-native';
-import AllButtonStyles from '../../styles/AllSrcStyles/AllButtonStyles';
+import {Text, TouchableOpacity, View} from 'react-native';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import Icon from 'react-native-vector-icons/Entypo';
 
 interface AllViewBarProps {
   text?: string;
@@ -25,6 +25,7 @@ export const GreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
     <View
       style={{
         alignItems: 'center',
+        marginTop: deviceHeight * 0.01,
       }}>
       <View
         style={{
@@ -44,6 +45,52 @@ export const GreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
           ]}>
           {text}
         </Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: '#009b64',
+          width: deviceWidth * 0.03,
+          height: deviceHeight * 0.05,
+          marginRight: deviceWidth * 0.87,
+        }}></View>
+    </View>
+  );
+};
+
+/**
+ * 조회기능에 들어가는 아이콘이 있는 상세내용 초록색&연두색 제목바
+ */
+export const IconGreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
+  return (
+    <View style={{alignItems: 'center', marginTop: deviceHeight * 0.01}}>
+      <View
+        style={{
+          backgroundColor: '#49b08c',
+          width: deviceWidth * 0.9,
+          height: deviceHeight * 0.05,
+          position: 'absolute',
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}>
+        <Text
+          style={[
+            AllTextStyles.SemiBold18,
+            {
+              color: '#ffffff',
+              marginLeft: deviceWidth * 0.065,
+            },
+          ]}>
+          {text}
+        </Text>
+        <TouchableOpacity>
+          <Icon
+            style={{marginRight: deviceWidth * 0.02}}
+            name="chevron-down"
+            size={27}
+            color="white"
+          />
+        </TouchableOpacity>
       </View>
       <View
         style={{

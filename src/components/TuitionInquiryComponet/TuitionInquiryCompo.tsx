@@ -17,17 +17,17 @@ export const TIDetailBar: React.FC<TuitionInquiryProps> = ({
       style={{
         justifyContent: 'center',
         flexDirection: 'row',
-        marginBottom: deviceHeight * 0.01,
+        marginBottom: deviceHeight * 0.012,
       }}>
       <View
         style={{
-          width: deviceWidth * 0.18,
-          height: deviceHeight * 0.045,
+          width: deviceWidth * 0.19,
+          height: deviceHeight * 0.043,
           backgroundColor: '#009B64',
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>
+        <Text style={[AllTextStyles.SemiBold15, {color: '#ffffff'}]}>
           {titleText}
         </Text>
       </View>
