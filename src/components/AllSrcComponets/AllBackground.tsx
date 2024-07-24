@@ -5,12 +5,13 @@ import {
   SafeAreaView,
   ScrollView,
   TouchableWithoutFeedback,
-  View,
 } from 'react-native';
 import AllBackgroundStyles from '../../styles/AllSrcStyles/AllBackgroundStyles';
+import {deviceHeight} from '../../utils/DeviceUtils';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
+  srcbottom: number;
 }
 
 /**
@@ -19,17 +20,27 @@ interface AllBackgroundProps {
 export const AllBackground: React.FC<AllBackgroundProps> = ({children}) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <SafeAreaView style={{backgroundColor: '#ffffff'}}>
-        <ScrollView
-          contentContainerStyle={{flexGrow: 1}}
-          keyboardShouldPersistTaps="handled">
-          <SafeAreaView
-            onStartShouldSetResponder={() => true}
-            style={AllBackgroundStyles.AllBackground}>
-            {children}
-          </SafeAreaView>
-        </ScrollView>
+      <SafeAreaView style={AllBackgroundStyles.AllBackground}>
+        {children}
       </SafeAreaView>
+    </TouchableWithoutFeedback>
+  );
+};
+
+export const AllScrollBackground: React.FC<AllBackgroundProps> = ({
+  children,
+  srcbottom,
+}) => {
+  return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <ScrollView
+        contentContainerStyle={{flexGrow: 1}}
+        contentInset={{bottom: deviceHeight * srcbottom}}
+        keyboardShouldPersistTaps="handled">
+        <SafeAreaView style={AllBackgroundStyles.AllBackground}>
+          {children}
+        </SafeAreaView>
+      </ScrollView>
     </TouchableWithoutFeedback>
   );
 };
