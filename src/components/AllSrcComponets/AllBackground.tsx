@@ -18,6 +18,18 @@ interface AllBackgroundProps {
 export const AllBackground: React.FC<AllBackgroundProps> = ({children}) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <SafeAreaView style={AllBackgroundStyles.AllBackground}>
+        {children}
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
+  );
+};
+
+export const AllScrollBackground: React.FC<AllBackgroundProps> = ({
+  children,
+}) => {
+  return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
         keyboardShouldPersistTaps="handled">

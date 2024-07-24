@@ -18,22 +18,31 @@ import Notice from '../screens/NoticeScreen/Notice';
 import Point from '../screens/PointScreen/Point';
 import Mimi from '../screens/Mimi';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
-import StudentInfo from '../screens/SutdentInfoScreen/StudentInfo';
 import Grade from '../screens/GradeScreens/Grade';
 import SelfGraduate from '../screens/SelfGraduateScreens/SelfGraduate';
 import AttendanceInquiry from '../screens/AttendanceInquiryScreen/AttendanceInquiry';
+import CourseCheck from '../screens/CourseCheckScreen/CourseCheck';
+import TuitionInquiry from '../screens/TuitionInquiryScreen/TuitionInquiry';
+import ChangePassword from '../screens/ChangePasswordScreen/ChangePassword';
+import Schedule from '../screens/ScheduleScreen/Schedule';
+import FreeShuttleBus from '../screens/FreeShuttleBusScreen/FreeShuttleBus';
 
-type RootStackParamList = {
+export type RootStackParamList = {
   Ex1: undefined;
   Login: undefined;
   RegiHakgua: undefined;
   RegiCodeConfig: undefined;
   RegiComple: undefined;
   RegiEmail: undefined;
-  RegiHakbun: undefined;
-  RegiID: undefined;
+  RegiHakbun: {
+    STD_DEC_CD: string;
+  };
+  RegiID: {STD_DEC_CD: string; STD_NUM: string; NAME: string};
   RegiPass: undefined;
-  RegiName: undefined;
+  RegiName: {
+    STD_DEC_CD: string;
+    STD_NUM: string;
+  };
   Main: undefined;
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
@@ -41,10 +50,14 @@ type RootStackParamList = {
   Point: undefined;
   Mimi: undefined;
   DrawerBurgur: undefined;
-  StudentInfo: undefined;
   Grade: undefined;
   SelfGraduate: undefined;
   AttendanceInquiry: undefined;
+  CourseCheck: undefined;
+  TuitionInquiry: undefined;
+  ChangePassword: undefined;
+  Schedule: undefined;
+  FreeShuttleBus : undefined;
 };
 
 export type ScreenProps = {
@@ -68,7 +81,7 @@ const StackNavigator = () => {
       <Stack.Screen name="RegiPass" component={RegiPass} />
       <Stack.Screen name="Main" component={Main} />
       <Stack.Screen name="Point" component={Point} />
-      <Stack.Screen name="StudentInfo" component={StudentInfo} />
+      <Stack.Screen name="CourseCheck" component={CourseCheck} />
       <Stack.Screen
         name="BottomTabNavigations"
         component={BottomTabNavigations}
@@ -80,6 +93,10 @@ const StackNavigator = () => {
       <Stack.Screen name="Grade" component={Grade} />
       <Stack.Screen name="SelfGraduate" component={SelfGraduate} />
       <Stack.Screen name="AttendanceInquiry" component={AttendanceInquiry} />
+      <Stack.Screen name="TuitionInquiry" component={TuitionInquiry} />
+      <Stack.Screen name="ChangePassword" component={ChangePassword} />
+      <Stack.Screen name="Schedule" component={Schedule} />
+      <Stack.Screen name="FreeShuttleBus"component={FreeShuttleBus}/>
     </Stack.Navigator>
   );
 };

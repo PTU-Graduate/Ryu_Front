@@ -18,7 +18,7 @@ export const AllTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress}>
-        <Icon name="chevron-back" size={25} color="blak" />
+        <Icon name="chevron-back" size={25} color="#000000" />
       </TouchableOpacity>
       <Text style={styles.title}>{text}</Text>
     </View>
@@ -27,12 +27,11 @@ export const AllTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    height: 75,
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#ffffff',
     paddingHorizontal: 10, //container와 아이콘사이의 간격조정
-    marginTop: 8, //container자체를 밑으로 내림
   },
   icon: {
     marginRight: 10, // 아이콘과 텍스트 사이의 간격

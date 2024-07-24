@@ -1,10 +1,13 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
+import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
-import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
-import {StudentInfoTextbar} from '../../components/StudentInfoComponents/StudentInfoComponents';
+import {
+  StudentInfoFDTextbar,
+  StudentInfoTextbar,
+} from '../../components/StudentInfoComponents/StudentInfoComponents';
 
 const Profile = () => {
   return (
@@ -16,93 +19,99 @@ const Profile = () => {
         <View
           style={{
             width: deviceWidth * 1,
-            height: deviceHeight * 0.25,
+            height: deviceHeight * 0.3,
             backgroundColor: '#F0F0F0',
+            justifyContent: 'center',
             position: 'absolute',
           }}>
           <View
             style={{
-              width: deviceWidth * 0.5,
-              height: deviceHeight * 0.2,
+              width: deviceWidth * 0.39,
+              height: deviceHeight * 0.24,
+              marginLeft: deviceWidth * 0.07,
               backgroundColor: '#D9D9D9',
-              borderRadius: 10,
-              top: deviceHeight * 0.025,
-              marginLeft: deviceWidth * 0.04,
+              borderRadius: 15,
               justifyContent: 'center',
               alignItems: 'center',
+              position: 'absolute',
             }}>
             <Image
               style={{
-                width: deviceWidth * 0.4,
-                height: deviceHeight * 0.2,
-                resizeMode: 'contain',
+                width: deviceWidth * 0.39,
+                height: deviceHeight * 0.24,
+                borderRadius: 15,
+                position: 'absolute',
               }}
-              source={require('../../assets/images/PtuLogo.png')}
+              source={require('../../assets/images/Person.jpeg')}
             />
           </View>
-          <Text
-            style={[
-              AllTextStyles.SemiBold15,
-              {
-                marginLeft: deviceWidth * 0.6,
-                marginTop: deviceHeight * 0.05,
-                position: 'absolute',
-              },
-            ]}>
-            문화예술대학
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiBold14,
-              {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.08,
-              },
-            ]}>
-            커뮤니케이션디자인학과
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiBold15,
-              {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.11,
-              },
-            ]}>
-            류채현
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin12,
-              {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.15,
-              },
-            ]}>
-            연락쳐: 010-3934-2106
-          </Text>
-          <Text
-            style={[
-              AllTextStyles.SemiThin12,
-              {
-                marginLeft: deviceWidth * 0.6,
-                position: 'absolute',
-                marginTop: deviceHeight * 0.17,
-              },
-            ]}>
-            주민번호:020816 - 4******
-          </Text>
+          <View style={{marginLeft: deviceWidth * 0.51}}>
+            <Text
+              style={[
+                AllTextStyles.SemiBold16,
+                {
+                  marginTop: deviceHeight * 0.01,
+                  marginBottom: deviceHeight * 0.01,
+                },
+              ]}>
+              문화예술대학
+            </Text>
+            <Text
+              style={[
+                AllTextStyles.SemiBold16,
+                {
+                  marginBottom: deviceHeight * 0.03,
+                },
+              ]}>
+              커뮤니케이션디자인학과
+            </Text>
+            <Text
+              style={[
+                AllTextStyles.medium16,
+                {
+                  marginBottom: deviceHeight * 0.05,
+                },
+              ]}>
+              류채현
+            </Text>
+            <Text
+              style={[
+                AllTextStyles.SemiThin12,
+                {
+                  marginBottom: deviceHeight * 0.008,
+                },
+              ]}>
+              연락쳐: 010-3934-2106
+            </Text>
+            <Text style={[AllTextStyles.SemiThin12]}>
+              주민번호: 020816 - 4******
+            </Text>
+          </View>
         </View>
       </View>
 
-      <View style={{flex: 4}}>
-        <StudentInfoTextbar></StudentInfoTextbar>
+      <View style={{flex: 7}}>
+        <View style={{marginTop: deviceHeight * 0.07}}>
+          <StudentInfoFDTextbar
+            titletext1="학적구분"
+            detailtext1="휴학"
+            titletext2="지도교수"
+            detailtext2="이경희"
+          />
+          <StudentInfoFDTextbar
+            titletext1="학년"
+            detailtext1="3학년"
+            titletext2="전공유형"
+            detailtext2="전공심화"
+          />
+          <StudentInfoTextbar titletext1="졸업일자" detailtext1="-" />
+          <StudentInfoTextbar
+            titletext1="은행명"
+            detailtext1="352-1095-5772-23 농협은행"
+          />
+        </View>
       </View>
     </AllBackground>
   );
 };
-
 export default Profile;

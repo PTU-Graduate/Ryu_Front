@@ -1,6 +1,9 @@
 import React from 'react';
 import {View} from 'react-native';
-import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
+import {
+  AllBackground,
+  AllScrollBackground,
+} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {
   AllScoreDetailBar,
@@ -11,7 +14,7 @@ import {deviceHeight} from '../../utils/DeviceUtils';
 
 const Grade = () => {
   return (
-    <AllBackground>
+    <AllScrollBackground>
       <View style={{flex: 1}}>
         <AllTitleTopBarCompo text="성 적 조 회"></AllTitleTopBarCompo>
       </View>
@@ -64,7 +67,7 @@ const Grade = () => {
           />
         </View>
       </View>
-    </AllBackground>
+    </AllScrollBackground>
   );
 };
 export default Grade;

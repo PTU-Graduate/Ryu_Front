@@ -29,16 +29,16 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       }}>
       <TouchableOpacity
         style={{
-          width: deviceWidth * 0.15,
-          height: deviceHeight * 0.04,
+          width: deviceWidth * 0.19,
+          height: deviceHeight * 0.036,
           alignItems: 'center',
-          borderBottomWidth: selectedCategory === '공지' ? 1 : undefined,
+          borderBottomWidth: selectedCategory === '공지' ? 1.2 : undefined,
           borderBottomColor: '#000000',
         }}
         onPress={() => setSelectedCategory('공지')}>
         <Text
           style={[
-            AllTextStyles.SemiBold14,
+            AllTextStyles.SemiBold16,
             {color: selectedCategory === '공지' ? '#000000' : '#909090'}, // 삼항연산자를 이용하여 눌렀을 때와 안눌렀을 때의 색깔 차이를 준다.
           ]}>
           공지사항
@@ -46,16 +46,16 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       </TouchableOpacity>
       <TouchableOpacity
         style={{
-          width: deviceWidth * 0.15,
-          height: deviceHeight * 0.04,
+          width: deviceWidth * 0.19,
+          height: deviceHeight * 0.036,
           alignItems: 'center',
-          borderBottomWidth: selectedCategory === '학사' ? 1 : undefined,
+          borderBottomWidth: selectedCategory === '학사' ? 1.2 : undefined,
           borderBottomColor: '#000000',
         }}
         onPress={() => setSelectedCategory('학사')}>
         <Text
           style={[
-            AllTextStyles.SemiBold14,
+            AllTextStyles.SemiBold16,
             {color: selectedCategory === '학사' ? '#000000' : '#909090'},
           ]}>
           학사안내
@@ -63,16 +63,16 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       </TouchableOpacity>
       <TouchableOpacity
         style={{
-          width: deviceWidth * 0.15,
-          height: deviceHeight * 0.04,
+          width: deviceWidth * 0.19,
+          height: deviceHeight * 0.036,
           alignItems: 'center',
-          borderBottomWidth: selectedCategory === '장학' ? 1 : undefined,
+          borderBottomWidth: selectedCategory === '장학' ? 1.2 : undefined,
           borderBottomColor: '#000000',
         }}
         onPress={() => setSelectedCategory('장학')}>
         <Text
           style={[
-            AllTextStyles.SemiBold14,
+            AllTextStyles.SemiBold16,
             {color: selectedCategory === '장학' ? '#000000' : '#909090'},
           ]}>
           장학안내
@@ -80,16 +80,16 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       </TouchableOpacity>
       <TouchableOpacity
         style={{
-          width: deviceWidth * 0.15,
-          height: deviceHeight * 0.04,
+          width: deviceWidth * 0.19,
+          height: deviceHeight * 0.036,
           alignItems: 'center',
-          borderBottomWidth: selectedCategory === '입학' ? 1 : undefined,
+          borderBottomWidth: selectedCategory === '입학' ? 1.2 : undefined,
           borderBottomColor: '#000000',
         }}
         onPress={() => setSelectedCategory('입학')}>
         <Text
           style={[
-            AllTextStyles.SemiBold14,
+            AllTextStyles.SemiBold16,
             {color: selectedCategory === '입학' ? '#000000' : '#909090'},
           ]}>
           입학안내
