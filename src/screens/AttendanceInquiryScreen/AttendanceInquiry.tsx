@@ -1,10 +1,7 @@
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
-import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
-import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
-import Icon from 'react-native-vector-icons/Entypo';
 import {DetailBar} from '../../components/AttendanceInquiryComponet/AttendanceInquiryCompo';
 import {IconGreenViewBar} from '../../components/AllSrcComponets/AllViewBar';
 
