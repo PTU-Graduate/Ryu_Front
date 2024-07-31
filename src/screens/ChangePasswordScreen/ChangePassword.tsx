@@ -2,10 +2,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
-import {
-  ChangePasswordInput,
-  SignLogInput,
-} from '../../components/AllSrcComponets/AllInputCompo';
+import {ChangePasswordInput} from '../../components/AllSrcComponets/AllInputCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
