@@ -14,7 +14,7 @@ import {deviceHeight} from '../../utils/DeviceUtils';
 
 const Grade = () => {
   return (
-    <AllScrollBackground>
+    <AllScrollBackground srcbottom={0.1}>
       <View style={{flex: 1}}>
         <AllTitleTopBarCompo text="성 적 조 회"></AllTitleTopBarCompo>
       </View>

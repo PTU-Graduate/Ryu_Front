@@ -11,6 +11,10 @@ import {deviceHeight} from '../../utils/DeviceUtils';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
+}
+
+interface AllBackground2Props {
+  children?: React.ReactNode;
   srcbottom: number;
 }
 
@@ -27,7 +31,7 @@ export const AllBackground: React.FC<AllBackgroundProps> = ({children}) => {
   );
 };
 
-export const AllScrollBackground: React.FC<AllBackgroundProps> = ({
+export const AllScrollBackground: React.FC<AllBackground2Props> = ({
   children,
   srcbottom,
 }) => {
