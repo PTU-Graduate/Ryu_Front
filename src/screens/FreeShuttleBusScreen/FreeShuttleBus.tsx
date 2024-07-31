@@ -1,6 +1,6 @@
 import {View, Text, DeviceEventEmitter} from 'react-native';
 import React from 'react';
-import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
+import {AllScrollBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
@@ -11,7 +11,7 @@ import {
 
 const FreeShuttleBus = () => {
   return (
-    <AllBackground>
+    <AllScrollBackground srcbottom={0}>
       <View style={{flex: 1}}>
         <AllTitleTopBarCompo text="셔틀버스 시간조회"></AllTitleTopBarCompo>
       </View>
@@ -88,7 +88,7 @@ const FreeShuttleBus = () => {
           1661 - 1248
         </Text>
       </View>
-    </AllBackground>
+    </AllScrollBackground>
   );
 };
 
