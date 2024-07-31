@@ -55,7 +55,7 @@ const Search = () => {
         <TouchableOpacity
           style={{top: deviceHeight * 0.018, left: deviceWidth * 0.345}}>
           <Text style={[AllTextStyles.SemiBold10, {color: '#EE0031'}]}>
-            전체 삭제
+            전체 삭제 yo~
           </Text>
         </TouchableOpacity>
       </View>
