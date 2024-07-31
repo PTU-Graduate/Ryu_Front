@@ -5,19 +5,19 @@ import {
   AllScrollBackground,
 } from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
-import {GreenViewBar} from '../../components/AllSrcComponets/AllViewBar';
+import {IconGreenViewBar} from '../../components/AllSrcComponets/AllViewBar';
 import {CCDetailBar} from '../../components/CouresewCheckComponents/CourseCheckCompo';
 
 const CourseCheck = () => {
   return (
-    <AllScrollBackground>
+    <AllScrollBackground srcbottom={0.5}>
       <View style={{flex: 1}}>
         <AllTitleTopBarCompo text="수 강 조 회" />
       </View>
-      <View style={{flex: 1, backgroundColor: '#456'}}>
-        <GreenViewBar text="2024년도 1학기" />
+      <View style={{flex: 1}}>
+        <IconGreenViewBar text="2024년도 1학기" />
       </View>
-      <View style={{flex: 9, backgroundColor: '#222'}}>
+      <View style={{flex: 9}}>
         <CCDetailBar
           titleText="리더쉽"
           detailText="건병하 교수님, 9:30~11:30, 이108"
