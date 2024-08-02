@@ -10,7 +10,7 @@ const Point = () => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="i + 솔선수범 포인트 조회" />
+        <AllTitleTopBarCompo text="i + 솔 선 수 범 포 인 트 조 회" />
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
         <Text
@@ -30,7 +30,7 @@ const Point = () => {
             {
               color: '#000000',
               marginRight: deviceWidth * 0.655,
-              marginBottom: deviceHeight * 0.008,
+              marginBottom: deviceHeight * 0.014,
             },
           ]}>
           포인트 목록
@@ -38,14 +38,14 @@ const Point = () => {
         <View
           style={{
             width: deviceWidth * 0.85,
-            height: deviceHeight * 0.15,
+            height: deviceHeight * 0.12,
             backgroundColor: '#49B08C',
             borderRadius: 10,
             justifyContent: 'center',
           }}>
           <Text
             style={[
-              AllTextStyles.SemiBold13,
+              AllTextStyles.SemiBold14,
               {
                 color: '#ffffff',
                 marginLeft: deviceWidth * 0.05,
@@ -56,7 +56,7 @@ const Point = () => {
           </Text>
           <Text
             style={[
-              AllTextStyles.SemiBold19,
+              AllTextStyles.SemiBold20,
               {
                 color: '#ffffff',
                 marginLeft: deviceWidth * 0.05,
@@ -66,7 +66,12 @@ const Point = () => {
           </Text>
         </View>
       </View>
-      <View style={{flex: 2, alignItems: 'center', justifyContent: 'flex-end'}}>
+      <View
+        style={{
+          flex: 3,
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}>
         <Text
           style={[
             AllTextStyles.SemiBold14,
@@ -78,7 +83,7 @@ const Point = () => {
           style={{
             backgroundColor: '#D9D9D9',
             width: deviceWidth * 0.85,
-            height: deviceHeight * 0.08,
+            height: deviceHeight * 0.075,
             borderRadius: 10,
             marginTop: deviceHeight * 0.012,
             justifyContent: 'center',
@@ -94,7 +99,7 @@ const Point = () => {
             style={{
               backgroundColor: '#BCD5AC',
               width: deviceWidth * 0.425,
-              height: deviceHeight * 0.08,
+              height: deviceHeight * 0.075,
               borderRadius: 10,
               justifyContent: 'center',
               alignItems: 'center',
@@ -104,7 +109,7 @@ const Point = () => {
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View
             style={{
-              width: deviceWidth * 0.03,
+              width: deviceWidth * 0.032,
               height: deviceHeight * 0.016,
               backgroundColor: '#BCD5AC',
               borderRadius: 50,
@@ -114,7 +119,10 @@ const Point = () => {
           <Text
             style={[
               AllTextStyles.SemiBold12,
-              {marginRight: deviceWidth * 0.39, marginTop: deviceHeight * 0.02},
+              {
+                marginRight: deviceWidth * 0.39,
+                marginTop: deviceHeight * 0.021,
+              },
             ]}>
             이번 학기에 모은 포인트 금액
           </Text>
@@ -122,7 +130,7 @@ const Point = () => {
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View
             style={{
-              width: deviceWidth * 0.03,
+              width: deviceWidth * 0.032,
               height: deviceHeight * 0.016,
               backgroundColor: '#D9D9D9',
               borderRadius: 50,
@@ -134,19 +142,19 @@ const Point = () => {
               AllTextStyles.SemiBold12,
               {
                 marginRight: deviceWidth * 0.28,
-                marginTop: deviceHeight * 0.015,
+                marginTop: deviceHeight * 0.019,
               },
             ]}>
             인출가능한 솔선수범 포인트 최소 금액
           </Text>
         </View>
       </View>
-      <View style={{flex: 3}}>
+      <View style={{flex: 5}}>
         <View
           style={{
             borderBottomColor: '#C9C6C6',
             borderBottomWidth: 1,
-            marginTop: deviceHeight * 0.05,
+            marginTop: deviceHeight * 0.04,
           }}></View>
         <View style={{alignItems: 'center'}}>
           <Text
@@ -164,7 +172,7 @@ const Point = () => {
             style={{
               backgroundColor: '#D9D9D9',
               width: deviceWidth * 0.85,
-              height: deviceHeight * 0.1,
+              height: deviceHeight * 0.09,
               borderRadius: 10,
               justifyContent: 'center',
             }}
@@ -172,19 +180,19 @@ const Point = () => {
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View
               style={{
-                width: deviceWidth * 0.011,
+                width: deviceWidth * 0.012,
                 height: deviceHeight * 0.006,
                 backgroundColor: '#FF0000',
                 borderRadius: 50,
                 marginRight: deviceWidth * 0.02,
-                marginTop: deviceHeight * 0.029,
+                marginTop: deviceHeight * 0.025,
               }}></View>
             <Text
               style={[
                 AllTextStyles.SemiBold10,
                 {
                   color: '#ff0000',
-                  marginTop: deviceHeight * 0.025,
+                  marginTop: deviceHeight * 0.023,
                   marginRight: deviceWidth * 0.18,
                 },
               ]}>
