@@ -8,6 +8,7 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {SignLogInput} from '../../components/AllSrcComponets/AllInputCompo';
 import {LoginGreenButton} from '../../components/AllSrcComponets/AllButtonCompo';
+import RegiHakgua from '../RegiScreen/RegiHakgua';
 
 const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
@@ -105,6 +106,10 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
         <LoginGreenButton text="로그인" onPress={handleLogin} />
+        <LoginGreenButton
+          text="회원가입"
+          onPress={() => navigation.navigate('RegiHakgua')}
+        />
       </View>
       <View
         style={{
