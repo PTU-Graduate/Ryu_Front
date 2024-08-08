@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {RegiCommonScreen} from '../../components/RegiCommonScreen/RegiCommonScreen';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {ScreenProps} from '../../navigations/StackNavigator';
+import {RegiPassProp} from '../../utils/navigationProps/RegiNavigationProps';
 
-const RegiPass: React.FC<ScreenProps> = ({navigation}) => {
+const RegiPass: React.FC<RegiPassProp> = ({navigation, route}) => {
+  const [pass, setPass] = useState<string>('');
+
+  const {MEMB_ID, SALT} = route.params;
+
   return (
     <AllBackground>
       <RegiCommonScreen
