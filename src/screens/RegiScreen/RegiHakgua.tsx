@@ -5,6 +5,7 @@ import {ScreenProps} from '../../navigations/StackNavigator';
 
 const RegiHakgua: React.FC<ScreenProps> = ({navigation}) => {
   const [STD_DEP_CD, setSTD_DEP_CD] = useState<string>('');
+  
   return (
     <AllBackground>
       <RegiCommonScreen

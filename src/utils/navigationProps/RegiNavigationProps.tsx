@@ -20,7 +20,6 @@ export type RegiHakbunProps = {
 /**
  * @param 이름 스크린 데이터
  */
-
 type RegiNameRouteProp = RouteProp<RootStackParamList, 'RegiName'>;
 type ReginameNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -33,9 +32,27 @@ export type RegiNameProps = {
 
 /* ---------------------------------------------------------------------------------- */
 
+/**
+ * @param 아이디 스크린 데이터
+ */
 type RegiIDRouteProp = RouteProp<RootStackParamList, 'RegiID'>;
 type RegiIDNavigationProp = StackNavigationProp<RootStackParamList, 'RegiID'>;
 export type RegiIDProps = {
   route: RegiIDRouteProp;
   navigation: RegiIDNavigationProp;
+};
+
+/* ---------------------------------------------------------------------------------- */
+
+/**
+ * @param 비밀번호 스크린 데이터
+ */
+type RegiPassRouteProp = RouteProp<RootStackParamList, 'RegiPass'>;
+type RegiPassNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'RegiPass'
+>;
+export type RegiPassProp = {
+  route: RegiPassRouteProp;
+  navigation: RegiPassNavigationProp;
 };

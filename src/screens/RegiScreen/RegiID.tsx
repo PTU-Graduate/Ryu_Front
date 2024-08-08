@@ -3,8 +3,10 @@ import {RegiCkeckCommonScreen} from '../../components/RegiCommonScreen/RegiCheck
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {regiIDApiCall} from '../../services/_private/Regi/RegiApi';
 import {RegiIDProps} from '../../utils/navigationProps/RegiNavigationProps';
+
 const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
   const [std_id, setStd_id] = useState<string>('');
+  const [salt, setSalt] = useState<string>(''); 
   const [butOnOff, setButOnOff] = useState<boolean>(true);
 
   const {STD_DEC_CD, STD_NUM, NAME} = route.params;
@@ -31,7 +33,7 @@ const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
         placeholder="아이디"
         CheckonPress={handleRegi}
         disable={butOnOff}
-        onPress={() => navigation.navigate('RegiPass')}
+        onPress={() => navigation.navigate('RegiPass', {MEMB_ID:std_id, SALT:salt})}
       />
     </AllBackground>
   );
