@@ -29,3 +29,7 @@ export const loginApiCall = async (
     return null;
   }
 };
+
+export const loginSalt = async (
+  SALT: string,
+): Promise<LoginResultDataType | any | null> => {};

@@ -1,11 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Image, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
   text: string;
+  onPress?: () => void;
 }
 
 /**
@@ -27,26 +29,36 @@ export const MainTapbutton: React.FC<AllBackgroundProps> = ({text}) => {
   );
 };
 
-export const MainIconbutton: React.FC<AllBackgroundProps> = ({text}) => {
+export const MainServiceButton: React.FC<AllBackgroundProps> = ({
+  text,
+  onPress,
+}) => {
   return (
-    <TouchableOpacity
-      style={{
-        alignItems: 'center',
-        height: deviceHeight * 0.15,
-        width: deviceWidth * 0.2,
-        marginLeft: deviceWidth * 0.02,
-      }}>
-      <Image
+    <View style={{marginLeft: deviceWidth * 0.05}}>
+      <TouchableOpacity
         style={{
-          width: deviceWidth * 0.15,
-          height: deviceHeight * 0.15,
-          resizeMode: 'contain',
+          width: deviceWidth * 0.18,
+          height: deviceWidth * 0.18,
+          borderRadius: 50,
+          backgroundColor: '#123',
         }}
-        source={require('../../assets/images/Vector.png')}
-      />
-      <Text style={{marginTop: deviceHeight * 0.005, color: '#cdcdcd'}}>
-        {text}
-      </Text>
-    </TouchableOpacity>
+        onPress={onPress}></TouchableOpacity>
+      <View
+        style={{
+          width: deviceWidth * 0.18,
+          alignItems: 'center',
+        }}>
+        <Text
+          style={[
+            AllTextStyles.SemiBold11,
+            {
+              color: '#C9C6C6',
+              marginTop: deviceHeight * 0.018,
+            },
+          ]}>
+          {text}
+        </Text>
+      </View>
+    </View>
   );
 };
