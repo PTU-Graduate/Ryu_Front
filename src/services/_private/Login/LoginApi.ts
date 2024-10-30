@@ -31,5 +31,7 @@ export const loginApiCall = async (
 };
 
 export const loginSalt = async (
-  SALT: string,
-): Promise<LoginResultDataType | any | null> => {};
+  MEMB_ID: string,
+): Promise<LoginResultDataType | any | null> => {
+  
+};
