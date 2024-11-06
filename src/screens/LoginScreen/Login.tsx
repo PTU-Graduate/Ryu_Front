@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Alert, Text, View} from 'react-native';
+import {Alert, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {DrawerActions} from '@react-navigation/native';
 import {ScreenProps} from '../../navigations/StackNavigator';
@@ -9,6 +9,7 @@ import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {SignLogInput} from '../../components/AllSrcComponets/AllInputCompo';
 import {LoginGreenButton} from '../../components/AllSrcComponets/AllButtonCompo';
 import RegiHakgua from '../RegiScreen/RegiHakgua';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
 const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
@@ -106,10 +107,13 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
         <LoginGreenButton text="로그인" onPress={handleLogin} />
-        <LoginGreenButton
-          text="회원가입"
-          onPress={() => navigation.navigate('RegiHakgua')}
-        />
+        <TouchableOpacity
+          style={{marginTop: deviceHeight * 0.03}}
+          onPress={() => navigation.navigate('RegiHakgua')}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#009B64'}]}>
+            회원가입
+          </Text>
+        </TouchableOpacity>
       </View>
       <View
         style={{
