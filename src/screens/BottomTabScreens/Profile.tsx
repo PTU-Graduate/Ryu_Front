@@ -91,7 +91,7 @@ const Profile = () => {
       </View>
 
       <View style={{flex: 7}}>
-        <View style={{marginTop: deviceHeight * 0.07}}>
+        <View style={{marginTop: deviceHeight * 0.09}}>
           <StudentInfoFDTextbar
             titletext1="학적구분"
             detailtext1="휴학"

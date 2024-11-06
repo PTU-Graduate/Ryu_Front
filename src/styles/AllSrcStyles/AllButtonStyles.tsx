@@ -4,7 +4,7 @@ import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
 export default StyleSheet.create({
   SignLogGreenButtonStyle: {
     width: deviceWidth * 0.8,
-    height: deviceHeight * 0.075,
+    height: deviceWidth * 0.15,
     backgroundColor: '#009B64',
     borderRadius: 6,
     justifyContent: 'center',
@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
   SignLogGrayButtonStyle: {
     width: deviceWidth * 0.8,
-    height: deviceHeight * 0.08,
+    height: deviceWidth * 0.15,
     backgroundColor: '#D9D9D9',
     borderRadius: 6,
     justifyContent: 'center',

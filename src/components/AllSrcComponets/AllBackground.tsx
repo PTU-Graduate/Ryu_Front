@@ -38,6 +38,7 @@ export const AllScrollBackground: React.FC<AllBackground2Props> = ({
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView
+        style={AllBackgroundStyles.AllBackground}
         contentContainerStyle={{flexGrow: 1}}
         contentInset={{bottom: deviceHeight * srcbottom}}
         keyboardShouldPersistTaps="handled">
