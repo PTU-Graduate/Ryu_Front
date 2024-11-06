@@ -83,14 +83,14 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
         style={{
           backgroundColor: '#626262',
           width: deviceWidth * 0.17,
-          height: deviceHeight * 0.034,
+          height: deviceWidth * 0.055,
           borderRadius: 4,
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1,
           position: 'absolute',
-          marginLeft: deviceWidth * 0.35,
-          top: 5,
+          marginTop:
+            deviceHeight >= 800 ? deviceHeight * 0.018 : deviceHeight * 0.01,
           right: 10,
         }}
         onPress={onPress}>

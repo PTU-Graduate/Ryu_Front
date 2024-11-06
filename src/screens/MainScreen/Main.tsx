@@ -17,11 +17,13 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
         style={{
           flex: 1,
           justifyContent: 'center',
+          alignItems: 'center',
         }}>
         <Image
           style={{
-            resizeMode: 'center',
-            marginTop: 10,
+            resizeMode: 'contain',
+            width: deviceWidth * 0.55,
+            marginTop: deviceHeight * 0.02,
           }}
           source={require('../../assets/images/MainTopLogo.jpeg')}></Image>
       </View>

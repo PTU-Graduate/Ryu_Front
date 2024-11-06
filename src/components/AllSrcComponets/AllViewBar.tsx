@@ -25,13 +25,13 @@ export const GreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
     <View
       style={{
         alignItems: 'center',
-        marginTop: deviceHeight * 0.01,
+        marginTop: deviceHeight * 0.004,
       }}>
       <View
         style={{
           backgroundColor: '#49b08c',
           width: deviceWidth * 0.9,
-          height: deviceHeight * 0.05,
+          height: deviceWidth * 0.11,
           position: 'absolute',
           justifyContent: 'center',
         }}>
@@ -67,7 +67,7 @@ export const IconGreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
         style={{
           backgroundColor: '#49b08c',
           width: deviceWidth * 0.9,
-          height: deviceHeight * 0.05,
+          height: deviceWidth * 0.11,
           position: 'absolute',
           justifyContent: 'space-between',
           flexDirection: 'row',
