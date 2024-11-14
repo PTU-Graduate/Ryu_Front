@@ -1,13 +1,63 @@
 import {serverConnector} from '../Api.config';
 import {AxiosResponse} from 'axios';
 import {CommonResultDataType} from '../../../utils/DataTableSet/CommonResultData';
-import {setSaltUserData} from '../../../utils/DataTableSet/RegiData/RegiBasicDataSaveResult';
+import {
+  EntranceUtilType,
+  setEntranceData,
+} from '../../../utils/DataTableSet/communityUtil/EntranceUtil';
 
-export const regiHakbunApiCall = async (
-  STD_NUM: string,
+export const entranceDataApi = async (
+  page: number,
 ): Promise<CommonResultDataType | any | null> => {
-  const endpoint = '/PTU/Register/StdNum';
-  const data = {STD_NUM};
+  const endpoint = '/entrance';
+  const data = {page};
+
+  try {
+    const result = (await serverConnector(endpoint, data)) as AxiosResponse<
+      EntranceUtilType | any
+    >;
+    if (result && result.data && result.data.RSLT_CD === '00') {
+      // RSLT_CD는 응답코드를 의미
+      setEntranceData(result.data);
+      return result.data;
+    } else {
+      console.log(result.data);
+      return result.data;
+    }
+  } catch (error) {
+    return '';
+  }
+};
+
+export const entranceAdd = async (
+  MEMB_ID: string,
+  TIT: string,
+  CONT: string,
+): Promise<CommonResultDataType | any | null> => {
+  const endpoint = '/PTU/Entrance/add';
+  const data = {MEMB_ID, TIT, CONT};
+
+  try {
+    const result = (await serverConnector(endpoint, data)) as AxiosResponse<
+      CommonResultDataType | any
+    >;
+    if (result && result.data && result.data.RSLT_CD === '00') {
+      return result.data;
+    } else {
+      return result.data;
+    }
+  } catch (error) {
+    return '';
+  }
+};
+
+export const entranceUpdate = async (
+  CRE_SEQ: number,
+  TIT: string,
+  CONT: string,
+): Promise<CommonResultDataType | any | null> => {
+  const endpoint = '/PTU/Entrance/update';
+  const data = {CRE_SEQ, TIT, CONT};
 
   try {
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<
@@ -15,10 +65,8 @@ export const regiHakbunApiCall = async (
     >;
     if (result && result.data && result.data.RSLT_CD === '00') {
       // RSLT_CD는 응답코드를 의미
-      console.log(result.data);
       return result.data;
     } else {
-      console.log(result.data);
       return result.data;
     }
   } catch (error) {
@@ -26,11 +74,11 @@ export const regiHakbunApiCall = async (
   }
 };
 
-export const regiIDApiCall = async (
-  STD_NUM: string,
+export const entranceDelete = async (
+  CRE_SEQ: number,
 ): Promise<CommonResultDataType | any | null> => {
-  const endpoint = '/PTU/Register/ID';
-  const data = {STD_NUM};
+  const endpoint = '/PTU/Entrance/delete';
+  const data = {CRE_SEQ};
 
   try {
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<
@@ -38,73 +86,6 @@ export const regiIDApiCall = async (
     >;
     if (result && result.data && result.data.RSLT_CD === '00') {
       // RSLT_CD는 응답코드를 의미
-      console.log(result.data);
-      return result.data;
-    } else {
-      console.log(result.data);
-      return result.data;
-    }
-  } catch (error) {
-    return '';
-  }
-};
-
-export const regiBasicDataSave = async (
-  STD_DEP_CD: string,
-  NAME: string,
-): Promise<CommonResultDataType | any | null> => {
-  const endpoint = '/PTU/Register/basic-info-save';
-  const data = {STD_DEP_CD, NAME};
-
-  try {
-    const result = (await serverConnector(endpoint, data)) as AxiosResponse<
-      CommonResultDataType | any
-    >;
-    if (result && result.data && result.data.RSLT_CD === '00') {
-      console.log(result.data);
-      setSaltUserData(result.data);
-      return result.data;
-    } else {
-      return result.data;
-    }
-  } catch (error) {
-    return '';
-  }
-};
-
-export const mailCheck = async (
-  EMAIL: string,
-): Promise<CommonResultDataType | any | null> => {
-  const endpoint = '/PTU/Register/Mail';
-  const data = {EMAIL};
-
-  try {
-    const result = (await serverConnector(endpoint, data)) as AxiosResponse<
-      CommonResultDataType | any
-    >;
-    if (result && result.data && result.data.RSLT_CD === '00') {
-      console.log(result.data);
-      return result.data;
-    } else {
-      return result.data;
-    }
-  } catch (error) {
-    return '';
-  }
-};
-
-export const stdInfoSave = async (
-  PASS: string,
-): Promise<CommonResultDataType | any | null> => {
-  const endpoint = '/PTU/Register/StdInfo';
-  const data = {PASS};
-
-  try {
-    const result = (await serverConnector(endpoint, data)) as AxiosResponse<
-      CommonResultDataType | any
-    >;
-    if (result && result.data && result.data.RSLT_CD === '00') {
-      console.log(result.data);
       return result.data;
     } else {
       return result.data;
