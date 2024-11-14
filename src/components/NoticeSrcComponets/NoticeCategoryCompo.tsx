@@ -30,7 +30,7 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       <TouchableOpacity
         style={{
           width: deviceWidth * 0.19,
-          height: deviceHeight * 0.036,
+          height: deviceWidth * 0.065,
           alignItems: 'center',
           borderBottomWidth: selectedCategory === '공지' ? 1.2 : undefined,
           borderBottomColor: '#000000',
@@ -47,7 +47,7 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       <TouchableOpacity
         style={{
           width: deviceWidth * 0.19,
-          height: deviceHeight * 0.036,
+          height: deviceWidth * 0.065,
           alignItems: 'center',
           borderBottomWidth: selectedCategory === '학사' ? 1.2 : undefined,
           borderBottomColor: '#000000',
@@ -64,7 +64,7 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       <TouchableOpacity
         style={{
           width: deviceWidth * 0.19,
-          height: deviceHeight * 0.036,
+          height: deviceWidth * 0.065,
           alignItems: 'center',
           borderBottomWidth: selectedCategory === '장학' ? 1.2 : undefined,
           borderBottomColor: '#000000',
@@ -81,7 +81,7 @@ export const NoticeCategoryCompo: React.FC<CategoryProps> = ({
       <TouchableOpacity
         style={{
           width: deviceWidth * 0.19,
-          height: deviceHeight * 0.036,
+          height: deviceWidth * 0.065,
           alignItems: 'center',
           borderBottomWidth: selectedCategory === '입학' ? 1.2 : undefined,
           borderBottomColor: '#000000',

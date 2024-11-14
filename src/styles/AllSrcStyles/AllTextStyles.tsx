@@ -168,8 +168,24 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
   },
+
+  SemiBold21: {
+    fontWeight: 'bold',
+    fontSize: 21,
+  },
+
+  SemiBold22: {
+    fontWeight: 'bold',
+    fontSize: 22,
+  },
+
+  SemiBold23: {
+    fontWeight: 'bold',
+    fontSize: 23,
+  },
+
+  SemiBold26: {
+    fontWeight: 'bold',
+    fontSize: 26,
+  },
 });
-
-
-
-

@@ -14,7 +14,7 @@ const Setting: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="설 정" />
+        <AllTitleTopBarCompo text="설 정" onPress={() => navigation.goBack()} />
       </View>
       <View
         style={{
