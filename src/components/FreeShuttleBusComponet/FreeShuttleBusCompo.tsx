@@ -1,11 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Text, View} from 'react-native';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 interface AllViewBarProps {
-  titletext?: string;
+  titletext1?: string;
+  titletext2?: string;
   detailtext?: string;
   detailtext1?: string;
   detailtext2?: string;
@@ -14,10 +16,11 @@ interface AllViewBarProps {
 }
 
 /**
- * 조회기능에 들어가는 상세내용 초록색&연두색 제목바
+ * 셔틀버스 시간조회에 들어가는 무료노선 상세바
  */
-export const ShuttleBusBar: React.FC<AllViewBarProps> = ({
-  titletext,
+export const FreeShuttleBusBar: React.FC<AllViewBarProps> = ({
+  titletext1,
+  titletext2,
   detailtext,
   detailtext1,
   detailtext2,
@@ -25,139 +28,197 @@ export const ShuttleBusBar: React.FC<AllViewBarProps> = ({
   detailtext4,
 }) => {
   return (
-    <View
-      style={{
-        marginLeft: deviceWidth * 0.05,
-        marginTop: deviceHeight * 0.01,
-        marginBottom: deviceHeight * 0.06,
-      }}>
+    <View style={{marginTop: deviceHeight * 0.005}}>
       <View
         style={{
           backgroundColor: '#49b08c',
           width: deviceWidth * 0.9,
-          height: deviceHeight * 0.05,
+          height: deviceWidth * 0.1,
           position: 'absolute',
-          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'row',
         }}>
         <Text
           style={[
             AllTextStyles.SemiBold18,
             {
               color: '#ffffff',
-              marginLeft: deviceWidth * 0.065,
+              marginLeft: deviceWidth * 0.06,
             },
           ]}>
-          {titletext}
+          {titletext1}
+        </Text>
+        <Icon
+          style={{
+            marginLeft: deviceWidth * 0.015,
+            marginBottom: deviceWidth * 0.005,
+          }}
+          name="arrow-right"
+          size={16}
+          color="#ffffff"
+        />
+        <Text
+          style={[
+            AllTextStyles.SemiBold18,
+            {
+              color: '#ffffff',
+              marginLeft: deviceWidth * 0.015,
+            },
+          ]}>
+          {titletext2}
         </Text>
       </View>
       <View
         style={{
           backgroundColor: '#009b64',
           width: deviceWidth * 0.03,
-          height: deviceHeight * 0.05,
-          marginRight: deviceWidth * 0.87,
+          height: deviceWidth * 0.1,
         }}></View>
-      <Text
-        style={{
-          marginTop: deviceHeight * 0.015,
-          marginBottom: deviceHeight * 0.015,
-        }}>
-        * 승차장소 : {detailtext}
-      </Text>
+      <View style={{flexDirection: 'row'}}>
+        <Icon
+          style={{
+            marginTop: deviceWidth * 0.034,
+            marginBottom: deviceWidth * 0.015,
+            marginRight: deviceWidth * 0.01,
+          }}
+          name="circle"
+          size={5}
+          color="#000000"
+        />
+        <Text
+          style={{
+            marginTop: deviceWidth * 0.02,
+            marginBottom: deviceWidth * 0.012,
+          }}>
+          승차장소 : {detailtext}
+        </Text>
+      </View>
       <View style={{flexDirection: 'row'}}>
         <View
           style={{
-            width: deviceWidth * 0.19,
-            height: deviceHeight * 0.043,
+            width: deviceWidth * 0.2,
+            height: deviceWidth * 0.08,
             backgroundColor: '#009B64',
             alignItems: 'center',
             justifyContent: 'center',
           }}>
           <Text style={[AllTextStyles.SemiBold15, {color: '#ffffff'}]}>
-            시간
+            시 간
           </Text>
         </View>
         <View
           style={{
-            width: deviceWidth * 0.72,
+            width: deviceWidth * 0.7,
             borderBottomColor: '#898A8D',
             borderBottomWidth: deviceWidth * 0.001,
-            justifyContent: 'space-evenly',
-            flexDirection: 'row',
-            alignItems: 'center',
+            justifyContent: 'center',
           }}>
-          <Text style={[AllTextStyles.SemiBold14]}>{detailtext1}</Text>
-          <Text style={[AllTextStyles.SemiBold14]}>{detailtext2}</Text>
-          <Text style={[AllTextStyles.SemiBold14]}>{detailtext3}</Text>
-          <Text style={[AllTextStyles.SemiBold14]}>{detailtext4}</Text>
+          <Text
+            style={[
+              AllTextStyles.SemiBold14,
+              {marginLeft: deviceWidth * 0.05},
+            ]}>
+            {detailtext1}
+          </Text>
         </View>
       </View>
     </View>
   );
 };
+
+/**
+ * 셔틀버스 시간조회에 들어가는 유료노선 상세바
+ */
 export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
-  titletext,
+  titletext1,
+  titletext2,
   detailtext,
   detailtext1,
   detailtext2,
   detailtext3,
 }) => {
   return (
-    <View
-      style={{
-        marginLeft: deviceWidth * 0.05,
-        marginTop: deviceHeight * 0.01,
-        marginBottom: deviceHeight * 0.06,
-      }}>
+    <View style={{marginTop: deviceHeight * 0.005}}>
       <View
         style={{
           backgroundColor: '#49b08c',
           width: deviceWidth * 0.9,
-          height: deviceHeight * 0.05,
+          height: deviceWidth * 0.1,
           position: 'absolute',
-          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'row',
         }}>
         <Text
           style={[
             AllTextStyles.SemiBold18,
             {
               color: '#ffffff',
-              marginLeft: deviceWidth * 0.065,
+              marginLeft: deviceWidth * 0.06,
             },
           ]}>
-          {titletext}
+          {titletext1}
+        </Text>
+        <Icon
+          style={{
+            marginLeft: deviceWidth * 0.015,
+            marginBottom: deviceWidth * 0.005,
+          }}
+          name="arrow-right"
+          size={16}
+          color="#ffffff"
+        />
+        <Text
+          style={[
+            AllTextStyles.SemiBold18,
+            {
+              color: '#ffffff',
+              marginLeft: deviceWidth * 0.015,
+            },
+          ]}>
+          {titletext2}
         </Text>
       </View>
       <View
         style={{
           backgroundColor: '#009b64',
           width: deviceWidth * 0.03,
-          height: deviceHeight * 0.05,
-          marginRight: deviceWidth * 0.87,
+          height: deviceWidth * 0.1,
         }}></View>
-      <Text
-        style={{
-          marginTop: deviceHeight * 0.015,
-          marginBottom: deviceHeight * 0.015,
-        }}>
-        * 승차장소 : {detailtext}
-      </Text>
+      <View style={{flexDirection: 'row'}}>
+        <Icon
+          style={{
+            marginTop: deviceWidth * 0.034,
+            marginBottom: deviceWidth * 0.015,
+            marginRight: deviceWidth * 0.01,
+          }}
+          name="circle"
+          size={5}
+          color="#000000"
+        />
+        <Text
+          style={{
+            marginTop: deviceWidth * 0.02,
+            marginBottom: deviceWidth * 0.012,
+          }}>
+          승차장소 : {detailtext}
+        </Text>
+      </View>
       <View style={{flexDirection: 'row'}}>
         <View
           style={{
-            width: deviceWidth * 0.19,
-            height: deviceHeight * 0.043,
+            width: deviceWidth * 0.2,
+            height: deviceWidth * 0.08,
             backgroundColor: '#009B64',
             alignItems: 'center',
             justifyContent: 'center',
           }}>
           <Text style={[AllTextStyles.SemiBold15, {color: '#ffffff'}]}>
-            시간
+            시 간
           </Text>
         </View>
         <View
           style={{
-            width: deviceWidth * 0.72,
+            width: deviceWidth * 0.7,
             borderBottomColor: '#898A8D',
             borderBottomWidth: deviceWidth * 0.001,
             justifyContent: 'center',
@@ -173,13 +234,14 @@ export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
       </View>
       <View
         style={{
-          width: deviceWidth * 0.72,
+          width: deviceWidth * 0.7,
           borderBottomColor: '#898A8D',
           borderBottomWidth: deviceWidth * 0.001,
           justifyContent: 'center',
-          marginLeft: deviceWidth * 0.19,
-          height: deviceHeight * 0.05,
-          marginBottom: deviceHeight * 0.03,
+          paddingTop: deviceHeight * 0.005,
+          marginLeft: deviceWidth * 0.2,
+          height: deviceWidth * 0.085,
+          marginBottom: deviceWidth * 0.03,
         }}>
         <Text
           style={[AllTextStyles.SemiBold14, {marginLeft: deviceWidth * 0.05}]}>
@@ -189,8 +251,8 @@ export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
       <View style={{flexDirection: 'row'}}>
         <View
           style={{
-            width: deviceWidth * 0.19,
-            height: deviceHeight * 0.043,
+            width: deviceWidth * 0.2,
+            height: deviceWidth * 0.08,
             backgroundColor: '#009B64',
             alignItems: 'center',
             justifyContent: 'center',
@@ -201,7 +263,7 @@ export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
         </View>
         <View
           style={{
-            width: deviceWidth * 0.72,
+            width: deviceWidth * 0.7,
             borderBottomColor: '#898A8D',
             borderBottomWidth: deviceWidth * 0.001,
             justifyContent: 'center',

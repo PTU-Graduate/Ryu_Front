@@ -8,12 +8,13 @@ import Icon from 'react-native-vector-icons/Fontisto';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {TouchableOpacity} from 'react-native';
 import {SearchGraybar} from '../../components/MainSrcCompo/SerachCompo.tsx/SearchCompo';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const Search = () => {
+const Search: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="검 색" />
+        <AllTitleTopBarCompo text="검 색" onPress={() => navigation.goBack()} />
       </View>
       <View
         style={{

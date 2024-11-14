@@ -4,12 +4,16 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {DetailBar} from '../../components/AttendanceInquiryComponet/AttendanceInquiryCompo';
 import {IconGreenViewBar} from '../../components/AllSrcComponets/AllViewBar';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const AttendanceInquiry = () => {
+const AttendanceInquiry: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="출 석 조 회" />
+        <AllTitleTopBarCompo
+          text="출 석 조 회"
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View
         style={{

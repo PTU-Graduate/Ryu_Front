@@ -12,6 +12,7 @@ import Schedule from '../screens/ScheduleScreen/Schedule';
 import CourseCheck from '../screens/CourseCheckScreen/CourseCheck';
 import Grade from '../screens/GradeScreens/Grade';
 import AttendanceInquiry from '../screens/AttendanceInquiryScreen/AttendanceInquiry';
+import FreeShuttleBus from '../screens/FreeShuttleBusScreen/FreeShuttleBus';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,13 +29,10 @@ const DrawerNavigation = () => {
       <Drawer.Screen name="출석조회" component={AttendanceInquiry} />
       <Drawer.Screen name="성적조회" component={Grade} />
       <Drawer.Screen name="등록금납부" component={TuitionInquiry} />
-      <Drawer.Screen name="셔틀버스" component={BottomTabNavigator} />
+      <Drawer.Screen name="셔틀버스" component={FreeShuttleBus} />
       <Drawer.Screen name="졸업자가진단" component={SelfGraduate} />
       <Drawer.Screen name="솔선수범포인트" component={Point} />
       <Drawer.Screen name="공지사항" component={Notice} />
-      <Drawer.Screen name="학사안내" component={Notice} />
-      <Drawer.Screen name="장학안내" component={Notice} />
-      <Drawer.Screen name="입학안내" component={Notice} />
       <Drawer.Screen name="학사일정" component={Schedule} />
     </Drawer.Navigator>
   );

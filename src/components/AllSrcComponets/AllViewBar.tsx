@@ -50,7 +50,7 @@ export const GreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
         style={{
           backgroundColor: '#009b64',
           width: deviceWidth * 0.03,
-          height: deviceHeight * 0.05,
+          height: deviceWidth * 0.11,
           marginRight: deviceWidth * 0.87,
         }}></View>
     </View>
@@ -96,7 +96,7 @@ export const IconGreenViewBar: React.FC<AllViewBarProps> = ({text}) => {
         style={{
           backgroundColor: '#009b64',
           width: deviceWidth * 0.03,
-          height: deviceHeight * 0.05,
+          height: deviceWidth * 0.11,
           marginRight: deviceWidth * 0.87,
         }}></View>
     </View>

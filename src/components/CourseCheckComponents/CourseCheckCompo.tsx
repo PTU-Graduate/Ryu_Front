@@ -33,7 +33,7 @@ export const CCDetailBar: React.FC<CourseCheckProps> = ({
       }}>
       <View
         style={{
-          width: deviceWidth * 0.9,
+          width: deviceWidth * 0.88,
           borderBottomColor: '#898A8D',
           borderBottomWidth: deviceWidth * 0.001,
           justifyContent: 'center',
