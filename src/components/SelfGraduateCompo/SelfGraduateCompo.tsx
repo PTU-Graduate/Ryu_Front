@@ -112,7 +112,11 @@ export const SelfGraduateDetailBar: React.FC<SelfGraduateProps> = ({
               width: deviceWidth * 0.06,
               alignItems: 'center',
             }}>
-            <Text style={[AllTextStyles.medium12, {color: '#2C0FDE'}]}>
+            <Text
+              style={[
+                AllTextStyles.medium12,
+                {color: detailtext3 === '불가' ? '#EE0031' : '#2C0FDE'},
+              ]}>
               {detailtext3}
             </Text>
           </View>

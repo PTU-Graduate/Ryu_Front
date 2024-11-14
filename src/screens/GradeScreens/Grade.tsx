@@ -11,12 +11,16 @@ import {
   ScoreSemesterDetailBar,
 } from '../../components/AllSrcComponets/AllViewBar';
 import {deviceHeight} from '../../utils/DeviceUtils';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const Grade = () => {
+const Grade: React.FC<ScreenProps> = ({navigation}) => {
   return (
-    <AllScrollBackground srcbottom={0.1}>
+    <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="성 적 조 회"></AllTitleTopBarCompo>
+        <AllTitleTopBarCompo
+          text="성 적 조 회"
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View
         style={{
@@ -67,7 +71,7 @@ const Grade = () => {
           />
         </View>
       </View>
-    </AllScrollBackground>
+    </AllBackground>
   );
 };
 export default Grade;

@@ -15,7 +15,7 @@ interface AllBackgroundProps {
 
 interface AllBackground2Props {
   children?: React.ReactNode;
-  srcbottom: number;
+  srcbottom?: number;
 }
 
 /**
@@ -23,11 +23,11 @@ interface AllBackground2Props {
  */
 export const AllBackground: React.FC<AllBackgroundProps> = ({children}) => {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+   /*  <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */
       <SafeAreaView style={AllBackgroundStyles.AllBackground}>
         {children}
       </SafeAreaView>
-    </TouchableWithoutFeedback>
+  /*  </TouchableWithoutFeedback> */
   );
 };
 
@@ -36,16 +36,14 @@ export const AllScrollBackground: React.FC<AllBackground2Props> = ({
   srcbottom,
 }) => {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <ScrollView
-        style={AllBackgroundStyles.AllBackground}
-        contentContainerStyle={{flexGrow: 1}}
-        contentInset={{bottom: deviceHeight * srcbottom}}
-        keyboardShouldPersistTaps="handled">
-        <SafeAreaView style={AllBackgroundStyles.AllBackground}>
-          {children}
-        </SafeAreaView>
-      </ScrollView>
-    </TouchableWithoutFeedback>
+    <ScrollView
+      style={AllBackgroundStyles.AllBackground}
+      contentContainerStyle={{flexGrow: 1}}
+      /*  contentInset={{bottom: deviceHeight * srcbottom}} */
+      keyboardShouldPersistTaps="handled">
+      <SafeAreaView style={AllBackgroundStyles.AllBackground}>
+        {children}
+      </SafeAreaView>
+    </ScrollView>
   );
 };

@@ -8,12 +8,16 @@ import {
   StudentInfoFDTextbar,
   StudentInfoTextbar,
 } from '../../components/StudentInfoComponents/StudentInfoComponents';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const Profile = () => {
+const Profile: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="학 생 정 보" />
+        <AllTitleTopBarCompo
+          text="학 생 정 보"
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View style={{flex: 3}}>
         <View

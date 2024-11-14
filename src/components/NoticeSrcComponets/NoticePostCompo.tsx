@@ -14,7 +14,7 @@ interface AllButtonCompoProps {
 }
 
 /**
- * 로그인 및 회원가입 화면에 사용되는 초록색 공통 버튼
+ * 공지사항 화면에 사용되는 초록색 공통 버튼
  */
 export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
   children,

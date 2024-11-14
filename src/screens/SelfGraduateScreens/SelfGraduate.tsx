@@ -1,5 +1,5 @@
 import React from 'react';
-import {AllScrollBackground} from '../../components/AllSrcComponets/AllBackground';
+import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {Text, View, TouchableOpacity} from 'react-native';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {
@@ -9,25 +9,29 @@ import {
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {ScreenProps} from '../../navigations/StackNavigator';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const SelfGraduate: React.FC<ScreenProps> = ({navigation}) => {
   return (
-    <AllScrollBackground srcbottom={0.4}>
+    <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="졸 업 자 가 진 단" />
+        <AllTitleTopBarCompo
+          text="졸 업 자 가 진 단"
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View
         style={{
           flex: 4,
-          justifyContent: 'space-evenly',
+          justifyContent: 'center',
           alignItems: 'center',
         }}>
         <View
           style={{
             width: deviceWidth * 0.85,
-            height: deviceHeight * 0.4,
-            alignContent: 'space-around',
+            height: deviceHeight * 0.35,
             justifyContent: 'space-between',
+            marginTop: deviceHeight * 0.01,
           }}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <SelfGraduatetTextbar titletext="입학구분" detailtext="신입학" />
@@ -113,9 +117,9 @@ const SelfGraduate: React.FC<ScreenProps> = ({navigation}) => {
             <TouchableOpacity
               style={{
                 width: deviceWidth * 0.35,
-                height: deviceHeight * 0.046,
+                height: deviceWidth * 0.092,
                 backgroundColor: '#009B64',
-                borderRadius: 3,
+                borderRadius: 5,
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
@@ -134,50 +138,53 @@ const SelfGraduate: React.FC<ScreenProps> = ({navigation}) => {
             backgroundColor: '#979797',
             marginTop: deviceHeight * 0.022,
           }}></View>
-        <SelfGraduateDetailBar
-          text="경건실천"
-          detailtext1="(4)"
-          detailtext2="(4)"
-          detailtext3="통과"
-          detailtext4="(0)"
-        />
-        <SelfGraduateDetailBar
-          text="전공계"
-          detailtext1="78"
-          detailtext2="66"
-          detailtext3="불가"
-          detailtext4="12"
-        />
-        <SelfGraduateDetailBar
-          text="dfdf"
-          detailtext1="78"
-          detailtext2="66"
-          detailtext3="불가"
-          detailtext4="12"
-        />
-        <SelfGraduateDetailBar
-          text="gssgsg"
-          detailtext1="78"
-          detailtext2="66"
-          detailtext3="불가"
-          detailtext4="12"
-        />
-        <SelfGraduateDetailBar
-          text="전공ererer계"
-          detailtext1="78"
-          detailtext2="66"
-          detailtext3="불가"
-          detailtext4="12"
-        />
-        <SelfGraduateDetailBar
-          text="전공ww계"
-          detailtext1="78"
-          detailtext2="66"
-          detailtext3="불가"
-          detailtext4="12"
-        />
+        <ScrollView>
+          <SelfGraduateDetailBar
+            text="경건실천"
+            detailtext1="(4)"
+            detailtext2="(4)"
+            detailtext3="통과"
+            detailtext4="(0)"
+          />
+          <SelfGraduateDetailBar
+            text="전공계"
+            detailtext1="78"
+            detailtext2="66"
+            detailtext3="불가"
+            detailtext4="12"
+          />
+          <SelfGraduateDetailBar
+            text="dfdf"
+            detailtext1="78"
+            detailtext2="66"
+            detailtext3="불가"
+            detailtext4="12"
+          />
+          <SelfGraduateDetailBar
+            text="gssgsg"
+            detailtext1="78"
+            detailtext2="66"
+            detailtext3="불가"
+            detailtext4="12"
+          />
+          <SelfGraduateDetailBar
+            text="전공ererer계"
+            detailtext1="78"
+            detailtext2="66"
+            detailtext3="불가"
+            detailtext4="12"
+          />
+          <SelfGraduateDetailBar
+            text="전공ww계"
+            detailtext1="78"
+            detailtext2="66"
+            detailtext3="불가"
+            detailtext4="12"
+          />
+          <View style={{marginTop: deviceWidth * 0.01}}></View>
+        </ScrollView>
       </View>
-    </AllScrollBackground>
+    </AllBackground>
   );
 };
 

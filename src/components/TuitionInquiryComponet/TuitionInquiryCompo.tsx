@@ -1,6 +1,6 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import {deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
 interface TuitionInquiryProps {
@@ -15,33 +15,16 @@ export const TIDetailBar: React.FC<TuitionInquiryProps> = ({
   return (
     <View
       style={{
-        justifyContent: 'center',
+        height: deviceWidth * 0.13,
         flexDirection: 'row',
-        marginBottom: deviceHeight * 0.012,
+        alignItems: 'center',
+        justifyContent: 'space-between',
       }}>
-      <View
-        style={{
-          width: deviceWidth * 0.19,
-          height: deviceHeight * 0.043,
-          backgroundColor: '#009B64',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text style={[AllTextStyles.SemiBold15, {color: '#ffffff'}]}>
-          {titleText}
-        </Text>
+      <View style={{width: deviceWidth * 0.37, alignItems: 'center'}}>
+        <Text style={AllTextStyles.SemiBold15}>{titleText}</Text>
       </View>
-      <View
-        style={{
-          width: deviceWidth * 0.72,
-          borderBottomColor: '#898A8D',
-          borderBottomWidth: deviceWidth * 0.001,
-          justifyContent: 'center',
-        }}>
-        <Text
-          style={[AllTextStyles.SemiBold14, {marginLeft: deviceWidth * 0.04}]}>
-          {detailText}
-        </Text>
+      <View style={{width: deviceWidth * 0.45, alignItems: 'center'}}>
+        <Text style={AllTextStyles.SemiBold15}>{detailText}</Text>
       </View>
     </View>
   );
