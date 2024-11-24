@@ -8,20 +8,28 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {SignLogInput} from '../../components/AllSrcComponets/AllInputCompo';
 import {LoginGreenButton} from '../../components/AllSrcComponets/AllButtonCompo';
+import {saltCall} from '../../services/_private/Login/LoginApi';
 import RegiHakgua from '../RegiScreen/RegiHakgua';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {hashpass} from '../../utils/_private/.secure/.CryptoFuntion';
 
 const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
   const [loginPass, setLoginPass] = useState<string>('');
+  const [hashepass, sethashedPass] = useState<string>('');
 
   const handleLogin = async () => {
-    const result = await loginApiCall(loginId, loginPass);
-    if (result !== null && result.RSLT_CD === '00') {
-      navigation.reset({
-        index: 0,
-        routes: [{name: 'DrawerNavigation'}],
-      });
+    const result2 = await saltCall(loginId);
+    if (result2 !== null && result2.RSLT_CD === '00') {
+      const hashedpass = hashpass(loginPass, result2.SALT);
+      const result = await loginApiCall(loginId, hashedpass);
+      console.log(result2.SALT);
+      if (result !== null && result.RSLT_CD === '00') {
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'DrawerNavigation'}],
+        });
+      }
     } else {
       Alert.alert('실패');
     }

@@ -56,3 +56,33 @@ export type RegiPassProp = {
   route: RegiPassRouteProp;
   navigation: RegiPassNavigationProp;
 };
+
+/* ---------------------------------------------------------------------------------- */
+
+/**
+ * @param 비밀번호 스크린 데이터
+ */
+type RegiEMAILRouteProp = RouteProp<RootStackParamList, 'RegiEmail'>;
+type RegiEMAILNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'RegiEmail'
+>;
+export type RegiEmailProp = {
+  route: RegiEMAILRouteProp;
+  navigation: RegiEMAILNavigationProp;
+};
+
+/* ---------------------------------------------------------------------------------- */
+
+/**
+ * @param 비밀번호 스크린 데이터
+ */
+type RegiCodeConfigRouteProp = RouteProp<RootStackParamList, 'RegiCodeConfig'>;
+type RegiCodeConfigNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'RegiCodeConfig'
+>;
+export type RegiCodeConfigProp = {
+  route: RegiCodeConfigRouteProp;
+  navigation: RegiCodeConfigNavigationProp;
+};
