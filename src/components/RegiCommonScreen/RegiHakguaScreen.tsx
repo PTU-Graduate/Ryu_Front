@@ -2,23 +2,21 @@
 import {View, Text, SafeAreaView, Image, TextInputProps} from 'react-native';
 import React from 'react';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
-import {SignCheckGreenButton} from '../AllSrcComponets/AllButtonCompo';
-import {SignLogCheckInput} from '../AllSrcComponets/AllInputCompo';
+import {SignGreenButton} from '../AllSrcComponets/AllButtonCompo';
+import HukguaDropdown from '../DropDownComponets/HakguaDropDownComponets/HakguaDropDownCompo';
 
 interface RegiCommonScreen extends TextInputProps {
   mediumtext: string;
   smalltext: string;
+  inputtext: string;
   onPress?: () => void;
-  CheckonPress?: () => void;
-  disable?: boolean;
 }
 
-export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
+export const RegiHakguaScreen: React.FC<RegiCommonScreen> = ({
   mediumtext,
   smalltext,
+  inputtext,
   onPress,
-  CheckonPress,
-  disable,
   ...props
 }) => {
   return (
@@ -66,18 +64,17 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
           flex: 7,
           alignItems: 'center',
         }}>
-        <View style={{marginTop: deviceHeight * 0.073}}>
-          <SignLogCheckInput onPress={CheckonPress} {...props} />
+        <View style={{marginTop: deviceHeight * 0.07}}>
+          <View style={{zIndex: 2}}>
+            <HukguaDropdown />
+          </View>
           <View
             style={{
               marginTop: deviceHeight * 0.073,
               marginLeft: deviceWidth * 0.05,
+              zIndex: 1,
             }}>
-            <SignCheckGreenButton
-              text="다음"
-              onPress={onPress}
-              disable={disable}
-            />
+            <SignGreenButton text="다음" onPress={onPress} />
           </View>
         </View>
       </View>
