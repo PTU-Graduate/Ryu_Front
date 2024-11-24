@@ -3,17 +3,12 @@ import {RegiCkeckCommonScreen} from '../../components/RegiCommonScreen/RegiCheck
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {RegiHakbunProps} from '../../utils/navigationProps/RegiNavigationProps';
 import {regiHakbunApiCall} from '../../services/_private/Regi/RegiApi';
-import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 
 const RegiHakbun: React.FC<RegiHakbunProps> = ({navigation, route}) => {
   const [std_num, setStd_num] = useState<string>(''); // 초기값은 아무것도 없어야함 -> 사용자가 입력한 값이 들어가야하기에 (메모리 낭비 방지)
   const [butOnOff, setButOnOff] = useState<boolean>(true); // 초기값이 true
 
   const {STD_DEC_CD} = route.params;
-
-  useEffect(() => {
-    console.log(deviceHeight, deviceWidth);
-  }, []);
 
   const handleRegi = async () => {
     console.log(std_num);

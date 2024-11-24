@@ -50,24 +50,28 @@ export const regiIDApiCall = async (
 };
 
 export const regiBasicDataSave = async (
+  MEMB_ID: string,
+  STD_NUM: string,
   STD_DEP_CD: string,
   NAME: string,
 ): Promise<CommonResultDataType | any | null> => {
   const endpoint = '/PTU/Register/basic-info-save';
-  const data = {STD_DEP_CD, NAME};
+  const data = {MEMB_ID, STD_NUM, STD_DEP_CD, NAME};
+  console.log('호출');
 
   try {
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<
       CommonResultDataType | any
     >;
     if (result && result.data && result.data.RSLT_CD === '00') {
-      console.log(result.data);
       setSaltUserData(result.data);
       return result.data;
     } else {
+      console.log(result.data);
       return result.data;
     }
   } catch (error) {
+    console.log(error);
     return '';
   }
 };
@@ -94,10 +98,15 @@ export const mailCheck = async (
 };
 
 export const stdInfoSave = async (
+  MEMB_ID: string,
+  STD_NUM: string,
+  EMAIL: string,
   PASS: string,
 ): Promise<CommonResultDataType | any | null> => {
   const endpoint = '/PTU/Register/StdInfo';
-  const data = {PASS};
+  const data = {MEMB_ID, STD_NUM, EMAIL, PASS};
+
+  console.log(MEMB_ID, STD_NUM, EMAIL, PASS);
 
   try {
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<

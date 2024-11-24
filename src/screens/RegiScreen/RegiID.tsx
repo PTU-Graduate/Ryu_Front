@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {RegiCkeckCommonScreen} from '../../components/RegiCommonScreen/RegiCheckCommonScreen';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {regiIDApiCall} from '../../services/_private/Regi/RegiApi';
+import {
+  regiIDApiCall,
+  regiBasicDataSave,
+} from '../../services/_private/Regi/RegiApi';
 import {RegiIDProps} from '../../utils/navigationProps/RegiNavigationProps';
 
 const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
   const [std_id, setStd_id] = useState<string>('');
-  const [salt, setSalt] = useState<string>(''); 
+  const [salt, setSalt] = useState<string>('');
   const [butOnOff, setButOnOff] = useState<boolean>(true);
 
   const {STD_DEC_CD, STD_NUM, NAME} = route.params;
@@ -21,6 +24,16 @@ const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
     if (result !== null && result.RSLT_CD === '00') {
       setButOnOff(false);
     } else {
+      console.log(result);
+    }
+  };
+
+  const handleNextScreen = async () => {
+    const result = await regiBasicDataSave(std_id, STD_NUM, STD_DEC_CD, NAME);
+    if (result !== null && result.RSLT_CD === '00') {
+      navigation.navigate('RegiPass', {
+        STD_NUM: STD_NUM,
+      });
     }
   };
   return (
@@ -33,7 +46,7 @@ const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
         placeholder="아이디"
         CheckonPress={handleRegi}
         disable={butOnOff}
-        onPress={() => navigation.navigate('RegiPass', {MEMB_ID:std_id, SALT:salt})}
+        onPress={handleNextScreen}
       />
     </AllBackground>
   );

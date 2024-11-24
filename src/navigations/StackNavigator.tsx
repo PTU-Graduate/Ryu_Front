@@ -32,12 +32,12 @@ export type RootStackParamList = {
   RegiHakgua: undefined;
   RegiCodeConfig: undefined;
   RegiComple: undefined;
-  RegiEmail: undefined;
+  RegiEmail: {PASS: string; STD_NUM: string};
   RegiHakbun: {
     STD_DEC_CD: string;
   };
   RegiID: {STD_DEC_CD: string; STD_NUM: string; NAME: string};
-  RegiPass: {MEMB_ID: string; SALT: string};
+  RegiPass: {STD_NUM: string};
   RegiName: {
     STD_DEC_CD: string;
     STD_NUM: string;
