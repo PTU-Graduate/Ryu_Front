@@ -14,11 +14,13 @@ import Main from '../screens/MainScreen/Main';
 import BottomTabNavigations from './BottomTabNavigations';
 import DrawerNavigation from './Drawer';
 import Notice from '../screens/NoticeScreen/Notice';
+import NoticeDetail from '../screens/NoticeScreen/NoticeDetail';
 import Point from '../screens/PointScreen/Point';
 import DrawerBurgur from '../screens/BottomTabScreens/DrawerBurgur';
 import Grade from '../screens/GradeScreens/Grade';
 import SelfGraduate from '../screens/SelfGraduateScreens/SelfGraduate';
 import AttendanceInquiry from '../screens/AttendanceInquiryScreen/AttendanceInquiry';
+import AttendanceInquiryDetail from '../screens/AttendanceInquiryScreen/AttendacneInquiryDetail';
 import CourseCheck from '../screens/CourseCheckScreen/CourseCheck';
 import TuitionInquiry from '../screens/TuitionInquiryScreen/TuitionInquiry';
 import ChangePassword from '../screens/ChangePasswordScreen/ChangePassword';
@@ -44,6 +46,7 @@ export type RootStackParamList = {
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
   Notice: undefined;
+  NoticeDetail: undefined;
   Point: undefined;
   DrawerBurgur: undefined;
   Grade: undefined;
@@ -54,6 +57,7 @@ export type RootStackParamList = {
   ChangePassword: undefined;
   Schedule: undefined;
   FreeShuttleBus: undefined;
+  AttendanceInquiryDetail: undefined;
 };
 
 export type ScreenProps = {
@@ -83,10 +87,15 @@ const StackNavigator = () => {
       />
       <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       <Stack.Screen name="Notice" component={Notice} />
+      <Stack.Screen name="NoticeDetail" component={NoticeDetail} />
       <Stack.Screen name="DrawerBurgur" component={DrawerBurgur} />
       <Stack.Screen name="Grade" component={Grade} />
       <Stack.Screen name="SelfGraduate" component={SelfGraduate} />
       <Stack.Screen name="AttendanceInquiry" component={AttendanceInquiry} />
+      <Stack.Screen
+        name="AttendanceInquiryDetail"
+        component={AttendanceInquiryDetail}
+      />
       <Stack.Screen name="TuitionInquiry" component={TuitionInquiry} />
       <Stack.Screen name="ChangePassword" component={ChangePassword} />
       <Stack.Screen name="Schedule" component={Schedule} />

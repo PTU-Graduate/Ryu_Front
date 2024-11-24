@@ -57,6 +57,16 @@ export default StyleSheet.create({
   },
   // ------------------------------------------------------------------------------------------------------------
 
+  medium8: {
+    fontWeight: '500',
+    fontSize: 8,
+  },
+
+  medium9: {
+    fontWeight: '500',
+    fontSize: 9,
+  },
+
   medium10: {
     fontWeight: '500',
     fontSize: 10,

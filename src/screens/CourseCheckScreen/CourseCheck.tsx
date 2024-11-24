@@ -1,14 +1,12 @@
-import {View} from 'react-native';
+import {Text, View} from 'react-native';
 import React from 'react';
-import {
-  AllBackground,
-  AllScrollBackground,
-} from '../../components/AllSrcComponets/AllBackground';
+import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
-import {GreenViewBar} from '../../components/AllSrcComponets/AllViewBar';
 import {CCDetailBar} from '../../components/CourseCheckComponents/CourseCheckCompo';
 import {ScrollView} from 'react-native-gesture-handler';
 import {ScreenProps} from '../../navigations/StackNavigator';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 
 const CourseCheck: React.FC<ScreenProps> = ({navigation}) => {
   return (
@@ -19,10 +17,20 @@ const CourseCheck: React.FC<ScreenProps> = ({navigation}) => {
           onPress={() => navigation.goBack()}
         />
       </View>
-      <View style={{flex: 1}}>
-        <GreenViewBar text="2024년도 1학기" />
+      <View style={{flex: 1, flexDirection: 'row'}}>
+        <Text
+          style={[AllTextStyles.SemiBold17, {marginLeft: deviceWidth * 0.055}]}>
+          2024년
+        </Text>
+        <Text
+          style={[
+            AllTextStyles.SemiBold17,
+            {color: '#009B64', marginLeft: deviceWidth * 0.02},
+          ]}>
+          1학기
+        </Text>
       </View>
-      <View style={{flex: 9}}>
+      <View style={{flex: 9, marginTop: deviceHeight * -0.04}}>
         <ScrollView>
           <CCDetailBar
             titleText="경건실천"
