@@ -25,7 +25,7 @@ const TuitionInquiry: React.FC<ScreenProps> = ({navigation}) => {
                 AllTextStyles.medium15,
                 {
                   marginRight: deviceWidth * 0.6,
-                  lineHeight: deviceHeight * 0.05,
+                  marginBottom: deviceHeight * 0.015,
                 },
               ]}>
               2024년 1학기

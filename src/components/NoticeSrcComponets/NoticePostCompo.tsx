@@ -10,11 +10,12 @@ interface AllButtonCompoProps {
   children?: React.ReactNode; // 부모, 자식 관계를 선언해주는 것 touchableopacity나 textinput안의 text를 선언할 때
   title?: string;
   date?: string;
+  text?: string;
   onPress?: () => void;
 }
 
 /**
- * 공지사항 화면에 사용되는 초록색 공통 버튼
+ * 공지사항 화면에 사용되는 공통 버튼
  */
 export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
   children,
@@ -35,20 +36,28 @@ export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
         <View
           style={{
             flex: 7,
-            alignItems: 'center',
-            justifyContent: 'center',
             width: deviceWidth * 0.8,
+            flexDirection: 'row',
           }}>
           <Text
             style={[
               AllTextStyles.SemiBold16,
-              {color: '#009b64', lineHeight: 22},
+              {
+                color: '#009b64',
+                marginTop: deviceHeight * 0.02,
+              },
             ]}>
             {'[공지]  '}
-            <Text style={[AllTextStyles.SemiBold16, {color: '#000000'}]}>
+          </Text>
+          <View style={{width: deviceWidth * 0.69}}>
+            <Text
+              style={[
+                AllTextStyles.SemiBold16,
+                {color: '#000000', marginTop: deviceHeight * 0.02},
+              ]}>
               {title}
             </Text>
-          </Text>
+          </View>
         </View>
         <View style={{justifyContent: 'center'}}>
           <Icon
@@ -79,5 +88,13 @@ export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
         </Text>
       </View>
     </TouchableOpacity>
+  );
+};
+
+export const NoticeDeatilText: React.FC<AllButtonCompoProps> = ({text}) => {
+  return (
+    <Text style={[AllTextStyles.SemiThin15, {marginTop: deviceWidth * 0.05}]}>
+      {text}
+    </Text>
   );
 };

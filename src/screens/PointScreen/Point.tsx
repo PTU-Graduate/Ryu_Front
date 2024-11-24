@@ -23,7 +23,7 @@ const Point: React.FC<ScreenProps> = ({navigation}) => {
             {
               color: '#009B64',
               marginRight: deviceWidth * 0.575,
-              lineHeight: deviceHeight * 0.04,
+              marginBottom: deviceHeight * 0.007,
             },
           ]}>
           2024년 1학기
@@ -60,7 +60,7 @@ const Point: React.FC<ScreenProps> = ({navigation}) => {
           </Text>
           <Text
             style={[
-              AllTextStyles.SemiBold22,
+              AllTextStyles.SemiBold23,
               {
                 color: '#ffffff',
                 marginLeft: deviceWidth * 0.05,
@@ -108,7 +108,8 @@ const Point: React.FC<ScreenProps> = ({navigation}) => {
               justifyContent: 'center',
               alignItems: 'center',
               position: 'absolute',
-            }}></View>
+            }}
+          />
         </View>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View

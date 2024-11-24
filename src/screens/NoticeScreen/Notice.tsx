@@ -49,39 +49,40 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
         <View style={{flex: 9, alignItems: 'center'}}>
           <ScrollView>
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="모바일 학사정보시스템 [헤이영 캠퍼스] 오픈 안내"
+              date="2024.03.07"
+              onPress={() => navigation.navigate('NoticeDetail')}
+            />
+            <NoticeListButton
+              title="e-학사정보시스템 로그인 시 2차인증 적용 안내"
               date="2024.04.07"
             />
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="2024년 평택대학교 대학안전관리 계획 안내"
               date="2024.04.07"
             />
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="2024년 천원의 아침밥 안내"
               date="2024.04.07"
             />
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="제237회 학교법인 피어선기념학원 이사회 개최"
               date="2024.04.07"
             />
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="교내 장애인전용주차구역 주차방해금지 안내"
               date="2024.04.07"
             />
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="2024학년도 2학기 창업 동아리 모집"
               date="2024.04.07"
             />
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="2024학년도 2학기 연구 활동 종사자 온라인 정기 교육 공지 사항"
               date="2024.04.07"
             />
             <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
-              date="2024.04.07"
-            />
-            <NoticeListButton
-              title="2024학년도 어쩌구 저쩌구 쏼라쏼ㄹ 나는 멍청이 궁시렁"
+              title="2024학년도 2학기 학생생활상담센터 개인상담 및 심리검사 안내"
               date="2024.04.07"
             />
             <NoticeListButton

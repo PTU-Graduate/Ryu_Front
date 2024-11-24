@@ -122,6 +122,7 @@ const SelfGraduate: React.FC<ScreenProps> = ({navigation}) => {
                 borderRadius: 5,
                 justifyContent: 'center',
                 alignItems: 'center',
+                marginBottom: deviceHeight * 0.005,
               }}>
               <Text style={[AllTextStyles.medium16, {color: '#FFFFFF'}]}>
                 졸업자가진단 시작
