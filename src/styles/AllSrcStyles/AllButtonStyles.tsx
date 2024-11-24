@@ -20,7 +20,7 @@ export default StyleSheet.create({
   },
   NoticeListButtonStyle: {
     width: deviceWidth * 0.9,
-    height: deviceHeight * 0.1,
+    height: deviceWidth * 0.2,
     borderBottomColor: '#C9C6C6',
     borderBottomWidth: 1,
   },

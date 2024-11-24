@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {deviceWidth} from '../../utils/DeviceUtils';
+import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
 interface CategoryProps {
@@ -24,7 +24,7 @@ export const FreeShuttleCategoryCompo: React.FC<CategoryProps> = ({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        marginBottom: deviceWidth * 0.015,
+        marginBottom: deviceHeight * 0.015,
       }}>
       <TouchableOpacity
         style={{
