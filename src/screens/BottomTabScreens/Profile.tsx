@@ -46,7 +46,7 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
                 borderRadius: 15,
                 position: 'absolute',
               }}
-              source={require('../../assets/images/Person.jpeg')}
+              source={require('../../assets/images/profile.jpeg')}
             />
           </View>
           <View style={{marginLeft: deviceWidth * 0.51}}>
@@ -58,7 +58,7 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
                   marginBottom: deviceHeight * 0.01,
                 },
               ]}>
-              문화예술대학
+              IT공과대학
             </Text>
             <Text
               style={[
@@ -67,7 +67,7 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
                   marginBottom: deviceHeight * 0.03,
                 },
               ]}>
-              커뮤니케이션디자인학과
+              정보통신학과
             </Text>
             <Text
               style={[
@@ -76,7 +76,7 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
                   marginBottom: deviceHeight * 0.05,
                 },
               ]}>
-              류채현
+              안재경
             </Text>
             <Text
               style={[
@@ -85,11 +85,9 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
                   marginBottom: deviceHeight * 0.008,
                 },
               ]}>
-              연락쳐: 010-3934-2106
+              연락쳐:
             </Text>
-            <Text style={[AllTextStyles.SemiThin12]}>
-              주민번호: 020816 - 4******
-            </Text>
+            <Text style={[AllTextStyles.SemiThin12]}>주민번호:</Text>
           </View>
         </View>
       </View>
@@ -98,13 +96,13 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
         <View style={{marginTop: deviceHeight * 0.09}}>
           <StudentInfoFDTextbar
             titletext1="학적구분"
-            detailtext1="휴학"
+            detailtext1="재학"
             titletext2="지도교수"
             detailtext2="이경희"
           />
           <StudentInfoFDTextbar
             titletext1="학년"
-            detailtext1="3학년"
+            detailtext1="4학년"
             titletext2="전공유형"
             detailtext2="전공심화"
           />
