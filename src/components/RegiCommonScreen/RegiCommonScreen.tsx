@@ -29,53 +29,58 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
       <View
         style={{
           position: 'absolute',
-          marginLeft: deviceWidth * 0.035,
-          marginTop: deviceHeight * 0.14,
+          marginLeft: deviceWidth * 0.005,
+          marginTop: deviceHeight * 0.135,
         }}>
         <Image
           source={require('../../assets/images/PtuLogo.png')}
           style={{
             resizeMode: 'contain',
             opacity: 0.12,
-            width: deviceWidth * 0.83,
+            width: deviceWidth * 0.9,
             height: deviceHeight * 0.5,
           }}
         />
       </View>
-      <View style={{flex: 2}} />
-      <View
-        style={{
-          flex: 1,
-        }}>
-        <Text
-          style={{
-            color: '#009b64',
-            fontSize: 30,
-            fontWeight: 'bold',
-            marginBottom: deviceHeight * 0.01,
-          }}>
-          회원가입
-        </Text>
-        <Text>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{mediumtext}</Text>
-          <Text style={{fontSize: 15}}>{smalltext}</Text>
-        </Text>
-      </View>
-      <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
-        <SignLogInput
-          placeholderTextColor="#979797"
-          placeholder={inputtext}
-          {...props}
-        />
+      <View style={{flex: 3}}>
+        <View style={{marginTop: deviceHeight * 0.22}}>
+          <Text
+            style={{
+              color: '#009b64',
+              fontSize: 30,
+              fontWeight: 'bold',
+              marginBottom: deviceHeight * 0.01,
+            }}>
+            회원가입
+          </Text>
+          <Text>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>{mediumtext}</Text>
+            <Text style={{fontSize: 15}}>{smalltext}</Text>
+          </Text>
+        </View>
       </View>
       <View
         style={{
-          flex: 2,
-          marginLeft: deviceWidth * 0.05,
+          flex: 7,
+          alignItems: 'center',
         }}>
-        <SignGreenButton text="다음" onPress={onPress} />
+        <View style={{marginTop: deviceHeight * 0.07}}>
+          <View>
+            <SignLogInput
+              placeholderTextColor="#979797"
+              placeholder={inputtext}
+              {...props}
+            />
+          </View>
+          <View
+            style={{
+              marginTop: deviceHeight * 0.073,
+              marginLeft: deviceWidth * 0.05,
+            }}>
+            <SignGreenButton text="다음" onPress={onPress} />
+          </View>
+        </View>
       </View>
-      <View style={{flex: 3}} />
     </SafeAreaView>
   );
 };
