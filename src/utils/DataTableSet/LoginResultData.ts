@@ -1,4 +1,11 @@
-type LoginResultData = 'RSLT_CD' | 'STD_NUM' | 'STD_DEP_CD' | 'NAME' | 'GRADE';
+type LoginResultData =
+  | 'RSLT_CD'
+  | 'STD_NUM'
+  | 'DEPARTMENT_NAME'
+  | 'NAME'
+  | 'MEMB_ID'
+  | 'CRE_CON'
+  | 'EMAIL';
 
 export interface LoginResultDataType {
   RSLT_CD: string;
@@ -6,7 +13,7 @@ export interface LoginResultDataType {
   STD_NUM: string;
   EMAIL: string;
   CRE_CON: string;
-  STD_DEP_CD: string;
+  DEPARTMENT_NAME: string;
   NAME: string;
 }
 
@@ -16,7 +23,7 @@ let loginResultData: LoginResultDataType | null = {
   STD_NUM: '',
   EMAIL: '',
   CRE_CON: '',
-  STD_DEP_CD: '',
+  DEPARTMENT_NAME: '',
   NAME: '',
 };
 

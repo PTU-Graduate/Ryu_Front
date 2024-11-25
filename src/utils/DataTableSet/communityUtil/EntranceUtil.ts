@@ -3,7 +3,7 @@ export interface EntranceUtilType {
   ENTRANCE: EntranceItemType[][];
 }
 
-interface EntranceItemType {
+export interface EntranceItemType {
   CRE_SEQ: number;
   MEMB_ID: string;
   TIT: string;
