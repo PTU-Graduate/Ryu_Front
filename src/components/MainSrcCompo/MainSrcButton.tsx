@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
@@ -40,9 +40,12 @@ export const MainServiceButton: React.FC<AllBackgroundProps> = ({
           width: deviceWidth * 0.18,
           height: deviceWidth * 0.18,
           borderRadius: 50,
-          backgroundColor: '#123',
         }}
-        onPress={onPress}></TouchableOpacity>
+        onPress={onPress}>
+        <Image
+          style={{width: '100%', height: '100%', resizeMode: 'contain'}}
+          source={require('../../assets/images/LOGO.png')}></Image>
+      </TouchableOpacity>
       <View
         style={{
           width: deviceWidth * 0.18,

@@ -3,7 +3,7 @@ export interface BachelorUtilType {
   BACHELOR: BachelorItemType[][];
 }
 
-interface BachelorItemType {
+export interface BachelorItemType {
   CRE_SEQ: number;
   MEMB_ID: string;
   TIT: string;
@@ -11,12 +11,12 @@ interface BachelorItemType {
   CRE_DATE: string;
 }
 
-let bachelorData: BachelorItemType | null = null;
+let bachelorData: BachelorUtilType | null = null;
 
-export function setBachelorData(data: BachelorItemType | null) {
+export function setBachelorData(data: BachelorUtilType | null) {
   bachelorData = data;
 }
 
-export function getBachelorData(): BachelorItemType | null {
+export function getBachelorData(): BachelorUtilType | null {
   return bachelorData;
 }

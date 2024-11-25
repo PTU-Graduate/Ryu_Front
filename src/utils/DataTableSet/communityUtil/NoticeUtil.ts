@@ -3,12 +3,13 @@ export interface NoticeUtilType {
   NOTICES: NoticeItemType[][];
 }
 
-interface NoticeItemType {
+export interface NoticeItemType {
   CRE_SEQ: number;
   MEMB_ID: string;
   TIT: string;
   CONT: string;
   CRE_DATE: string;
+  IMG_CD: string;
 }
 
 let noticeData: NoticeUtilType | null = null;

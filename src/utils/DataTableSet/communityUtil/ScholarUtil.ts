@@ -3,7 +3,7 @@ export interface ScholarUtilType {
   SCHOLAR: ScholarItemType[][];
 }
 
-interface ScholarItemType {
+export interface ScholarItemType {
   CRE_SEQ: number;
   MEMB_ID: string;
   TIT: string;
