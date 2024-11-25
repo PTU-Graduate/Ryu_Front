@@ -17,7 +17,7 @@ interface AllButtonCompoProps {
 /**
  * 공지사항 화면에 사용되는 공통 버튼
  */
-export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
+const NoticeListButton: React.FC<AllButtonCompoProps> = ({
   children,
   title,
   date,
@@ -98,3 +98,5 @@ export const NoticeDeatilText: React.FC<AllButtonCompoProps> = ({text}) => {
     </Text>
   );
 };
+
+export default NoticeListButton;

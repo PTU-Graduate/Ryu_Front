@@ -16,7 +16,6 @@ import {hashpass} from '../../utils/_private/.secure/.CryptoFuntion';
 const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
   const [loginPass, setLoginPass] = useState<string>('');
-  const [hashepass, sethashedPass] = useState<string>('');
 
   const handleLogin = async () => {
     const result2 = await saltCall(loginId);
