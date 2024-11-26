@@ -2,7 +2,7 @@ import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
+import {DrawerTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {
   StudentInfoFDTextbar,
@@ -14,47 +14,37 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo
-          text="학 생 정 보"
-          onPress={() => navigation.goBack()}
-        />
+        <DrawerTitleTopBarCompo text="학 생 정 보" />
       </View>
       <View style={{flex: 3}}>
         <View
           style={{
             width: deviceWidth * 1,
-            height: deviceHeight * 0.3,
+            height: deviceHeight * 0.29,
             backgroundColor: '#F0F0F0',
             justifyContent: 'center',
             position: 'absolute',
           }}>
           <View
             style={{
-              width: deviceWidth * 0.39,
-              height: deviceHeight * 0.24,
-              marginLeft: deviceWidth * 0.07,
-              backgroundColor: '#D9D9D9',
-              borderRadius: 15,
-              justifyContent: 'center',
-              alignItems: 'center',
+              marginLeft: deviceWidth * 0.065,
               position: 'absolute',
             }}>
             <Image
               style={{
-                width: deviceWidth * 0.39,
+                width: deviceWidth * 0.4,
                 height: deviceHeight * 0.24,
                 borderRadius: 15,
-                position: 'absolute',
+                resizeMode: 'stretch',
               }}
-              source={require('../../assets/images/profile.jpeg')}
+              source={require('../../assets/images/JK.jpg')}
             />
           </View>
           <View style={{marginLeft: deviceWidth * 0.51}}>
             <Text
               style={[
-                AllTextStyles.SemiBold16,
+                AllTextStyles.SemiBold15,
                 {
-                  marginTop: deviceHeight * 0.01,
                   marginBottom: deviceHeight * 0.01,
                 },
               ]}>
@@ -62,9 +52,9 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
             </Text>
             <Text
               style={[
-                AllTextStyles.SemiBold16,
+                AllTextStyles.SemiBold17,
                 {
-                  marginBottom: deviceHeight * 0.03,
+                  marginBottom: deviceHeight * 0.04,
                 },
               ]}>
               정보통신학과
@@ -73,7 +63,7 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
               style={[
                 AllTextStyles.medium16,
                 {
-                  marginBottom: deviceHeight * 0.05,
+                  marginBottom: deviceHeight * 0.06,
                 },
               ]}>
               안재경
@@ -82,12 +72,14 @@ const Profile: React.FC<ScreenProps> = ({navigation}) => {
               style={[
                 AllTextStyles.SemiThin12,
                 {
-                  marginBottom: deviceHeight * 0.008,
+                  marginBottom: deviceHeight * 0.005,
                 },
               ]}>
-              연락쳐:
+              연락쳐: 010-4486-2232
             </Text>
-            <Text style={[AllTextStyles.SemiThin12]}>주민번호:</Text>
+            <Text style={[AllTextStyles.SemiThin12]}>
+              주민번호: 001213-3******
+            </Text>
           </View>
         </View>
       </View>
