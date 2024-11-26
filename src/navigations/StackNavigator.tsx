@@ -47,7 +47,15 @@ export type RootStackParamList = {
   BottomTabNavigations: undefined;
   DrawerNavigation: undefined;
   Notice: undefined;
-  NoticeDetail: undefined;
+  NoticeDetail: {
+    MEMB_ID: string;
+    CRE_SEQ: number;
+    TIT: string;
+    CONT: string;
+    IMG_CD: string;
+    CRE_DATE: string;
+    category: string;
+  };
   Point: undefined;
   DrawerBurgur: undefined;
   Grade: undefined;

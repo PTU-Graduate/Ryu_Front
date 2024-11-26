@@ -58,6 +58,24 @@ export const AllNoticeTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
   );
 };
 
+export const AllAddTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
+  text,
+  onPress,
+  onPressplus,
+}) => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={onPress}>
+        <Icon name="chevron-back" size={25} color="#000000" />
+      </TouchableOpacity>
+      <Text style={styles.title}>{text}</Text>
+      <TouchableOpacity onPress={onPressplus}>
+        <Icon name="send-sharp" size={25} color="#000000" />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
