@@ -5,6 +5,7 @@ import {
   TextInputProps,
   View,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import AllInputStyles from '../../styles/AllSrcStyles/AllInputStyles';
@@ -14,6 +15,7 @@ interface AllInputCompoProps extends TextInputProps {
   children?: React.ReactNode;
   text?: React.ReactNode;
   passsecure?: boolean;
+  isLoading?: boolean;
   onPress?: () => void;
 }
 
@@ -65,9 +67,13 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
   children,
   passsecure,
   onPress,
+  isLoading,
   ...props
 }) => {
   const placeholderText = typeof text === 'string' ? text : undefined;
+
+  // 로딩 상태를 받기 위한 추가 props (임시로 예제에 포함)
+
   return (
     <View
       style={{
@@ -78,7 +84,8 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
         style={[AllInputStyles.SignLogInputStyle, AllTextStyles.medium14]}
         placeholder={placeholderText}
         secureTextEntry={passsecure}
-        {...props}></TextInput>
+        {...props}
+      />
       <TouchableOpacity
         style={{
           backgroundColor: '#626262',
@@ -94,7 +101,11 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
           right: 10,
         }}
         onPress={onPress}>
-        <Text style={{color: '#ffffff', fontWeight: 'bold'}}>중복확인</Text>
+        {isLoading ? (
+          <ActivityIndicator size="small" color="#ffffff" />
+        ) : (
+          <Text style={{color: '#ffffff', fontWeight: 'bold'}}>중복확인</Text>
+        )}
       </TouchableOpacity>
     </View>
   );
