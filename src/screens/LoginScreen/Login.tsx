@@ -16,8 +16,10 @@ import {hashpass} from '../../utils/_private/.secure/.CryptoFuntion';
 const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
   const [loginPass, setLoginPass] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleLogin = async () => {
+    setLoading(true);
     const result2 = await saltCall(loginId);
     if (result2 !== null && result2.RSLT_CD === '00') {
       const hashedpass = hashpass(loginPass, result2.SALT);
@@ -32,6 +34,7 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
     } else {
       Alert.alert('실패');
     }
+    setLoading(false);
   };
   return (
     <AllBackground>
@@ -113,7 +116,11 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
         />
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
-        <LoginGreenButton text="로그인" onPress={handleLogin} />
+        <LoginGreenButton
+          text="로그인"
+          onPress={handleLogin}
+          loading={loading}
+        />
         <TouchableOpacity
           style={{marginTop: deviceHeight * 0.03}}
           onPress={() => navigation.navigate('RegiHakgua')}>

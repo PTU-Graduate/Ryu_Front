@@ -18,6 +18,7 @@ export const noticeDataApi = async (
     >;
     if (result && result.data && result.data.RSLT_CD === '00') {
       // RSLT_CD는 응답코드를 의미
+      console.log(result.data);
       setNoticeData(result.data);
       return result.data;
     } else {
@@ -33,17 +34,20 @@ export const noticeAdd = async (
   MEMB_ID: string,
   TIT: string,
   CONT: string,
+  IMAGE: string,
 ): Promise<CommonResultDataType | any | null> => {
   const endpoint = '/PTU/Notice/add';
-  const data = {MEMB_ID, TIT, CONT};
-
+  const data = {MEMB_ID, TIT, CONT, IMAGE};
   try {
+    console.log(data);
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<
       CommonResultDataType | any
     >;
     if (result && result.data && result.data.RSLT_CD === '00') {
+      console.log(result.data);
       return result.data;
     } else {
+      console.log(result.data);
       return result.data;
     }
   } catch (error) {

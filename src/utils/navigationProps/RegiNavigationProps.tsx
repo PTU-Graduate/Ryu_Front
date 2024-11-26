@@ -86,3 +86,18 @@ export type RegiCodeConfigProp = {
   route: RegiCodeConfigRouteProp;
   navigation: RegiCodeConfigNavigationProp;
 };
+
+/* ---------------------------------------------------------------------------------- */
+
+/**
+ * @param 비밀번호 스크린 데이터
+ */
+type NoticeDetailRoutProp = RouteProp<RootStackParamList, 'NoticeDetail'>;
+type NoticeDetailNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'NoticeDetail'
+>;
+export type NoticeDetailProp = {
+  route: NoticeDetailRoutProp;
+  navigation: NoticeDetailNavigationProp;
+};
