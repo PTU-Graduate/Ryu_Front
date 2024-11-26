@@ -6,6 +6,7 @@ import {
   regiBasicDataSave,
 } from '../../services/_private/Regi/RegiApi';
 import {RegiIDProps} from '../../utils/navigationProps/RegiNavigationProps';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
   const [std_id, setStd_id] = useState<string>('');
@@ -52,18 +53,20 @@ const RegiID: React.FC<RegiIDProps> = ({navigation, route}) => {
   };
   return (
     <AllBackground>
-      <RegiCkeckCommonScreen
-        value={std_id}
-        onChangeText={text => setStd_id(text)}
-        mediumtext="아이디"
-        smalltext="를 입력해주세요."
-        placeholder="아이디"
-        CheckonPress={handleRegi}
-        disable={butOnOff}
-        onPress={handleNextScreen}
-        isLoading={isLoading} // 로딩 상태 전달
-        errorMessage={errorMessage} // 에러 메시지 전달
-      />
+      <KeyboardAwareScrollView>
+        <RegiCkeckCommonScreen
+          value={std_id}
+          onChangeText={text => setStd_id(text)}
+          mediumtext="아이디"
+          smalltext="를 입력해주세요."
+          placeholder="아이디"
+          CheckonPress={handleRegi}
+          disable={butOnOff}
+          onPress={handleNextScreen}
+          isLoading={isLoading} // 로딩 상태 전달
+          errorMessage={errorMessage} // 에러 메시지 전달
+        />
+      </KeyboardAwareScrollView>
     </AllBackground>
   );
 };

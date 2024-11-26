@@ -6,6 +6,7 @@ import {
   View,
   TouchableOpacity,
   ActivityIndicator,
+  Platform,
 } from 'react-native';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import AllInputStyles from '../../styles/AllSrcStyles/AllInputStyles';
@@ -104,7 +105,14 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
         {isLoading ? (
           <ActivityIndicator size="small" color="#ffffff" />
         ) : (
-          <Text style={{color: '#ffffff', fontWeight: 'bold'}}>중복확인</Text>
+          <Text
+            style={{
+              color: '#ffffff',
+              fontWeight: 'bold',
+              marginBottom: Platform.OS === 'ios' ? null : deviceHeight * 0.003,
+            }}>
+            중복확인
+          </Text>
         )}
       </TouchableOpacity>
     </View>

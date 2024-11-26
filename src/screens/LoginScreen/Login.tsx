@@ -9,7 +9,6 @@ import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {SignLogInput} from '../../components/AllSrcComponets/AllInputCompo';
 import {LoginGreenButton} from '../../components/AllSrcComponets/AllButtonCompo';
 import {saltCall} from '../../services/_private/Login/LoginApi';
-import RegiHakgua from '../RegiScreen/RegiHakgua';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {hashpass} from '../../utils/_private/.secure/.CryptoFuntion';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';

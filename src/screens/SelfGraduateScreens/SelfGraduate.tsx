@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text, View, TouchableOpacity, Platform} from 'react-native';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {
   SelfGraduateDetailBar,
@@ -140,7 +140,15 @@ const SelfGraduate: React.FC<ScreenProps> = ({navigation}) => {
                 alignItems: 'center',
               }}
               onPress={handlebut}>
-              <Text style={[AllTextStyles.medium16, {color: '#FFFFFF'}]}>
+              <Text
+                style={[
+                  AllTextStyles.medium16,
+                  {
+                    color: '#FFFFFF',
+                    marginBottom:
+                      Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                  },
+                ]}>
                 졸업자가진단 시작
               </Text>
             </TouchableOpacity>
@@ -168,35 +176,49 @@ const SelfGraduate: React.FC<ScreenProps> = ({navigation}) => {
                 detailtext4="(0)"
               />
               <SelfGraduateDetailBar
+                text="대학교양필수"
+                detailtext1="12"
+                detailtext2="12"
+                detailtext3="통과"
+                detailtext4="0"
+              />
+              <SelfGraduateDetailBar
+                text="PTU교양"
+                detailtext1="9"
+                detailtext2="9"
+                detailtext3="통과"
+                detailtext4="0"
+              />
+              <SelfGraduateDetailBar
+                text="전공기초교양"
+                detailtext1="4"
+                detailtext2="4"
+                detailtext3="통과"
+                detailtext4="0"
+              />
+              <SelfGraduateDetailBar
+                text="교양계"
+                detailtext1="47"
+                detailtext2="36"
+                detailtext3="불가"
+                detailtext4="11"
+              />
+              <SelfGraduateDetailBar
+                text="전공필수"
+                detailtext1="18"
+                detailtext2="18"
+                detailtext3="통과"
+                detailtext4="0"
+              />
+              <SelfGraduateDetailBar
+                text="졸업논문"
+                detailtext1="(1)"
+                detailtext2="(0)"
+                detailtext3="불가"
+                detailtext4="(1)"
+              />
+              <SelfGraduateDetailBar
                 text="전공계"
-                detailtext1="78"
-                detailtext2="66"
-                detailtext3="불가"
-                detailtext4="12"
-              />
-              <SelfGraduateDetailBar
-                text="dfdf"
-                detailtext1="78"
-                detailtext2="66"
-                detailtext3="불가"
-                detailtext4="12"
-              />
-              <SelfGraduateDetailBar
-                text="gssgsg"
-                detailtext1="78"
-                detailtext2="66"
-                detailtext3="불가"
-                detailtext4="12"
-              />
-              <SelfGraduateDetailBar
-                text="전공ererer계"
-                detailtext1="78"
-                detailtext2="66"
-                detailtext3="불가"
-                detailtext4="12"
-              />
-              <SelfGraduateDetailBar
-                text="전공ww계"
                 detailtext1="78"
                 detailtext2="66"
                 detailtext3="불가"

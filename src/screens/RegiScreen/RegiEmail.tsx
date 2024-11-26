@@ -9,6 +9,7 @@ import {stdInfoSave} from '../../services/_private/Regi/RegiApi';
 import {EmailAuthCodeSend} from '../../services/_private/Regi/.RegiEmailAuth';
 import {hashpass} from '../../utils/_private/.secure/.CryptoFuntion';
 import {RegiEmailScreen} from '../../components/RegiCommonScreen/RegiEmailScreen';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 const RegiEmail: React.FC<RegiEmailProp> = ({navigation, route}) => {
   const [email, setEmail] = useState<string>('');
   const [id, setID] = useState<string>('');
@@ -54,6 +55,7 @@ const RegiEmail: React.FC<RegiEmailProp> = ({navigation, route}) => {
 
   return (
     <AllBackground>
+      <KeyboardAwareScrollView>
       <RegiEmailScreen
         value={email}
         onChangeText={text => setEmail(text)}
@@ -64,6 +66,7 @@ const RegiEmail: React.FC<RegiEmailProp> = ({navigation, route}) => {
         isLoading={isLoading}
         errorMessage={errorMessage}
       />
+      </KeyboardAwareScrollView>
     </AllBackground>
   );
 };
