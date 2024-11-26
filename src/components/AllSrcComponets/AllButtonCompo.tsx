@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {ActivityIndicator, Text, TouchableOpacity} from 'react-native';
 import AllButtonStyles from '../../styles/AllSrcStyles/AllButtonStyles';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight} from '../../utils/DeviceUtils';
@@ -9,6 +9,7 @@ interface AllButtonCompoProps {
   text?: React.ReactNode; // ReactNode로 변경 (string | ReactElement)
   onPress?: () => void;
   disable?: boolean;
+  loading?: boolean;
 }
 
 /**
@@ -70,17 +71,21 @@ export const SignCheckGreenButton: React.FC<AllButtonCompoProps> = ({
 export const LoginGreenButton: React.FC<AllButtonCompoProps> = ({
   children,
   text,
+  loading,
   onPress,
 }) => {
   return (
     <TouchableOpacity
       style={AllButtonStyles.SignLogGreenButtonStyle}
       onPress={onPress}>
-      {typeof text === 'string' ? (
+           {loading ? (
+        <ActivityIndicator size="small" color="#ffffff" />
+      ) : typeof text === 'string' ? (
         <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
       ) : (
         text
       )}
+
       {children}
     </TouchableOpacity>
   );

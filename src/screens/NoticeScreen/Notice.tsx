@@ -176,8 +176,22 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
             }}>
             <NoticeListButton
               title={item.TIT}
-              date={item.CRE_DATE}
-              onPress={() => navigation.navigate('NoticeDetail')}
+              date={new Date(item.CRE_DATE).toLocaleDateString('ko-KR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+              })}
+              onPress={() =>
+                navigation.navigate('NoticeDetail', {
+                  MEMB_ID: item.MEMB_ID,
+                  CRE_SEQ: item.CRE_SEQ,
+                  IMG_CD: item.IMG_CD,
+                  TIT: item.TIT,
+                  CONT: item.CONT,
+                  CRE_DATE: item.CRE_DATE,
+                  category: selectedCategory,
+                })
+              }
             />
           </View>
         )}
