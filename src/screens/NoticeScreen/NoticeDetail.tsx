@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
@@ -12,6 +11,15 @@ import {NoticeDetailProp} from '../../utils/navigationProps/RegiNavigationProps'
 const NoticeDetail: React.FC<NoticeDetailProp> = ({navigation, route}) => {
   const {MEMB_ID, IMG_CD, TIT, CONT, CRE_DATE, CRE_SEQ, category} =
     route.params;
+
+  // 날짜 포맷팅 함수
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
 
   return (
     <AllBackground>
@@ -34,7 +42,7 @@ const NoticeDetail: React.FC<NoticeDetailProp> = ({navigation, route}) => {
               marginTop: deviceHeight * 0.01,
             },
           ]}>
-          {CRE_DATE}
+          {formatDate(CRE_DATE)}
         </Text>
         <View
           style={{
