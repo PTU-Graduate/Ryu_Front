@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
@@ -7,7 +7,7 @@ import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {ScreenProps} from '../../navigations/StackNavigator';
 
-const Point: React.FC<ScreenProps> = ({navigation}) => {
+const Point: React.FC<ScreenProps> = ({navigation, onPress}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
@@ -141,7 +141,8 @@ const Point: React.FC<ScreenProps> = ({navigation}) => {
               borderRadius: 50,
               marginRight: deviceWidth * 0.05,
               marginTop: deviceHeight * 0.02,
-            }}></View>
+            }}
+          />
           <Text
             style={[
               AllTextStyles.SemiBold12,
@@ -175,13 +176,21 @@ const Point: React.FC<ScreenProps> = ({navigation}) => {
           </Text>
           <TouchableOpacity
             style={{
-              backgroundColor: '#D9D9D9',
               width: deviceWidth * 0.85,
               height: deviceWidth * 0.2,
               borderRadius: 10,
-              justifyContent: 'center',
             }}
-          />
+            onPress={() => navigation.navigate('NoticeMoney')}>
+            <Image
+              style={{
+                width: deviceWidth * 0.85,
+                height: deviceWidth * 0.2,
+                borderRadius: 10,
+                opacity: 0.35,
+              }}
+              source={require('../../assets/images/money.png')}
+            />
+          </TouchableOpacity>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View
               style={{
