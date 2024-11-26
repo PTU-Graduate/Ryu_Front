@@ -1,20 +1,45 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
+import {View, StyleSheet, Dimensions} from 'react-native';
+import Video from 'react-native-video';
 import NavigationContainerWrapper from './src/navigations/NavigationContainer';
-import {
-  serverConnector,
-  serverConnectorGet,
-} from './src/services/_private/Api.config';
 
 function App(): React.JSX.Element {
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await serverConnectorGet('/test');
-    };
-    fetchData(); // 함수 호출
-  }, []);
-  // 위와 같이 빈 배열일 경우 이 스크린이 렌더링될 때 최초 한번만 useEffect를 실행한다는 의미
-  // 빈 배열이 아닌 값이 들어가 있는 경우, 그 값이 변할 때마다 useffect가 재실행
-  return <NavigationContainerWrapper />;
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true); // 초기 상태: 영상 재생 중
+
+  const handleVideoEnd = () => {
+    setIsVideoPlaying(false); // 영상 재생 완료 시 네비게이션 화면으로 전환
+  };
+
+  return (
+    <>
+      {isVideoPlaying ? (
+        <View style={styles.videoContainer}>
+          <Video
+            source={require('./src/assets/video/loadingscreen.mp4')} // mp4 파일 경로
+            style={styles.video}
+            resizeMode="cover" // 비디오 크기 조절
+            paused={false} // 비디오 자동 재생
+            onEnd={handleVideoEnd} // 영상 재생 완료 이벤트
+          />
+        </View>
+      ) : (
+        <NavigationContainerWrapper />
+      )}
+    </>
+  );
 }
+
+const styles = StyleSheet.create({
+  videoContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black', // 배경 색상
+  },
+  video: {
+    width: Dimensions.get('window').width, // 화면 가로 크기
+    height: Dimensions.get('window').height, // 화면 세로 크기
+  },
+});
 
 export default App;

@@ -1,8 +1,10 @@
 import {StyleSheet} from 'react-native';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
+import {Platform} from 'react-native';
 
 export default StyleSheet.create({
   SignLogGreenButtonStyle: {
+    marginTop: deviceHeight * 0.13  ,
     width: deviceWidth * 0.8,
     height: deviceWidth * 0.15,
     backgroundColor: '#009B64',
