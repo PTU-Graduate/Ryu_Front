@@ -1,10 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Animated, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import AllTextStyles from '../../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight, deviceWidth} from '../../../utils/DeviceUtils';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {HukguaDropdownStyle} from '../../../styles/DropdownStyles/HakguaDropdownStyle';
+import {setSTDData} from '../../../utils/DataTableSet/utils/HakguaUtil';
 
 interface DropDownProps {
   onSelected?: (item: string) => void;
@@ -35,7 +36,7 @@ export const HukguaDropdown: React.FC<DropDownProps> = ({onSelected}) => {
     '음악학과',
   ];
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState<string>('');
   const translateY = useRef(new Animated.Value(-30)).current;
   const rotation = useRef(new Animated.Value(0)).current;
 
@@ -52,12 +53,16 @@ export const HukguaDropdown: React.FC<DropDownProps> = ({onSelected}) => {
   };
 
   const handleSelectItem = (item: string) => {
-    setSelectedItem(item);
     handleToggleDropdown();
     if (onSelected) {
-      onSelected(item);
+      onSelected(item); // 선택된 값을 상위로 전달
+      setSelectedItem(item);
     }
   };
+
+  useEffect(() => {
+    console.log(selectedItem);
+  }, [selectedItem]);
 
   return (
     <View>
@@ -79,7 +84,7 @@ export const HukguaDropdown: React.FC<DropDownProps> = ({onSelected}) => {
                 marginTop: deviceWidth * 0.06,
               },
             ]}>
-            {selectedItem || '스마트모빌리티학과'}
+            {selectedItem || '학과'}
           </Text>
           <View style={{flexDirection: 'row'}}>
             <Entypo

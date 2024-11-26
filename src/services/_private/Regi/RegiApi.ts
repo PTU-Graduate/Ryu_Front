@@ -27,10 +27,10 @@ export const regiHakbunApiCall = async (
 };
 
 export const regiIDApiCall = async (
-  STD_NUM: string,
+  MEMB_ID: string,
 ): Promise<CommonResultDataType | any | null> => {
   const endpoint = '/PTU/Register/ID';
-  const data = {STD_NUM};
+  const data = {MEMB_ID};
 
   try {
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<
@@ -57,7 +57,10 @@ export const regiBasicDataSave = async (
 ): Promise<CommonResultDataType | any | null> => {
   const endpoint = '/PTU/Register/basic-info-save';
   const data = {MEMB_ID, STD_NUM, STD_DEP_CD, NAME};
-  console.log('호출');
+  console.log('아이디', MEMB_ID);
+  console.log('학번', STD_NUM);
+  console.log('학과', STD_DEP_CD);
+  console.log('이름', NAME);
 
   try {
     const result = (await serverConnector(endpoint, data)) as AxiosResponse<

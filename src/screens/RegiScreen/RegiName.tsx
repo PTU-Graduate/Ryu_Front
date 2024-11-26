@@ -8,6 +8,8 @@ const RegiName: React.FC<RegiNameProps> = ({navigation, route}) => {
 
   const {STD_DEC_CD, STD_NUM} = route.params;
 
+  
+
   useEffect(() => {
     console.log(STD_DEC_CD, STD_NUM);
   }, []);

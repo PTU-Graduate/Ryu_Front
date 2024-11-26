@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import AllButtonStyles from '../../styles/AllSrcStyles/AllButtonStyles';
@@ -6,8 +5,8 @@ import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight} from '../../utils/DeviceUtils';
 
 interface AllButtonCompoProps {
-  children?: React.ReactNode; // 부모, 자식 관계를 선언해주는 것 touchableopacity나 textinput안의 text를 선언할 때
-  text?: string;
+  children?: React.ReactNode; // 부모, 자식 관계를 선언
+  text?: React.ReactNode; // ReactNode로 변경 (string | ReactElement)
   onPress?: () => void;
   disable?: boolean;
 }
@@ -29,7 +28,11 @@ export const SignGreenButton: React.FC<AllButtonCompoProps> = ({
       ]}
       onPress={onPress}
       disabled={disable}>
-      <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
+      {typeof text === 'string' ? (
+        <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
+      ) : (
+        text
+      )}
       {children}
     </TouchableOpacity>
   );
@@ -51,11 +54,16 @@ export const SignCheckGreenButton: React.FC<AllButtonCompoProps> = ({
       ]}
       onPress={onPress}
       disabled={disable}>
-      <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
+      {typeof text === 'string' ? (
+        <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
+      ) : (
+        text
+      )}
       {children}
     </TouchableOpacity>
   );
 };
+
 /**
  * 로그인 화면에 사용되는 초록색 공통 버튼
  */
@@ -68,7 +76,11 @@ export const LoginGreenButton: React.FC<AllButtonCompoProps> = ({
     <TouchableOpacity
       style={AllButtonStyles.SignLogGreenButtonStyle}
       onPress={onPress}>
-      <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
+      {typeof text === 'string' ? (
+        <Text style={[AllTextStyles.SemiBold14, {color: '#ffffff'}]}>{text}</Text>
+      ) : (
+        text
+      )}
       {children}
     </TouchableOpacity>
   );
