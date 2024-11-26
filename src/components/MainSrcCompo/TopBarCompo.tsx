@@ -1,11 +1,13 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import IconPlus from 'react-native-vector-icons/Entypo';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
   text?: string;
   onPress?: () => void;
+  onPressplus?: () => void;
 }
 
 /**
@@ -34,6 +36,24 @@ export const DrawerTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
   return (
     <View style={styles.container}>
       <Text style={styles.title2}>{text}</Text>
+    </View>
+  );
+};
+
+export const AllNoticeTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
+  text,
+  onPress,
+  onPressplus,
+}) => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={onPress}>
+        <Icon name="chevron-back" size={25} color="#000000" />
+      </TouchableOpacity>
+      <Text style={styles.title}>{text}</Text>
+      <TouchableOpacity onPress={onPressplus}>
+        <IconPlus name="plus" size={25} color="#000000" />
+      </TouchableOpacity>
     </View>
   );
 };
