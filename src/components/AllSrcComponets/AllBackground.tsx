@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import AllBackgroundStyles from '../../styles/AllSrcStyles/AllBackgroundStyles';
 import {deviceHeight} from '../../utils/DeviceUtils';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
