@@ -126,56 +126,56 @@ const Schedule: React.FC<ScreenProps> = ({navigation}) => {
           </Text>
           <ScrollView>
             <ScheduleText
-              titleText="01.19 ~ 06.20"
+              titleText="05.20 ~ 12.27"
+              detailText="교과목 개설기간(시작종료일)"
+            />
+            <ScheduleText
+              titleText="06.10 ~ 12.26"
+              detailText="소프트웨어 설치현황조회기간"
+            />
+            <ScheduleText
+              titleText="06.17 ~ 12.27"
+              detailText="수업시간표 조회기간"
+            />
+            <ScheduleText
+              titleText="06.17 ~ 12.27"
+              detailText="교수시간표 조회기간"
+            />
+            <ScheduleText
+              titleText="07.15 ~ 12.26"
               detailText="수업계획서 조회기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="07.15 ~ 12.26"
+              detailText="개설교과목(수강) 조회기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="08.21 ~ 12.26"
+              detailText="미수강신청자 조회기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="08.29 ~ 12.26"
+              detailText="출석 등록 및 조회기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="08.29 ~ 12.26"
+              detailText="출석부 출력 기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="09.01 ~ 12.31"
+              detailText="High-up 장학신청기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="09.01 ~ 12.06"
+              detailText="i+솔선수범포인트입력기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="09.01 ~ 12.13"
+              detailText="i+솔선수범포인트조회기간"
             />
             <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
-            />
-            <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
-            />
-            <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
-            />
-            <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
-            />
-            <ScheduleText
-              titleText="01.19 ~ 06.20"
-              detailText="수업계획서 조회기간"
+              titleText="09.01 ~ 12.27"
+              detailText="근로장학출석등록기간"
             />
           </ScrollView>
         </View>
