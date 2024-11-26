@@ -8,8 +8,15 @@ import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import Icon from 'react-native-vector-icons/Feather';
 import {GradeButton} from '../../components/GradeComponet/GradeCompo';
 import {ScrollView} from 'react-native-gesture-handler';
+import Svg, {Circle, Text as SvgText} from 'react-native-svg';
 
 const Grade: React.FC<ScreenProps> = ({navigation}) => {
+  const percentage = 100; // 그래프에서 보여줄 비율 (예: 92%)
+  const radius = 50; // 원 반지름
+  const strokeWidth = 5; // 원의 두께
+  const circumference = 2 * Math.PI * radius;
+  // 92%의 길이만큼 진행 원을 표시
+  const progress = 0.92 * circumference; // 92% 만큼만 진행
   return (
     <AllBackground>
       <View style={{flex: 1}}>
@@ -34,14 +41,68 @@ const Grade: React.FC<ScreenProps> = ({navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View
               style={{
                 width: deviceWidth * 0.35,
                 height: deviceHeight * 0.16,
-                backgroundColor: '#987',
-              }}
-            />
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: deviceHeight * 0.03,
+              }}>
+              <Svg
+                width={deviceWidth * 0.8}
+                height={deviceHeight * 0.2}
+                viewBox="0 0 120 120">
+                {/* 배경 원 */}
+                <Circle
+                  cx="60"
+                  cy="60"
+                  r={radius}
+                  stroke="#D9D9D9"
+                  strokeWidth={strokeWidth}
+                  strokeDasharray={`${circumference} ${circumference}`} // 전체 원의 둘레
+                  strokeDashoffset={(-circumference * 4) / 12} // 시작 위치를 7시로 조정
+                  fill="none"
+                  rotation="30" // 시작 각도를 7시로 조정
+                  origin="60, 60"
+                />
+                {/* 진행 원 */}
+                <Circle
+                  cx="60"
+                  cy="60"
+                  r={radius}
+                  stroke="#009B64"
+                  strokeWidth={strokeWidth}
+                  strokeDasharray={`${progress} ${circumference}`} 
+                  strokeDashoffset={(-circumference * 4) / 12} // 시작 위치를 7시로 조정
+                  fill="none"
+                  rotation="30" // 시작 각도를 7시로 조정
+                  origin="60, 60"
+                />
+                {/* 중앙 텍스트 */}
+                <SvgText
+                  x="60"
+                  y="55" // 숫자 위치를 조금 위로 이동
+                  textAnchor="middle"
+                  alignmentBaseline="middle"
+                  fontSize="25"
+                  fontWeight="bold"
+                  fill="#000000">
+                  {percentage} {/* % 제거 */}
+                </SvgText>
+                {/* '백분율' 텍스트 */}
+                <SvgText
+                  x="60"
+                  y="75" // '백분율' 위치
+                  textAnchor="middle"
+                  alignmentBaseline="middle"
+                  fontSize="12"
+                  fill="#7c7c7c">
+                  백분율
+                </SvgText>
+              </Svg>
+            </View>
             <View style={{justifyContent: 'center'}}>
               <View style={{flexDirection: 'row'}}>
                 <View
