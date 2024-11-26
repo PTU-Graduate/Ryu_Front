@@ -5,7 +5,10 @@ import {ScreenProps} from '../../navigations/StackNavigator';
 import {NoticeCategoryCompo} from '../../components/NoticeSrcComponets/NoticeCategoryCompo';
 import NoticeListButton from '../../components/NoticeSrcComponets/NoticePostCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
-import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
+import {
+  AllTitleTopBarCompo,
+  AllNoticeTitleTopBarCompo,
+} from '../../components/MainSrcCompo/TopBarCompo';
 import {noticeDataApi} from '../../services/_private/communitySer/NoticeService';
 import {getNoticeData} from '../../utils/DataTableSet/communityUtil/NoticeUtil';
 import {NoticeItemType} from '../../utils/DataTableSet/communityUtil/NoticeUtil';
@@ -171,7 +174,11 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
               width: deviceWidth * 1,
               alignItems: 'center',
             }}>
-            <NoticeListButton title={item.TIT} date={item.CRE_DATE} />
+            <NoticeListButton
+              title={item.TIT}
+              date={item.CRE_DATE}
+              onPress={() => navigation.navigate('NoticeDetail')}
+            />
           </View>
         )}
         ListFooterComponent={
@@ -188,9 +195,10 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo
+        <AllNoticeTitleTopBarCompo
           text={selectedCategory}
           onPress={() => navigation.goBack()}
+          onPressplus={() => navigation.navigate('NoticeUpload')}
         />
       </View>
       <View style={{flex: 1}}>
