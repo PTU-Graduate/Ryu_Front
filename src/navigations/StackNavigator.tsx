@@ -74,6 +74,7 @@ export type RootStackParamList = {
 
 export type ScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Login'>;
+  onPress?: () => void;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
