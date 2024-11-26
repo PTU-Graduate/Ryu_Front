@@ -1,10 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import AllButtonStyles from '../../styles/AllSrcStyles/AllButtonStyles';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
-import Icon from 'react-native-vector-icons/Entypo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 interface AllButtonCompoProps {
   titleText?: string;
@@ -34,7 +31,6 @@ export const GradeButton: React.FC<AllButtonCompoProps> = ({
     <View
       style={{
         flexDirection: 'row',
-        marginTop: deviceHeight * 0.02,
         width: deviceWidth * 0.9,
       }}>
       <View

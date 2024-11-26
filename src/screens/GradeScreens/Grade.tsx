@@ -1,14 +1,15 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {ScreenProps} from '../../navigations/StackNavigator';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
-import Icon from 'react-native-vector-icons/Feather';
 import {GradeButton} from '../../components/GradeComponet/GradeCompo';
 import {ScrollView} from 'react-native-gesture-handler';
 import Svg, {Circle, Text as SvgText} from 'react-native-svg';
+import GradeHakgiDropdown from '../../components/DropDownComponets/GradeDropDownComponet/GradeHakgiDropDownCompo';
+import GradeYearDropdown from '../../components/DropDownComponets/GradeDropDownComponet/GradeYearDropDownCompo';
 
 const Grade: React.FC<ScreenProps> = ({navigation}) => {
   const percentage = 100; // 그래프에서 보여줄 비율 (예: 92%)
@@ -74,7 +75,7 @@ const Grade: React.FC<ScreenProps> = ({navigation}) => {
                   r={radius}
                   stroke="#009B64"
                   strokeWidth={strokeWidth}
-                  strokeDasharray={`${progress} ${circumference}`} 
+                  strokeDasharray={`${progress} ${circumference}`}
                   strokeDashoffset={(-circumference * 4) / 12} // 시작 위치를 7시로 조정
                   fill="none"
                   rotation="30" // 시작 각도를 7시로 조정
@@ -176,7 +177,7 @@ const Grade: React.FC<ScreenProps> = ({navigation}) => {
                 }}>
                 <View
                   style={{
-                    width: deviceWidth * 0.37,
+                    width: deviceWidth * 0.42,
                     height: deviceHeight * 0.012,
                     backgroundColor: '#009B64',
                     borderRadius: 5,
@@ -192,7 +193,7 @@ const Grade: React.FC<ScreenProps> = ({navigation}) => {
                   alignItems: 'flex-end',
                 }}>
                 <Text style={[AllTextStyles.SemiBold10, {color: '#999999'}]}>
-                  3.95 / 4.5
+                  4.5 / 4.5
                 </Text>
               </View>
             </View>
@@ -213,32 +214,14 @@ const Grade: React.FC<ScreenProps> = ({navigation}) => {
           style={{
             flexDirection: 'row',
             marginRight: deviceWidth * 0.46,
-            marginTop: deviceHeight * 0.015,
-            marginBottom: deviceWidth * 0.02,
+            marginTop: deviceHeight * 0.01,
+            marginBottom: deviceHeight * -0.018,
+            zIndex: 2,
           }}>
-          <TouchableOpacity style={{flexDirection: 'row'}}>
-            <Text
-              style={{
-                marginTop: deviceHeight * 0.002,
-                marginRight: deviceWidth * 0.025,
-              }}>
-              2024년
-            </Text>
-            <Icon name="chevron-down" size={20} color="#000000" />
-          </TouchableOpacity>
-          <TouchableOpacity style={{flexDirection: 'row'}}>
-            <Text
-              style={{
-                marginTop: deviceHeight * 0.002,
-                marginRight: deviceWidth * 0.025,
-                marginLeft: deviceHeight * 0.025,
-              }}>
-              1학기
-            </Text>
-            <Icon name="chevron-down" size={20} color="#000000" />
-          </TouchableOpacity>
+          <GradeYearDropdown />
+          <GradeHakgiDropdown />
         </View>
-        <ScrollView>
+        <ScrollView style={{zIndex: 1}}>
           <View>
             <GradeButton
               titleText="데이터 베이스"
@@ -246,48 +229,52 @@ const Grade: React.FC<ScreenProps> = ({navigation}) => {
               detailText2="5"
               detailText3="87.2"
               detailText4="-"
-              detailText5="87.9"
-              detailText6="8/42"
+              detailText5="89.9"
+              detailText6="2/42"
               detailText7="-"
             />
+            <View style={{height: deviceHeight * 0.02}} />
             <GradeButton
               titleText="자바 프로그래밍"
               detailText1="-"
-              detailText2="5"
-              detailText3="87.2"
+              detailText2="10"
+              detailText3="92.7"
               detailText4="-"
-              detailText5="87.9"
-              detailText6="8/42"
+              detailText5="94.9"
+              detailText6="1/42"
               detailText7="-"
             />
+            <View style={{height: deviceHeight * 0.02}} />
             <GradeButton
               titleText="윈도우프로그래밍"
               detailText1="-"
               detailText2="5"
-              detailText3="87.2"
+              detailText3="79.2"
               detailText4="-"
-              detailText5="87.9"
-              detailText6="8/42"
+              detailText5="82.9"
+              detailText6="4/42"
               detailText7="-"
             />
+            <View style={{height: deviceHeight * 0.02}} />
             <GradeButton
-              titleText="경건실천"
+              titleText="사랑과삶"
               detailText1="-"
-              detailText2="5"
-              detailText3="87.2"
+              detailText2="8"
+              detailText3="97.2"
               detailText4="-"
-              detailText5="87.9"
-              detailText6="8/42"
+              detailText5="99"
+              detailText6="1/42"
               detailText7="-"
             />
+            <View style={{height: deviceHeight * 0.02}} />
             <GradeButton
-              titleText="어쩌구저쩌구긴이름의 과목명 이름입니당"
+              titleText="인터넷보안"
               detailText1="-"
-              detailText2="5"
+              detailText2="15"
               detailText3="87.2"
               detailText4="-"
-              detailText5="87.9"
-              detailText6="8/42"
+              detailText5="91.9"
+              detailText6="2/42"
               detailText7="-"
             />
           </View>
