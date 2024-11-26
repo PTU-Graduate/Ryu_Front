@@ -69,7 +69,7 @@ const Schedule: React.FC<ScreenProps> = ({navigation}) => {
             todayBackgroundColor: '#FF0000',
             todayTextColor: '#ffffff',
           }}
-          onDayPress={day => {
+          onDayPress={(day: any) => {
             console.log(day);
           }}
           hideExtraDays={true}
@@ -81,7 +81,7 @@ const Schedule: React.FC<ScreenProps> = ({navigation}) => {
               activeOpacity: 0,
             },
           }}
-          renderArrow={direction =>
+          renderArrow={(direction: string) =>
             direction === 'left' ? (
               <Icon name="left" size={13} />
             ) : (

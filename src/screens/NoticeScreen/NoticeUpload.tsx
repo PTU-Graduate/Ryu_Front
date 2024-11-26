@@ -7,6 +7,7 @@ import {AllAddTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo'
 import {ScreenProps} from '../../navigations/StackNavigator';
 import {noticeAdd} from '../../services/_private/communitySer/NoticeService';
 import {getUserData} from '../../utils/DataTableSet/LoginResultData';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
 const NoticeUpload: React.FC<ScreenProps> = ({navigation}) => {
   const [tit, setTit] = useState<string>('');
@@ -59,38 +60,45 @@ const NoticeUpload: React.FC<ScreenProps> = ({navigation}) => {
 
   return (
     <AllBackground>
-      <View style={{backgroundColor: '#ffffff', flex: 1}}>
+      <View style={{flex: 1}}>
         <AllAddTitleTopBarCompo
           text="공지사항 등록"
           onPress={() => navigation.goBack()}
           onPressplus={handleAdd}
         />
       </View>
-      <View style={{flex: 2, alignItems: 'center'}}>
-        <TextInput
-          style={{
-            marginTop: deviceHeight * 0.07,
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: deviceWidth * 0.9,
-            height: deviceHeight * 0.05,
-            borderBottomWidth: 1,
-          }}
-          placeholder="제목"
-          value={tit}
-          onChangeText={setTit}
-        />
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <View style={{marginTop: deviceHeight * 0.015}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              width: deviceWidth * 0.9,
+            }}>
+            <Text style={AllTextStyles.SemiBold15}>제목 : </Text>
+            <TextInput
+              style={{
+                width: deviceWidth * 0.79,
+                height: deviceHeight * 0.03,
+                borderBottomColor: '#999999',
+                borderBottomWidth: 0.3,
+              }}
+              value={tit}
+              onChangeText={text => setTit(text)}
+            />
+          </View>
+        </View>
       </View>
-      <View style={{flex: 6, marginLeft: deviceWidth * 0.05}}>
+      <View style={{flex: 9, marginLeft: deviceWidth * 0.05}}>
+        <Text style={AllTextStyles.SemiBold15}>본문</Text>
         <TextInput
           style={{
-            marginTop: deviceHeight * 0.07,
-            justifyContent: 'center',
             width: deviceWidth * 0.9,
-            height: deviceHeight * 0.1,
-            borderBottomWidth: 1,
+            height: deviceHeight * 0.6,
+            marginTop: deviceHeight * 0.01,
+            borderColor: '#999999',
+            borderWidth: 0.3,
           }}
-          placeholder="본문"
+          multiline={true}
           value={cont}
           onChangeText={setCont}
         />
@@ -98,12 +106,13 @@ const NoticeUpload: React.FC<ScreenProps> = ({navigation}) => {
         {/* 이미지 선택 버튼 */}
         <TouchableOpacity
           style={{
-            width: deviceWidth * 0.2,
-            height: deviceWidth * 0.2, // 버튼 크기
-            backgroundColor: '#DEEBE4',
+            width: deviceWidth * 0.25,
+            height: deviceWidth * 0.1, // 버튼 크기
+            backgroundColor: '#A7D18C',
             justifyContent: 'center',
-            borderRadius: 25,
+            borderRadius: 15,
             marginTop: deviceHeight * 0.02,
+            marginLeft: deviceWidth * 0.65,
             alignItems: 'center', // 이미지가 버튼 안에 중앙에 오도록 설정
             overflow: 'hidden', // 이미지가 버튼 안에서 벗어나지 않도록
           }}
@@ -120,7 +129,7 @@ const NoticeUpload: React.FC<ScreenProps> = ({navigation}) => {
               }}
             />
           ) : (
-            <Text>이미지 선택</Text> // 이미지가 없으면 "이미지 선택" 텍스트 표시
+            <Text style={AllTextStyles.medium13}>이미지 선택</Text> // 이미지가 없으면 "이미지 선택" 텍스트 표시
           )}
         </TouchableOpacity>
       </View>
