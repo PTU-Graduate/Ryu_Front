@@ -1,6 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {View, FlatList, ActivityIndicator, Image} from 'react-native';
+import {
+  View,
+  FlatList,
+  ActivityIndicator,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {ScreenProps} from '../../navigations/StackNavigator';
 import {NoticeCategoryCompo} from '../../components/NoticeSrcComponets/NoticeCategoryCompo';
 import NoticeListButton from '../../components/NoticeSrcComponets/NoticePostCompo';
@@ -224,21 +230,41 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
 
       {/* Display image only for "장학" category */}
       {selectedCategory === '장학' && (
-        <View style={{alignItems: 'center', marginVertical: 20}}>
-          <Image
-            source={require('../../assets/images/money.png')} // Replace with the actual image URL
-            style={{
-              width: deviceWidth,
-              height: deviceHeight * 0.13,
-              opacity: 0.3,
-            }}
-          />
+        <View style={{flex: 9, alignItems: 'center', width: '100%'}}>
+          <View style={{alignItems: 'center', marginVertical: 20}}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('NoticeMoney')}>
+              <Image
+                source={require('../../assets/images/money.png')} // Replace with the actual image URL
+                style={{
+                  width: deviceWidth,
+                  height: deviceHeight * 0.13,
+                  opacity: 0.3,
+                }}
+              />
+            </TouchableOpacity>
+          </View>
+          {renderCategoryData()}
         </View>
       )}
 
-      <View style={{flex: 9, alignItems: 'center', width: '100%'}}>
-        {renderCategoryData()}
-      </View>
+      {selectedCategory === '공지' && (
+        <View style={{flex: 9, alignItems: 'center', width: '100%'}}>
+          {renderCategoryData()}
+        </View>
+      )}
+
+      {selectedCategory === '학사' && (
+        <View style={{flex: 9, alignItems: 'center', width: '100%'}}>
+          {renderCategoryData()}
+        </View>
+      )}
+
+      {selectedCategory === '입학' && (
+        <View style={{flex: 9, alignItems: 'center', width: '100%'}}>
+          {renderCategoryData()}
+        </View>
+      )}
     </AllBackground>
   );
 };

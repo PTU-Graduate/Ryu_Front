@@ -27,6 +27,7 @@ import ChangePassword from '../screens/ChangePasswordScreen/ChangePassword';
 import Schedule from '../screens/ScheduleScreen/Schedule';
 import FreeShuttleBus from '../screens/FreeShuttleBusScreen/FreeShuttleBus';
 import NoticeUpload from '../screens/NoticeScreen/NoticeUpload';
+import NoticeMoney from '../screens/NoticeScreen/NoticeMoney';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -68,6 +69,7 @@ export type RootStackParamList = {
   FreeShuttleBus: undefined;
   AttendanceInquiryDetail: undefined;
   NoticeUpload: undefined;
+  NoticeMoney: undefined;
 };
 
 export type ScreenProps = {
@@ -111,6 +113,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Schedule" component={Schedule} />
       <Stack.Screen name="FreeShuttleBus" component={FreeShuttleBus} />
       <Stack.Screen name="NoticeUpload" component={NoticeUpload} />
+      <Stack.Screen name="NoticeMoney" component={NoticeMoney} />
     </Stack.Navigator>
   );
 };
