@@ -4,7 +4,6 @@ import React from 'react';
 import {getUserData} from '../../utils/DataTableSet/LoginResultData';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
-import Swiper from 'react-native-swiper';
 import {MainServiceButton} from '../../components/MainSrcCompo/MainSrcButton';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {ScreenProps} from '../../navigations/StackNavigator';
@@ -30,18 +29,17 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
       <View
         style={{
           flex: 3,
+          alignItems: 'center',
         }}>
-        <Swiper>
-          <Image
-            style={{
-              flex: 1,
-              marginTop: deviceWidth * 0.04,
-              marginBottom: deviceWidth * 0.08,
-              width: deviceWidth * 1,
-            }}
-            source={require('../../assets/images/testImage.png')}
-          />
-        </Swiper>
+        <Image
+          style={{
+            flex: 1,
+            marginTop: deviceWidth * 0.04,
+            marginBottom: deviceWidth * 0.08,
+            width: deviceWidth * 1,
+          }}
+          source={require('../../assets/images/testImage.png')}
+        />
       </View>
       <View style={{flex: 2}}>
         <Text
@@ -53,9 +51,18 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
             flexDirection: 'row',
             marginTop: deviceHeight * 0.03,
           }}>
-          <MainServiceButton text="홈페이지" />
-          <MainServiceButton text="e학사" />
-          <MainServiceButton text="평택대교회" />
+          <MainServiceButton
+            text="홈페이지"
+            uri={require('../../assets/images/home.png')}
+          />
+          <MainServiceButton
+            text="e학사"
+            uri={require('../../assets/images/ehaksa.png')}
+          />
+          <MainServiceButton
+            text="평택대교회"
+            uri={require('../../assets/images/gyo.png')}
+          />
         </View>
       </View>
       <View style={{flex: 2}}>
@@ -71,18 +78,22 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
           <MainServiceButton
             text="공지사항"
             onPress={() => navigation.navigate('Notice')}
+            uri={require('../../assets/images/speaker.png')}
           />
           <MainServiceButton
             text="출석조회"
             onPress={() => navigation.navigate('AttendanceInquiry')}
+            uri={require('../../assets/images/timer.png')}
           />
           <MainServiceButton
             text="성적조회"
             onPress={() => navigation.navigate('Grade')}
+            uri={require('../../assets/images/note.png')}
           />
           <MainServiceButton
             text="셔틀버스 조회"
             onPress={() => navigation.navigate('FreeShuttleBus')}
+            uri={require('../../assets/images/bus.png')}
           />
         </View>
       </View>

@@ -51,6 +51,7 @@ export const noticeAdd = async (
       return result.data;
     }
   } catch (error) {
+    console.log(error);
     return '';
   }
 };
