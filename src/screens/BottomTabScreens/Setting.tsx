@@ -1,7 +1,7 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
-import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
+import {DrawerTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {
@@ -14,7 +14,7 @@ const Setting: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="설 정" onPress={() => navigation.goBack()} />
+        <DrawerTitleTopBarCompo text="설 정" />
       </View>
       <View
         style={{

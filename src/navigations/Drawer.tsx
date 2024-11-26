@@ -17,7 +17,7 @@ import Grade from '../screens/GradeScreens/Grade';
 import AttendanceInquiry from '../screens/AttendanceInquiryScreen/AttendanceInquiry';
 import FreeShuttleBus from '../screens/FreeShuttleBusScreen/FreeShuttleBus';
 import {getUserData} from '../utils/DataTableSet/LoginResultData';
-import {deviceWidth} from '../utils/DeviceUtils';
+import {deviceHeight, deviceWidth} from '../utils/DeviceUtils';
 
 const Drawer = createDrawerNavigator();
 
@@ -40,14 +40,13 @@ const DrawerHeader = () => {
   return (
     <View style={styles.headerContainer}>
       <Image
-        source={require('../assets/images/profile.jpeg')}
+        source={require('../assets/images/JK.jpg')}
         style={styles.profileImage}
       />
       <View style={{width: '100%'}}>
         <Text style={styles.userName}>{name}</Text>
-        <Text style={styles.userEmail}>{email}</Text>
-        <Text style={styles.userEmail}>{departName}</Text>
-        <Text style={styles.userEmail}>{std_num}</Text>
+        <Text style={styles.userHakgua}>{departName}</Text>
+        <Text style={styles.userHakbun}>{std_num}</Text>
         <Text></Text>
       </View>
     </View>
@@ -73,7 +72,6 @@ const DrawerNavigation = () => {
       drawerContent={props => <CustomDrawerContent {...props} />}
       screenOptions={{drawerPosition: 'left', headerShown: false}}>
       <Drawer.Screen name="홈" component={BottomTabNavigator} />
-      <Drawer.Screen name="학생정보" component={Profile} />
       <Drawer.Screen name="수강조회" component={CourseCheck} />
       <Drawer.Screen name="출석조회" component={AttendanceInquiry} />
       <Drawer.Screen name="성적조회" component={Grade} />
@@ -89,27 +87,37 @@ const DrawerNavigation = () => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    padding: 16,
-    backgroundColor: '#f4f4f4',
+    backgroundColor: '#f2f2f2',
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    borderBottomColor: '#dddddd',
     flexDirection: 'row',
     alignItems: 'center',
+    padding: deviceWidth * 0.01,
+    paddingLeft: deviceWidth * 0.035,
+    marginBottom: deviceHeight * 0.015,
   },
   profileImage: {
-    width: deviceWidth * 0.25,
+    width: deviceWidth * 0.2,
     height: deviceWidth * 0.25,
-    borderRadius: 40,
-    marginBottom: 8,
   },
   userName: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#333',
+    paddingLeft: deviceWidth * 0.02,
+    paddingTop: deviceHeight * 0.023,
   },
-  userEmail: {
-    fontSize: 14,
-    color: '#666',
+  userHakgua: {
+    fontSize: 12,
+    color: '#605D5D',
+    paddingLeft: deviceWidth * 0.02,
+    paddingTop: deviceHeight * 0.03,
+  },
+  userHakbun: {
+    fontSize: 11,
+    color: '#605D5D',
+    paddingLeft: deviceWidth * 0.02,
+    paddingTop: deviceHeight * 0.005,
   },
 });
 
