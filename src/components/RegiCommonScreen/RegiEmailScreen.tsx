@@ -1,24 +1,39 @@
-/* eslint-disable react-native/no-inline-styles */
-import {View, Text, SafeAreaView, Image, TextInputProps} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInputProps,
+  ActivityIndicator,
+} from 'react-native';
 import React from 'react';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
-import {SignGreenButton} from '../AllSrcComponets/AllButtonCompo';
-import HukguaDropdown from '../DropDownComponets/HakguaDropDownComponets/HakguaDropDownCompo';
+import {SignCheckGreenButton} from '../AllSrcComponets/AllButtonCompo';
+import {
+  SignLogCheckInput,
+  SignLogInput,
+} from '../AllSrcComponets/AllInputCompo';
 
 interface RegiCommonScreen extends TextInputProps {
   mediumtext: string;
   smalltext: string;
-  inputtext?: string;
-  setSelectedDepartment: (item: string) => void; // 함수 타입으로 수정
   onPress?: () => void;
+  CheckonPress?: () => void;
+  disable?: boolean;
+  isLoading?: boolean; // 로딩 상태 추가
+  inputtext: string;
+  errorMessage: string | null;
 }
 
-export const RegiHakguaScreen: React.FC<RegiCommonScreen> = ({
+export const RegiEmailScreen: React.FC<RegiCommonScreen> = ({
   mediumtext,
   smalltext,
-  inputtext,
-  setSelectedDepartment,
   onPress,
+  CheckonPress,
+  disable,
+  isLoading, // 로딩 상태를 받음
+  inputtext,
+  errorMessage,
   ...props
 }) => {
   return (
@@ -66,17 +81,38 @@ export const RegiHakguaScreen: React.FC<RegiCommonScreen> = ({
           flex: 7,
           alignItems: 'center',
         }}>
-        <View style={{marginTop: deviceHeight * 0.07}}>
-          <View style={{zIndex: 2}}>
-            <HukguaDropdown onSelected={setSelectedDepartment} />
-          </View>
+        <View style={{marginTop: deviceHeight * 0.073}}>
+          <SignLogInput
+            placeholderTextColor="#979797"
+            placeholder={inputtext}
+            {...props}
+          />
+          {errorMessage && (
+            <Text
+              style={{
+                color: 'red',
+                fontSize: 12,
+                marginTop: 10, // 인풋 아래에 텍스트 추가
+              }}>
+              {errorMessage}
+            </Text>
+          )}
           <View
             style={{
               marginTop: deviceHeight * 0.073,
               marginLeft: deviceWidth * 0.05,
-              zIndex: 1,
             }}>
-            <SignGreenButton text="다음" onPress={onPress} />
+            <SignCheckGreenButton
+              text={
+                isLoading ? (
+                  <ActivityIndicator size="small" color="#fff" />
+                ) : (
+                  '다음'
+                )
+              } // 로딩 중이면 ActivityIndicator, 아니면 '다음'
+              onPress={onPress}
+              disable={disable}
+            />
           </View>
         </View>
       </View>

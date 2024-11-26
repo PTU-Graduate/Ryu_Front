@@ -9,11 +9,9 @@ const RegiHakgua: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <RegiHakguaScreen
-        value={STD_DEP_CD}
-        onChangeText={text => setSTD_DEP_CD(text)}
         mediumtext="학과"
         smalltext="를 선택해주세요."
-        inputtext="학과"
+        setSelectedDepartment={(item: string) => setSTD_DEP_CD(item)} // 수정
         onPress={() =>
           navigation.navigate('RegiHakbun', {STD_DEC_CD: STD_DEP_CD})
         }

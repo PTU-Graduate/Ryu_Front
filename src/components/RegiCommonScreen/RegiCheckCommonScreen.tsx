@@ -1,5 +1,11 @@
-/* eslint-disable react-native/no-inline-styles */
-import {View, Text, SafeAreaView, Image, TextInputProps} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInputProps,
+  ActivityIndicator,
+} from 'react-native';
 import React from 'react';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
 import {SignCheckGreenButton} from '../AllSrcComponets/AllButtonCompo';
@@ -11,6 +17,8 @@ interface RegiCommonScreen extends TextInputProps {
   onPress?: () => void;
   CheckonPress?: () => void;
   disable?: boolean;
+  isLoading?: boolean; // 로딩 상태 추가
+  errorMessage?: string | null; // 에러 메시지 추가
 }
 
 export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
@@ -19,6 +27,8 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
   onPress,
   CheckonPress,
   disable,
+  isLoading, // 로딩 상태를 받음
+  errorMessage, // 에러 메시지
   ...props
 }) => {
   return (
@@ -68,13 +78,30 @@ export const RegiCkeckCommonScreen: React.FC<RegiCommonScreen> = ({
         }}>
         <View style={{marginTop: deviceHeight * 0.073}}>
           <SignLogCheckInput onPress={CheckonPress} {...props} />
+          {/* 에러 메시지가 있으면 출력 */}
+          {errorMessage && (
+            <Text
+              style={{
+                color: 'red',
+                fontSize: 12,
+                marginTop: 10, // 인풋 아래에 텍스트 추가
+              }}>
+              {errorMessage}
+            </Text>
+          )}
           <View
             style={{
               marginTop: deviceHeight * 0.073,
               marginLeft: deviceWidth * 0.05,
             }}>
             <SignCheckGreenButton
-              text="다음"
+              text={
+                isLoading ? (
+                  <ActivityIndicator size="small" color="#fff" />
+                ) : (
+                  '다음'
+                )
+              } // 로딩 중이면 ActivityIndicator, 아니면 '다음'
               onPress={onPress}
               disable={disable}
             />
