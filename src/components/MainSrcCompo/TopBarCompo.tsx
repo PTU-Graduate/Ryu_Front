@@ -25,8 +25,28 @@ export const AllTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
   );
 };
 
+/**
+ * 가장 기본 베이스 백그라운드 화면
+ */
+export const DrawerTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
+  text,
+}) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title2}>{text}</Text>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+    paddingHorizontal: 10, //container와 아이콘사이의 간격조정
+  },
+  container2: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
@@ -38,6 +58,13 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 0.93, // 남은 공간을 차지하여 중앙 정렬에 기여
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'black',
+    textAlign: 'center',
+  },
+  title2: {
+    flex: 1, // 남은 공간을 차지하여 중앙 정렬에 기여
     fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
