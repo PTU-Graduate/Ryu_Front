@@ -1,12 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, ImageSourcePropType, Text, TouchableOpacity, View} from 'react-native';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
   text: string;
+  uri: ImageSourcePropType;
   onPress?: () => void;
 }
 
@@ -32,6 +33,7 @@ export const MainTapbutton: React.FC<AllBackgroundProps> = ({text}) => {
 export const MainServiceButton: React.FC<AllBackgroundProps> = ({
   text,
   onPress,
+  uri,
 }) => {
   return (
     <View style={{marginLeft: deviceWidth * 0.05}}>
@@ -44,7 +46,7 @@ export const MainServiceButton: React.FC<AllBackgroundProps> = ({
         onPress={onPress}>
         <Image
           style={{width: '100%', height: '100%', resizeMode: 'contain'}}
-          source={require('../../assets/images/LOGO.png')}></Image>
+          source={uri}></Image>
       </TouchableOpacity>
       <View
         style={{
