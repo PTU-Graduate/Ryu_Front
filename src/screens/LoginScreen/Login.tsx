@@ -19,7 +19,8 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loading, setLoading] = useState<boolean>(false);
   const handleLogin = async () => {
     setLoading(true);
-    const result2 = await saltCall(loginId);
+    navigation.navigate('DrawerNavigation');
+    /* const result2 = await saltCall(loginId);
     if (result2 !== null && result2.RSLT_CD === '00') {
       const hashedpass = hashpass(loginPass, result2.SALT);
       const result = await loginApiCall(loginId, hashedpass);
@@ -32,7 +33,7 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
       }
     } else {
       Alert.alert('실패');
-    }
+    } */
     setLoading(false);
   };
   return (
