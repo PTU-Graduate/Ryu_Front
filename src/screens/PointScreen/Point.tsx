@@ -1,25 +1,29 @@
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const Point = () => {
+const Point: React.FC<ScreenProps> = ({navigation, onPress}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="i + 솔 선 수 범 포 인 트 조 회" />
+        <AllTitleTopBarCompo
+          text="i + 솔 선 수 범 포 인 트 조 회"
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
         <Text
           style={[
             AllTextStyles.SemiBold16,
             {
-              color: '#009b64',
+              color: '#009B64',
               marginRight: deviceWidth * 0.575,
-              lineHeight: deviceHeight * 0.04,
+              marginBottom: deviceHeight * 0.007,
             },
           ]}>
           2024년 1학기
@@ -38,7 +42,7 @@ const Point = () => {
         <View
           style={{
             width: deviceWidth * 0.85,
-            height: deviceHeight * 0.12,
+            height: deviceWidth * 0.25,
             backgroundColor: '#49B08C',
             borderRadius: 10,
             justifyContent: 'center',
@@ -56,7 +60,7 @@ const Point = () => {
           </Text>
           <Text
             style={[
-              AllTextStyles.SemiBold20,
+              AllTextStyles.SemiBold23,
               {
                 color: '#ffffff',
                 marginLeft: deviceWidth * 0.05,
@@ -83,7 +87,7 @@ const Point = () => {
           style={{
             backgroundColor: '#D9D9D9',
             width: deviceWidth * 0.85,
-            height: deviceHeight * 0.075,
+            height: deviceHeight * 0.07,
             borderRadius: 10,
             marginTop: deviceHeight * 0.012,
             justifyContent: 'center',
@@ -99,12 +103,13 @@ const Point = () => {
             style={{
               backgroundColor: '#BCD5AC',
               width: deviceWidth * 0.425,
-              height: deviceHeight * 0.075,
+              height: deviceHeight * 0.07,
               borderRadius: 10,
               justifyContent: 'center',
               alignItems: 'center',
               position: 'absolute',
-            }}></View>
+            }}
+          />
         </View>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View
@@ -136,7 +141,8 @@ const Point = () => {
               borderRadius: 50,
               marginRight: deviceWidth * 0.05,
               marginTop: deviceHeight * 0.02,
-            }}></View>
+            }}
+          />
           <Text
             style={[
               AllTextStyles.SemiBold12,
@@ -154,14 +160,14 @@ const Point = () => {
           style={{
             borderBottomColor: '#C9C6C6',
             borderBottomWidth: 1,
-            marginTop: deviceHeight * 0.04,
+            marginTop: deviceHeight * 0.03,
           }}></View>
         <View style={{alignItems: 'center'}}>
           <Text
             style={[
               AllTextStyles.SemiBold14,
               {
-                marginTop: deviceHeight * 0.04,
+                marginTop: deviceHeight * 0.03,
                 marginRight: deviceWidth * 0.565,
                 marginBottom: deviceHeight * 0.015,
               },
@@ -170,13 +176,21 @@ const Point = () => {
           </Text>
           <TouchableOpacity
             style={{
-              backgroundColor: '#D9D9D9',
               width: deviceWidth * 0.85,
-              height: deviceHeight * 0.09,
+              height: deviceWidth * 0.2,
               borderRadius: 10,
-              justifyContent: 'center',
             }}
-          />
+            onPress={() => navigation.navigate('NoticeMoney')}>
+            <Image
+              style={{
+                width: deviceWidth * 0.85,
+                height: deviceWidth * 0.2,
+                borderRadius: 10,
+                opacity: 0.35,
+              }}
+              source={require('../../assets/images/money.png')}
+            />
+          </TouchableOpacity>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View
               style={{
@@ -185,14 +199,14 @@ const Point = () => {
                 backgroundColor: '#FF0000',
                 borderRadius: 50,
                 marginRight: deviceWidth * 0.02,
-                marginTop: deviceHeight * 0.025,
+                marginTop: deviceHeight * 0.02,
               }}></View>
             <Text
               style={[
                 AllTextStyles.SemiBold10,
                 {
                   color: '#ff0000',
-                  marginTop: deviceHeight * 0.023,
+                  marginTop: deviceHeight * 0.02,
                   marginRight: deviceWidth * 0.18,
                 },
               ]}>

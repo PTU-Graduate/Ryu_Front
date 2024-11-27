@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
 import {deviceWidth, deviceHeight} from '../../utils/DeviceUtils';
+import {Platform} from 'react-native';
 
 export default StyleSheet.create({
   SignLogGreenButtonStyle: {
     width: deviceWidth * 0.8,
-    height: deviceHeight * 0.075,
+    height: deviceWidth * 0.15,
     backgroundColor: '#009B64',
     borderRadius: 6,
     justifyContent: 'center',
@@ -12,7 +13,7 @@ export default StyleSheet.create({
   },
   SignLogGrayButtonStyle: {
     width: deviceWidth * 0.8,
-    height: deviceHeight * 0.08,
+    height: deviceWidth * 0.15,
     backgroundColor: '#D9D9D9',
     borderRadius: 6,
     justifyContent: 'center',
@@ -20,7 +21,7 @@ export default StyleSheet.create({
   },
   NoticeListButtonStyle: {
     width: deviceWidth * 0.9,
-    height: deviceHeight * 0.1,
+    height: deviceWidth * 0.2,
     borderBottomColor: '#C9C6C6',
     borderBottomWidth: 1,
   },

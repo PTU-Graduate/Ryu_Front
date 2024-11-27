@@ -7,6 +7,10 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Icon2 from 'react-native-vector-icons/FontAwesome5';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {ScaleFromCenterAndroidSpec} from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionSpecs';
+import {ScreenProps} from '../../navigations/StackNavigator';
+import {ScrollView} from 'react-native-gesture-handler';
+import {ScheduleText} from '../../components/ScheduleComponent/ScheduleCompo';
 
 LocaleConfig.locales.kr = {
   monthNames: [
@@ -38,18 +42,21 @@ LocaleConfig.locales.kr = {
 
 LocaleConfig.defaultLocale = 'kr';
 
-const Schedule = () => {
+const Schedule: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="학 사 일 정" />
+        <AllTitleTopBarCompo
+          text="학 사 일 정"
+          onPress={() => navigation.goBack()}
+        />
       </View>
-      <View style={{flex: 5, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{flex: 10, alignItems: 'center'}}>
         <Calendar
           style={{
             width: deviceWidth * 0.9,
             borderRadius: 20,
-            paddingBottom: deviceHeight * 0.01,
+            paddingBottom: deviceHeight * 0.005,
           }}
           theme={{
             textDayFontSize: 16,
@@ -62,7 +69,7 @@ const Schedule = () => {
             todayBackgroundColor: '#FF0000',
             todayTextColor: '#ffffff',
           }}
-          onDayPress={day => {
+          onDayPress={(day: any) => {
             console.log(day);
           }}
           hideExtraDays={true}
@@ -74,15 +81,13 @@ const Schedule = () => {
               activeOpacity: 0,
             },
           }}
-          renderArrow={direction =>
+          renderArrow={(direction: string) =>
             direction === 'left' ? (
-              <Icon name="left" size={15} />
+              <Icon name="left" size={13} />
             ) : (
-              <Icon name="right" size={15} />
+              <Icon name="right" size={13} />
             )
           }></Calendar>
-      </View>
-      <View style={{flex: 5}}>
         <View style={{alignItems: 'center'}}>
           <TouchableOpacity>
             <Icon2
@@ -100,9 +105,14 @@ const Schedule = () => {
               backgroundColor: '#C9C6C6',
               width: deviceWidth * 0.9,
               height: deviceHeight * 0.002,
-            }}></View>
+            }}
+          />
         </View>
-        <View style={{marginLeft: deviceWidth * 0.05}}>
+        <View
+          style={{
+            marginLeft: deviceWidth * 0.05,
+            flex: 1,
+          }}>
           <Text
             style={[
               AllTextStyles.SemiBold14,
@@ -114,35 +124,60 @@ const Schedule = () => {
             ]}>
             2024년 7월 13일
           </Text>
-          <View style={{flexDirection: 'row'}}>
-            <Text
-              style={[
-                AllTextStyles.SemiBold14,
-                {
-                  color: '#009B64',
-                  marginLeft: deviceWidth * 0.02,
-                  marginBottom: deviceHeight * 0.005,
-                },
-              ]}>
-              01.19 ~ 06.20
-            </Text>
-            <Text
-              style={[
-                AllTextStyles.medium13,
-                {
-                  marginLeft: deviceWidth * 0.1,
-                  marginBottom: deviceHeight * 0.005,
-                },
-              ]}>
-              수업계획서 조회기간
-            </Text>
-          </View>
-          <View
-            style={{
-              backgroundColor: '#009B64',
-              width: deviceWidth * 0.9,
-              height: deviceHeight * 0.0008,
-            }}></View>
+          <ScrollView>
+            <ScheduleText
+              titleText="05.20 ~ 12.27"
+              detailText="교과목 개설기간(시작종료일)"
+            />
+            <ScheduleText
+              titleText="06.10 ~ 12.26"
+              detailText="소프트웨어 설치현황조회기간"
+            />
+            <ScheduleText
+              titleText="06.17 ~ 12.27"
+              detailText="수업시간표 조회기간"
+            />
+            <ScheduleText
+              titleText="06.17 ~ 12.27"
+              detailText="교수시간표 조회기간"
+            />
+            <ScheduleText
+              titleText="07.15 ~ 12.26"
+              detailText="수업계획서 조회기간"
+            />
+            <ScheduleText
+              titleText="07.15 ~ 12.26"
+              detailText="개설교과목(수강) 조회기간"
+            />
+            <ScheduleText
+              titleText="08.21 ~ 12.26"
+              detailText="미수강신청자 조회기간"
+            />
+            <ScheduleText
+              titleText="08.29 ~ 12.26"
+              detailText="출석 등록 및 조회기간"
+            />
+            <ScheduleText
+              titleText="08.29 ~ 12.26"
+              detailText="출석부 출력 기간"
+            />
+            <ScheduleText
+              titleText="09.01 ~ 12.31"
+              detailText="High-up 장학신청기간"
+            />
+            <ScheduleText
+              titleText="09.01 ~ 12.06"
+              detailText="i+솔선수범포인트입력기간"
+            />
+            <ScheduleText
+              titleText="09.01 ~ 12.13"
+              detailText="i+솔선수범포인트조회기간"
+            />
+            <ScheduleText
+              titleText="09.01 ~ 12.27"
+              detailText="근로장학출석등록기간"
+            />
+          </ScrollView>
         </View>
       </View>
     </AllBackground>

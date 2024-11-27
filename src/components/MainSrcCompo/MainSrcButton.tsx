@@ -1,11 +1,20 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Image, Text, TouchableOpacity} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
   text: string;
+  uri: ImageSourcePropType;
+  onPress?: () => void;
 }
 
 /**
@@ -27,26 +36,43 @@ export const MainTapbutton: React.FC<AllBackgroundProps> = ({text}) => {
   );
 };
 
-export const MainIconbutton: React.FC<AllBackgroundProps> = ({text}) => {
+export const MainServiceButton: React.FC<AllBackgroundProps> = ({
+  text,
+  onPress,
+  uri,
+}) => {
   return (
-    <TouchableOpacity
-      style={{
-        alignItems: 'center',
-        height: deviceHeight * 0.15,
-        width: deviceWidth * 0.2,
-        marginLeft: deviceWidth * 0.02,
-      }}>
-      <Image
+    <View style={{marginLeft: deviceWidth * 0.05}}>
+      <TouchableOpacity
         style={{
           width: deviceWidth * 0.15,
-          height: deviceHeight * 0.15,
-          resizeMode: 'contain',
+          height: deviceWidth * 0.15,
+          borderRadius: 50,
         }}
-        source={require('../../assets/images/Vector.png')}
-      />
-      <Text style={{marginTop: deviceHeight * 0.005, color: '#cdcdcd'}}>
-        {text}
-      </Text>
-    </TouchableOpacity>
+        onPress={onPress}>
+        <Image
+          style={{width: '100%', height: '100%', resizeMode: 'contain'}}
+          source={uri}
+        />
+      </TouchableOpacity>
+      <View
+        style={{
+          width: deviceWidth * 0.18,
+          alignItems: 'center',
+          marginLeft: deviceWidth * -0.02,
+          marginRight: deviceWidth * 0.03,
+        }}>
+        <Text
+          style={[
+            AllTextStyles.SemiBold11,
+            {
+              color: '#C9C6C6',
+              marginTop: deviceHeight * 0.018,
+            },
+          ]}>
+          {text}
+        </Text>
+      </View>
+    </View>
   );
 };

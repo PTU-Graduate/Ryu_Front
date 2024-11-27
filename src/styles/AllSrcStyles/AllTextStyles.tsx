@@ -57,6 +57,16 @@ export default StyleSheet.create({
   },
   // ------------------------------------------------------------------------------------------------------------
 
+  medium8: {
+    fontWeight: '500',
+    fontSize: 8,
+  },
+
+  medium9: {
+    fontWeight: '500',
+    fontSize: 9,
+  },
+
   medium10: {
     fontWeight: '500',
     fontSize: 10,
@@ -168,8 +178,24 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
   },
+
+  SemiBold21: {
+    fontWeight: 'bold',
+    fontSize: 21,
+  },
+
+  SemiBold22: {
+    fontWeight: 'bold',
+    fontSize: 22,
+  },
+
+  SemiBold23: {
+    fontWeight: 'bold',
+    fontSize: 23,
+  },
+
+  SemiBold26: {
+    fontWeight: 'bold',
+    fontSize: 26,
+  },
 });
-
-
-
-

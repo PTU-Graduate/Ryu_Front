@@ -58,7 +58,7 @@ export const DetailSettingArrow: React.FC<SettingProps> = ({text, onPress}) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         width: deviceWidth * 0.9,
-        height: deviceHeight * 0.06,
+        height: deviceHeight * 0.055,
         borderBottomColor: '#C9C6C6',
         borderBottomWidth: 1,
       }}>

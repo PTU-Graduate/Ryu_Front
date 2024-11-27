@@ -2,18 +2,19 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
-import {
-  ChangePasswordInput,
-  SignLogInput,
-} from '../../components/AllSrcComponets/AllInputCompo';
+import {ChangePasswordInput} from '../../components/AllSrcComponets/AllInputCompo';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {ScreenProps} from '../../navigations/StackNavigator';
 
-const ChangePassword = () => {
+const ChangePassword: React.FC<ScreenProps> = ({navigation}) => {
   return (
     <AllBackground>
       <View style={{flex: 1}}>
-        <AllTitleTopBarCompo text="비 밀 번 호 변 경" />
+        <AllTitleTopBarCompo
+          text="비 밀 번 호 변 경"
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View
         style={{

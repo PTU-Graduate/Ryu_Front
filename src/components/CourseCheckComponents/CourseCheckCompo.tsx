@@ -29,11 +29,11 @@ export const CCDetailBar: React.FC<CourseCheckProps> = ({
       style={{
         justifyContent: 'center',
         flexDirection: 'row',
-        marginBottom: deviceHeight * 0.04,
+        marginBottom: deviceHeight * 0.035,
       }}>
       <View
         style={{
-          width: deviceWidth * 0.9,
+          width: deviceWidth * 0.88,
           borderBottomColor: '#898A8D',
           borderBottomWidth: deviceWidth * 0.001,
           justifyContent: 'center',

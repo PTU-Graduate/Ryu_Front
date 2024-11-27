@@ -7,9 +7,16 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import AllBackgroundStyles from '../../styles/AllSrcStyles/AllBackgroundStyles';
+import {deviceHeight} from '../../utils/DeviceUtils';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
+}
+
+interface AllBackground2Props {
+  children?: React.ReactNode;
+  srcbottom?: number;
 }
 
 /**
@@ -17,26 +24,29 @@ interface AllBackgroundProps {
  */
 export const AllBackground: React.FC<AllBackgroundProps> = ({children}) => {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    /*  <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */
+    <KeyboardAwareScrollView>
       <SafeAreaView style={AllBackgroundStyles.AllBackground}>
         {children}
       </SafeAreaView>
-    </TouchableWithoutFeedback>
+    </KeyboardAwareScrollView>
+    /*  </TouchableWithoutFeedback> */
   );
 };
 
-export const AllScrollBackground: React.FC<AllBackgroundProps> = ({
+export const AllScrollBackground: React.FC<AllBackground2Props> = ({
   children,
+  srcbottom,
 }) => {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <ScrollView
-        contentContainerStyle={{flexGrow: 1}}
-        keyboardShouldPersistTaps="handled">
-        <SafeAreaView style={AllBackgroundStyles.AllBackground}>
-          {children}
-        </SafeAreaView>
-      </ScrollView>
-    </TouchableWithoutFeedback>
+    <ScrollView
+      style={AllBackgroundStyles.AllBackground}
+      contentContainerStyle={{flexGrow: 1}}
+      /*  contentInset={{bottom: deviceHeight * srcbottom}} */
+      keyboardShouldPersistTaps="handled">
+      <SafeAreaView style={AllBackgroundStyles.AllBackground}>
+        {children}
+      </SafeAreaView>
+    </ScrollView>
   );
 };

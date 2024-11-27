@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import {Alert, Text, View} from 'react-native';
+import {Alert, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {DrawerActions} from '@react-navigation/native';
 import {ScreenProps} from '../../navigations/StackNavigator';
@@ -8,21 +8,32 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import {SignLogInput} from '../../components/AllSrcComponets/AllInputCompo';
 import {LoginGreenButton} from '../../components/AllSrcComponets/AllButtonCompo';
+import {saltCall} from '../../services/_private/Login/LoginApi';
+import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
+import {hashpass} from '../../utils/_private/.secure/.CryptoFuntion';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const Login: React.FC<ScreenProps> = ({navigation}) => {
   const [loginId, setLoginId] = useState<string>('');
   const [loginPass, setLoginPass] = useState<string>('');
-
+  const [loading, setLoading] = useState<boolean>(false);
   const handleLogin = async () => {
-    const result = await loginApiCall(loginId, loginPass);
-    if (result !== null && result.RSLT_CD === '00') {
-      navigation.reset({
-        index: 0,
-        routes: [{name: 'DrawerNavigation'}],
-      });
+    setLoading(true);
+    const result2 = await saltCall(loginId);
+    if (result2 !== null && result2.RSLT_CD === '00') {
+      const hashedpass = hashpass(loginPass, result2.SALT);
+      const result = await loginApiCall(loginId, hashedpass);
+      console.log(result2.SALT);
+      if (result !== null && result.RSLT_CD === '00') {
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'DrawerNavigation'}],
+        });
+      }
     } else {
       Alert.alert('실패');
     }
+    setLoading(false);
   };
   return (
     <AllBackground>
@@ -104,14 +115,30 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
         />
       </View>
       <View style={{flex: 2, alignItems: 'center'}}>
-        <LoginGreenButton text="로그인" onPress={handleLogin} />
+        <LoginGreenButton
+          text="로그인"
+          onPress={handleLogin}
+          loading={loading}
+        />
+        <TouchableOpacity
+          style={{marginTop: deviceHeight * 0.03}}
+          onPress={() => navigation.navigate('RegiHakgua')}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#009B64'}]}>
+            회원가입
+          </Text>
+        </TouchableOpacity>
       </View>
       <View
         style={{
           flex: 1,
           alignItems: 'center',
         }}>
-        <Text style={{fontSize: 10.5, color: '#cdcdcd', fontWeight: 'bold'}}>
+        <Text
+          style={{
+            fontSize: 10.5,
+            color: '#cdcdcd',
+            fontWeight: 'bold',
+          }}>
           로그인정보는 포털과 동일합니다. (학생은 학번, 교직원은 사번입니다.
         </Text>
         <Text style={{fontSize: 10.5, color: '#cdcdcd', fontWeight: 'bold'}}>
