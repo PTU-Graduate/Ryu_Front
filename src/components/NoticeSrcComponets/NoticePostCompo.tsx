@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -9,15 +8,16 @@ import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 interface AllButtonCompoProps {
   children?: React.ReactNode; // 부모, 자식 관계를 선언해주는 것 touchableopacity나 textinput안의 text를 선언할 때
   title?: string;
-  date?: string;
   text?: string;
+  date?: string;
   onPress?: () => void;
 }
 
 /**
- * 공지사항 화면에 사용되는 공통 버튼
+ * 로그인 및 회원가입 화면에 사용되는 초록색 공통 버튼
+ * 공지사항 화면에 사용되는 초록색 공통 버튼
  */
-const NoticeListButton: React.FC<AllButtonCompoProps> = ({
+export const NoticeListButton: React.FC<AllButtonCompoProps> = ({
   children,
   title,
   date,
@@ -36,28 +36,20 @@ const NoticeListButton: React.FC<AllButtonCompoProps> = ({
         <View
           style={{
             flex: 7,
+
+            justifyContent: 'center',
             width: deviceWidth * 0.8,
-            flexDirection: 'row',
           }}>
           <Text
             style={[
               AllTextStyles.SemiBold16,
-              {
-                color: '#009b64',
-                marginTop: deviceHeight * 0.02,
-              },
+              {color: '#009b64', lineHeight: 22},
             ]}>
             {'[공지]  '}
-          </Text>
-          <View style={{width: deviceWidth * 0.69}}>
-            <Text
-              style={[
-                AllTextStyles.SemiBold16,
-                {color: '#000000', marginTop: deviceHeight * 0.02},
-              ]}>
+            <Text style={[AllTextStyles.SemiBold16, {color: '#000000'}]}>
               {title}
             </Text>
-          </View>
+          </Text>
         </View>
         <View style={{justifyContent: 'center'}}>
           <Icon
@@ -98,5 +90,3 @@ export const NoticeDeatilText: React.FC<AllButtonCompoProps> = ({text}) => {
     </Text>
   );
 };
-
-export default NoticeListButton;

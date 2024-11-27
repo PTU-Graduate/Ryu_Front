@@ -44,9 +44,9 @@ const DrawerHeader = () => {
         style={styles.profileImage}
       />
       <View style={{width: '100%'}}>
-        <Text style={styles.userName}>{name}</Text>
-        <Text style={styles.userHakgua}>{departName}</Text>
-        <Text style={styles.userHakbun}>{std_num}</Text>
+        <Text style={styles.userName}>안재경</Text>
+        <Text style={styles.userHakgua}>정보통신학과</Text>
+        <Text style={styles.userHakbun}>2018143040</Text>
         <Text></Text>
       </View>
     </View>
