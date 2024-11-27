@@ -85,6 +85,7 @@ export const SignLogCheckInput: React.FC<AllInputCompoProps> = ({
         style={[AllInputStyles.SignLogInputStyle, AllTextStyles.medium14]}
         placeholder={placeholderText}
         secureTextEntry={passsecure}
+        allowFontScaling={false}
         {...props}
       />
       <TouchableOpacity

@@ -40,6 +40,7 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
   const [loading, setLoading] = useState<boolean>(false); // 로딩 상태
   const [hasMore, setHasMore] = useState<boolean>(true); // 추가 데이터 여부
   const [refreshing, setRefreshing] = useState<boolean>(false); // 새로고침 상태
+  const [toptitle, setTopTitle] = useState<string>('공지사항');
 
   // 각 카테고리 데이터를 위한 상태
   const [noticeData, setNoticeData] = useState<NoticeItemType[]>([]);
@@ -65,7 +66,6 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
     }
     try {
       let newData: any[] = [];
-      console.log('호출 페이지', page);
       // 카테고리별 데이터 요청
       switch (selectedCategory) {
         case '공지':
@@ -124,6 +124,23 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
       }));
     }
   };
+
+  useEffect(() => {
+    switch (selectedCategory) {
+      case '공지':
+        setTopTitle('공지사항');
+        break;
+      case '학사':
+        setTopTitle('학사안내');
+        break;
+      case '입학':
+        setTopTitle('입학안내');
+        break;
+      case '장학':
+        setTopTitle('장학안내');
+        break;
+    }
+  }, [selectedCategory]);
 
   // 처음 로딩 시 데이터 가져오기
   useEffect(() => {
@@ -216,7 +233,7 @@ const Notice: React.FC<ScreenProps> = ({navigation}) => {
     <AllBackground>
       <View style={{flex: 1}}>
         <AllNoticeTitleTopBarCompo
-          text={selectedCategory}
+          text={toptitle}
           onPress={() => navigation.goBack()}
           onPressplus={() => navigation.navigate('NoticeUpload')}
         />

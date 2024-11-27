@@ -6,6 +6,7 @@ import {
   Image,
   Text,
   Platform,
+  Alert,
 } from 'react-native';
 import {launchImageLibrary} from 'react-native-image-picker'; // react-native-image-picker에서 이미지 선택을 위한 함수
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
@@ -22,6 +23,7 @@ const NoticeUpload: React.FC<ScreenProps> = ({navigation}) => {
   const [cont, setCont] = useState<string>('');
   const [membid, setMembId] = useState<string>('');
   const [imageBase64, setImageBase64] = useState<string>(''); // 선택된 이미지의 base64 상태
+  const [isLoading, setIsLoading] = useState<boolean>(false); // 로딩 상태
 
   // 이미지 선택 핸들러
   const handleImagePick = () => {
@@ -54,15 +56,37 @@ const NoticeUpload: React.FC<ScreenProps> = ({navigation}) => {
   }, [membid]);
 
   const handleAdd = async () => {
+    setIsLoading(true); // 로딩 시작
     try {
       const result = await noticeAdd(membid, tit, cont, imageBase64);
       if (result !== null && result.RSLT_CD === '00') {
-        navigation.goBack();
+        Alert.alert(
+          '알림',
+          '공지사항이 성공적으로 등록되었습니다.',
+          [
+            {
+              text: '확인',
+              onPress: () => navigation.goBack(),
+            },
+          ],
+          {cancelable: false},
+        );
       } else {
-        // 실패한 경우 처리
+        Alert.alert(
+          '오류',
+          '공지사항 등록에 실패했습니다. 다시 시도해주세요.',
+          [{text: '확인'}],
+        );
       }
     } catch (error) {
       console.error(error);
+      Alert.alert(
+        '오류',
+        '예기치 않은 문제가 발생했습니다. 다시 시도해주세요.',
+        [{text: '확인'}],
+      );
+    } finally {
+      setIsLoading(false); // 로딩 종료
     }
   };
 

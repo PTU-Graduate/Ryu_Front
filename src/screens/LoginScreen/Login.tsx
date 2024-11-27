@@ -37,120 +37,114 @@ const Login: React.FC<ScreenProps> = ({navigation}) => {
   };
   return (
     <AllBackground>
-      <KeyboardAwareScrollView>
-        <View
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+        }}>
+        <Text
           style={{
-            flex: 1,
-            justifyContent: 'flex-end',
-            alignItems: 'center',
+            fontWeight: 'bold',
+            fontSize: 18,
           }}>
-          <Text
-            style={{
-              fontWeight: 'bold',
-              fontSize: 18,
-            }}>
-            로그인
-          </Text>
-        </View>
-        <View
+          로그인
+        </Text>
+      </View>
+      <View
+        style={{
+          flex: 2,
+          marginLeft: deviceWidth * 0.05,
+        }}>
+        <Text
           style={{
-            flex: 2,
-            marginLeft: deviceWidth * 0.05,
+            marginTop: deviceHeight * 0.08,
+            fontSize: 23,
+            fontWeight: 'bold',
           }}>
-          <Text
-            style={{
-              marginTop: deviceHeight * 0.08,
-              fontSize: 23,
-              fontWeight: 'bold',
-            }}>
-            안녕하세요
-          </Text>
-          <Text
-            style={{
-              fontSize: 23,
-              fontWeight: 'bold',
-              marginTop: deviceHeight * 0.006,
-            }}>
-            <Text style={{color: '#009B64'}}>평택대학교</Text>
-            입니다.
-          </Text>
-          <Text
-            style={{
-              color: '#5c5c5c',
-              fontSize: 12,
-              marginTop: deviceHeight * 0.01,
-            }}>
-            회원 서비스 이용을 위해 로그인 해주세요.
-          </Text>
-        </View>
-        <View
+          안녕하세요
+        </Text>
+        <Text
           style={{
-            flex: 4,
-            alignItems: 'center',
+            fontSize: 23,
+            fontWeight: 'bold',
+            marginTop: deviceHeight * 0.006,
           }}>
-          <Text
-            style={{
-              color: '#000',
-              fontWeight: '300',
-              marginRight: deviceWidth * 0.81,
-              marginBottom: deviceHeight * -0.005,
-              marginTop: deviceHeight * 0.08,
-            }}>
-            학번
-          </Text>
-          <SignLogInput
-            value={loginId}
-            onChangeText={text => setLoginId(text)}
-          />
-          <Text
-            style={{
-              color: '#000',
-              fontWeight: '300',
-              marginTop: deviceHeight * 0.05,
-              marginBottom: deviceHeight * -0.005,
-              marginRight: deviceWidth * 0.75,
-            }}>
-            비밀번호
-          </Text>
-          <SignLogInput
-            passsecure={true}
-            value={loginPass}
-            onChangeText={text => setLoginPass(text)}
-          />
-        </View>
-        <View style={{flex: 2, alignItems: 'center'}}>
-          <LoginGreenButton
-            text="로그인"
-            onPress={handleLogin}
-            loading={loading}
-          />
-          <TouchableOpacity
-            style={{marginTop: deviceHeight * 0.03}}
-            onPress={() => navigation.navigate('RegiHakgua')}>
-            <Text style={[AllTextStyles.SemiBold14, {color: '#009B64'}]}>
-              회원가입
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
+          <Text style={{color: '#009B64'}}>평택대학교</Text>
+          입니다.
+        </Text>
+        <Text
           style={{
-            flex: 1,
-            alignItems: 'center',
+            color: '#5c5c5c',
+            fontSize: 12,
+            marginTop: deviceHeight * 0.01,
           }}>
-          <Text
-            style={{
-              fontSize: 10.5,
-              color: '#cdcdcd',
-              fontWeight: 'bold',
-              marginTop: deviceHeight * 0.1,
-            }}>
-            로그인정보는 포털과 동일합니다. (학생은 학번, 교직원은 사번입니다.
+          회원 서비스 이용을 위해 로그인 해주세요.
+        </Text>
+      </View>
+      <View
+        style={{
+          flex: 4,
+          alignItems: 'center',
+        }}>
+        <Text
+          style={{
+            color: '#000',
+            fontWeight: '300',
+            marginRight: deviceWidth * 0.81,
+            marginBottom: deviceHeight * -0.005,
+            marginTop: deviceHeight * 0.08,
+          }}>
+          학번
+        </Text>
+        <SignLogInput value={loginId} onChangeText={text => setLoginId(text)} />
+        <Text
+          style={{
+            color: '#000',
+            fontWeight: '300',
+            marginTop: deviceHeight * 0.05,
+            marginBottom: deviceHeight * -0.005,
+            marginRight: deviceWidth * 0.75,
+          }}>
+          비밀번호
+        </Text>
+        <SignLogInput
+          passsecure={true}
+          value={loginPass}
+          onChangeText={text => setLoginPass(text)}
+        />
+      </View>
+      <View style={{flex: 2, alignItems: 'center'}}>
+        <LoginGreenButton
+          text="로그인"
+          onPress={handleLogin}
+          loading={loading}
+        />
+        <TouchableOpacity
+          style={{marginTop: deviceHeight * 0.03}}
+          onPress={() => navigation.navigate('RegiHakgua')}>
+          <Text style={[AllTextStyles.SemiBold14, {color: '#009B64'}]}>
+            회원가입
           </Text>
-          <Text style={{fontSize: 10.5, color: '#cdcdcd', fontWeight: 'bold'}}>
-            아이디 찾기 / 비밀번호 찾기는 PC에서 포털을 이용하시기 바랍니다.)
-          </Text>
-        </View>
-      </KeyboardAwareScrollView>
+        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'center',
+        }}>
+        <Text
+          style={{
+            fontSize: 10.5,
+            color: '#cdcdcd',
+            fontWeight: 'bold',
+          }}>
+          로그인정보는 포털과 동일합니다. (학생은 학번, 교직원은 사번입니다.
+        </Text>
+        <Text style={{fontSize: 10.5, color: '#cdcdcd', fontWeight: 'bold'}}>
+          아이디 찾기 / 비밀번호 찾기는 PC에서 포털을 이용하시기 바랍니다.)
+        </Text>
+      </View>
     </AllBackground>
   );
 };

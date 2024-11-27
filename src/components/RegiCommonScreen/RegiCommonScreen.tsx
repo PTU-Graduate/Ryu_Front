@@ -9,6 +9,7 @@ interface RegiCommonScreen extends TextInputProps {
   mediumtext: string;
   smalltext: string;
   inputtext: string;
+  securetext?: boolean;
   onPress?: () => void;
 }
 
@@ -17,6 +18,7 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
   smalltext,
   inputtext,
   onPress,
+  securetext,
   ...props
 }) => {
   return (
@@ -69,6 +71,7 @@ export const RegiCommonScreen: React.FC<RegiCommonScreen> = ({
             <SignLogInput
               placeholderTextColor="#979797"
               placeholder={inputtext}
+              passsecure={securetext}
               {...props}
             />
           </View>
