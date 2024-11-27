@@ -84,7 +84,6 @@ const Stack = createStackNavigator<RootStackParamList>();
 const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="RegiHakgua" component={RegiHakgua} />
       <Stack.Screen name="RegiCodeConfig" component={RegiCodeConfig} />
@@ -102,6 +101,7 @@ const StackNavigator = () => {
         component={BottomTabNavigations}
       />
       <Stack.Screen name="Notice" component={Notice} />
+      <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       <Stack.Screen name="NoticeDetail" component={NoticeDetail} />
       <Stack.Screen name="DrawerBurgur" component={DrawerBurgur} />
       <Stack.Screen name="Grade" component={Grade} />
