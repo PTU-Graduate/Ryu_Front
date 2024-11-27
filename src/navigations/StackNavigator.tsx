@@ -28,6 +28,7 @@ import Schedule from '../screens/ScheduleScreen/Schedule';
 import FreeShuttleBus from '../screens/FreeShuttleBusScreen/FreeShuttleBus';
 import NoticeUpload from '../screens/NoticeScreen/NoticeUpload';
 import NoticeMoney from '../screens/NoticeScreen/NoticeMoney';
+import WebViewScreen from '../screens/WebView/WebViewScreen';
 
 export type RootStackParamList = {
   Login: undefined;
@@ -70,6 +71,7 @@ export type RootStackParamList = {
   AttendanceInquiryDetail: undefined;
   NoticeUpload: undefined;
   NoticeMoney: undefined;
+  WebViewScreen: {url: string; title: string};
 };
 
 export type ScreenProps = {
@@ -82,6 +84,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="RegiHakgua" component={RegiHakgua} />
       <Stack.Screen name="RegiCodeConfig" component={RegiCodeConfig} />
@@ -98,13 +101,13 @@ const StackNavigator = () => {
         name="BottomTabNavigations"
         component={BottomTabNavigations}
       />
-      <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} />
       <Stack.Screen name="Notice" component={Notice} />
       <Stack.Screen name="NoticeDetail" component={NoticeDetail} />
       <Stack.Screen name="DrawerBurgur" component={DrawerBurgur} />
       <Stack.Screen name="Grade" component={Grade} />
       <Stack.Screen name="SelfGraduate" component={SelfGraduate} />
       <Stack.Screen name="AttendanceInquiry" component={AttendanceInquiry} />
+      <Stack.Screen name="WebViewScreen" component={WebViewScreen} />
       <Stack.Screen
         name="AttendanceInquiryDetail"
         component={AttendanceInquiryDetail}

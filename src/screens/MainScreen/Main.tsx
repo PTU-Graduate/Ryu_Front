@@ -54,14 +54,32 @@ const Main: React.FC<ScreenProps> = ({navigation}) => {
           <MainServiceButton
             text="홈페이지"
             uri={require('../../assets/images/homepage.png')}
+            onPress={() =>
+              navigation.navigate('WebViewScreen', {
+                url: 'https://www.ptu.ac.kr/www/index.do',
+                title: '홈페이지',
+              })
+            }
           />
           <MainServiceButton
             text="e학사"
             uri={require('../../assets/images/e.png')}
+            onPress={() =>
+              navigation.navigate('WebViewScreen', {
+                url: 'https://haksa.ptu.ac.kr',
+                title: 'e학사',
+              })
+            }
           />
           <MainServiceButton
-            text="평택대교회"
+            text="평댁대교회"
             uri={require('../../assets/images/church.png')}
+            onPress={() =>
+              navigation.navigate('WebViewScreen', {
+                url: 'http://www.ptuc.or.kr',
+                title: '평택대학교회',
+              })
+            }
           />
         </View>
       </View>

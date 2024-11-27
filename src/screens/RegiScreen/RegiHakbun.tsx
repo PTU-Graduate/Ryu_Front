@@ -4,7 +4,7 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {RegiHakbunProps} from '../../utils/navigationProps/RegiNavigationProps';
 import {regiHakbunApiCall} from '../../services/_private/Regi/RegiApi';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import { Platform } from 'react-native';
+import {Platform} from 'react-native';
 
 const RegiHakbun: React.FC<RegiHakbunProps> = ({navigation, route}) => {
   const [std_num, setStd_num] = useState<string>(''); // 사용자가 입력한 값
@@ -37,25 +37,23 @@ const RegiHakbun: React.FC<RegiHakbunProps> = ({navigation, route}) => {
 
   return (
     <AllBackground>
-      <KeyboardAwareScrollView>
-        <RegiCkeckCommonScreen
-          value={std_num}
-          onChangeText={text => setStd_num(text)}
-          mediumtext="학번"
-          smalltext="을 입력해주세요."
-          placeholder="학번"
-          CheckonPress={handleRegi}
-          onPress={() =>
-            navigation.navigate('RegiName', {
-              STD_DEC_CD: STD_DEC_CD,
-              STD_NUM: std_num,
-            })
-          }
-          disable={butOnOff}
-          isLoading={isLoading} // 로딩 상태 전달
-          errorMessage={errorMessage} // 에러 메시지 전달
-        />
-      </KeyboardAwareScrollView>
+      <RegiCkeckCommonScreen
+        value={std_num}
+        onChangeText={text => setStd_num(text)}
+        mediumtext="학번"
+        smalltext="을 입력해주세요."
+        placeholder="학번"
+        CheckonPress={handleRegi}
+        onPress={() =>
+          navigation.navigate('RegiName', {
+            STD_DEC_CD: STD_DEC_CD,
+            STD_NUM: std_num,
+          })
+        }
+        disable={butOnOff}
+        isLoading={isLoading} // 로딩 상태 전달
+        errorMessage={errorMessage} // 에러 메시지 전달
+      />
     </AllBackground>
   );
 };

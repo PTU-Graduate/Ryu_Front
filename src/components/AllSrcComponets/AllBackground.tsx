@@ -24,11 +24,13 @@ interface AllBackground2Props {
  */
 export const AllBackground: React.FC<AllBackgroundProps> = ({children}) => {
   return (
-   /*  <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */
+    /*  <TouchableWithoutFeedback onPress={Keyboard.dismiss}> */
+    <KeyboardAwareScrollView>
       <SafeAreaView style={AllBackgroundStyles.AllBackground}>
         {children}
       </SafeAreaView>
-  /*  </TouchableWithoutFeedback> */
+    </KeyboardAwareScrollView>
+    /*  </TouchableWithoutFeedback> */
   );
 };
 

@@ -101,3 +101,18 @@ export type NoticeDetailProp = {
   route: NoticeDetailRoutProp;
   navigation: NoticeDetailNavigationProp;
 };
+
+/* ---------------------------------------------------------------------------------- */
+
+/**
+ * @param 비밀번호 스크린 데이터
+ */
+type WebViewRoutProp = RouteProp<RootStackParamList, 'WebViewScreen'>;
+type WebViewNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'WebViewScreen'
+>;
+export type WebViewDetailProp = {
+  route: WebViewRoutProp;
+  navigation: WebViewNavigationProp;
+};
