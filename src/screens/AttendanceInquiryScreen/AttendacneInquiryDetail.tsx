@@ -5,6 +5,7 @@ import {AllTitleTopBarCompo} from '../../components/MainSrcCompo/TopBarCompo';
 import {ScreenProps} from '../../navigations/StackNavigator';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
+import AndroidTextStyle from '../../styles/AllSrcStyles/AndroidTextStyle';
 
 const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
   return (
@@ -41,7 +42,7 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
         </Text>
         <Text
           style={[
-            AllTextStyles.medium14,
+            AllTextStyles.SemiBold14,
             {marginLeft: deviceWidth * 0.055, marginTop: deviceHeight * 0.005},
           ]}>
           통신망보안
@@ -57,18 +58,10 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              1주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              2주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              3주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              4주차
-            </Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>1주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>2주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>3주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>4주차</Text>
           </View>
           <View
             style={{
@@ -78,18 +71,12 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#FF0000'}]}>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={[AndroidTextStyle.AIDSemiBold13, {color: '#FF0000'}]}>
               결석
             </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
           </View>
           <View
             style={{
@@ -101,18 +88,10 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              5주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              6주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              7주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              8주차
-            </Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>5주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>6주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>7주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>8주차</Text>
           </View>
           <View
             style={{
@@ -122,18 +101,12 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#FF7A00'}]}>
+            <Text style={[AndroidTextStyle.AIDSemiBold13, {color: '#FF7A00'}]}>
               지각
             </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
           </View>
           <View
             style={{
@@ -145,18 +118,10 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              9주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              10주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              11주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              12주차
-            </Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>9주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>10주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>11주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>12주차</Text>
           </View>
           <View
             style={{
@@ -166,18 +131,12 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#FF7A00'}]}>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={[AndroidTextStyle.AIDSemiBold13, {color: '#FF7A00'}]}>
               지각
             </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
           </View>
           <View
             style={{
@@ -189,16 +148,10 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              13주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              14주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
-              15주차
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#009B64'}]}>
+            <Text style={AndroidTextStyle.AISemiBold13}>13주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>14주차</Text>
+            <Text style={AndroidTextStyle.AISemiBold13}>15주차</Text>
+            <Text style={[AndroidTextStyle.AISemiBold13, {color: '#009B64'}]}>
               16주차
             </Text>
           </View>
@@ -210,15 +163,9 @@ const AttendanceInquiryDetail: React.FC<ScreenProps> = ({navigation}) => {
               alignItems: 'center',
               justifyContent: 'space-around',
             }}>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
-            <Text style={[AllTextStyles.SemiBold13, {color: '#000000'}]}>
-              출석
-            </Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
+            <Text style={AndroidTextStyle.AIDSemiBold13}>출석</Text>
             <Text style={[AllTextStyles.SemiBold13, {color: '#ffffff'}]}>
               출석
             </Text>

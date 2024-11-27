@@ -4,6 +4,7 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {ScreenProps} from '../../navigations/StackNavigator';
 import {getSaltUserData} from '../../utils/DataTableSet/RegiData/RegiBasicDataSaveResult';
 import {EmailAuthCodeVerify} from '../../services/_private/Regi/.RegiEmailAuth';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const RegiCodeConfig: React.FC<ScreenProps> = ({navigation}) => {
   const [crecode, setCreCode] = useState<string>('');
@@ -24,14 +25,16 @@ const RegiCodeConfig: React.FC<ScreenProps> = ({navigation}) => {
   };
   return (
     <AllBackground>
-      <RegiCommonScreen
-        value={crecode}
-        onChangeText={text => setCreCode(text)}
-        mediumtext="인증번호"
-        smalltext="를 입력해주세요."
-        inputtext="인증번호"
-        onPress={handleConfig}
-      />
+      <KeyboardAwareScrollView>
+        <RegiCommonScreen
+          value={crecode}
+          onChangeText={text => setCreCode(text)}
+          mediumtext="인증번호"
+          smalltext="를 입력해주세요."
+          inputtext="인증번호"
+          onPress={handleConfig}
+        />
+      </KeyboardAwareScrollView>
     </AllBackground>
   );
 };

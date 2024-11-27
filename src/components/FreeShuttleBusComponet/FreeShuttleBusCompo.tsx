@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Platform, Text, View} from 'react-native';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -44,6 +44,7 @@ export const FreeShuttleBusBar: React.FC<AllViewBarProps> = ({
             {
               color: '#ffffff',
               marginLeft: deviceWidth * 0.06,
+              marginBottom: Platform.OS === 'ios' ? null : deviceHeight * 0.005,
             },
           ]}>
           {titletext1}
@@ -63,6 +64,7 @@ export const FreeShuttleBusBar: React.FC<AllViewBarProps> = ({
             {
               color: '#ffffff',
               marginLeft: deviceWidth * 0.015,
+              marginBottom: Platform.OS === 'ios' ? null : deviceHeight * 0.005,
             },
           ]}>
           {titletext2}
@@ -88,7 +90,10 @@ export const FreeShuttleBusBar: React.FC<AllViewBarProps> = ({
         <Text
           style={{
             marginTop: deviceWidth * 0.02,
-            marginBottom: deviceWidth * 0.012,
+            marginBottom:
+              Platform.OS === 'ios'
+                ? deviceHeight * 0.012
+                : deviceHeight * 0.012,
           }}>
           승차장소 : {detailtext}
         </Text>
@@ -102,7 +107,15 @@ export const FreeShuttleBusBar: React.FC<AllViewBarProps> = ({
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <Text style={[AllTextStyles.SemiBold15, {color: '#ffffff'}]}>
+          <Text
+            style={[
+              AllTextStyles.SemiBold15,
+              {
+                color: '#ffffff',
+                marginBottom:
+                  Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+              },
+            ]}>
             시 간
           </Text>
         </View>
@@ -154,6 +167,7 @@ export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
             {
               color: '#ffffff',
               marginLeft: deviceWidth * 0.06,
+              marginBottom: Platform.OS === 'ios' ? null : deviceHeight * 0.005,
             },
           ]}>
           {titletext1}
@@ -173,6 +187,7 @@ export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
             {
               color: '#ffffff',
               marginLeft: deviceWidth * 0.015,
+              marginBottom: Platform.OS === 'ios' ? null : deviceHeight * 0.005,
             },
           ]}>
           {titletext2}
@@ -198,7 +213,10 @@ export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
         <Text
           style={{
             marginTop: deviceWidth * 0.02,
-            marginBottom: deviceWidth * 0.012,
+            marginBottom:
+              Platform.OS === 'ios'
+                ? deviceHeight * 0.012
+                : deviceHeight * 0.012,
           }}>
           승차장소 : {detailtext}
         </Text>
@@ -212,7 +230,15 @@ export const MoneyShuttleBusBar: React.FC<AllViewBarProps> = ({
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <Text style={[AllTextStyles.SemiBold15, {color: '#ffffff'}]}>
+          <Text
+            style={[
+              AllTextStyles.SemiBold15,
+              {
+                color: '#ffffff',
+                marginBottom:
+                  Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+              },
+            ]}>
             시 간
           </Text>
         </View>

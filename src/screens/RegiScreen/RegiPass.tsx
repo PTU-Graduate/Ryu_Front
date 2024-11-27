@@ -4,6 +4,7 @@ import {AllBackground} from '../../components/AllSrcComponets/AllBackground';
 import {RegiPassProp} from '../../utils/navigationProps/RegiNavigationProps';
 import {getSaltUserData} from '../../utils/DataTableSet/RegiData/RegiBasicDataSaveResult';
 import {hashpass} from '../../utils/_private/.secure/.CryptoFuntion';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const RegiPass: React.FC<RegiPassProp> = ({navigation, route}) => {
   const [pass, setPass] = useState<string>('');
@@ -27,14 +28,16 @@ const RegiPass: React.FC<RegiPassProp> = ({navigation, route}) => {
 
   return (
     <AllBackground>
-      <RegiCommonScreen
-        value={pass}
-        onChangeText={text => setPass(text)}
-        mediumtext="비밀번호"
-        smalltext="를 입력해주세요."
-        inputtext="비밀번호"
-        onPress={handlenext}
-      />
+      <KeyboardAwareScrollView>
+        <RegiCommonScreen
+          value={pass}
+          onChangeText={text => setPass(text)}
+          mediumtext="비밀번호"
+          smalltext="를 입력해주세요."
+          inputtext="비밀번호"
+          onPress={handlenext}
+        />
+      </KeyboardAwareScrollView>
     </AllBackground>
   );
 };
