@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Platform, Text, TouchableOpacity, View} from 'react-native';
 import {deviceHeight, deviceWidth} from '../../utils/DeviceUtils';
 import AllTextStyles from '../../styles/AllSrcStyles/AllTextStyles';
 import Icon from 'react-native-vector-icons/Entypo';
@@ -58,7 +58,15 @@ export const MJDetailBar: React.FC<AllViewBarProps> = ({
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Text style={[AllTextStyles.SemiBold15, {color: '#ffffff'}]}>
+                <Text
+                  style={[
+                    AllTextStyles.SemiBold15,
+                    {
+                      color: '#ffffff',
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
                   {Titletext}
                 </Text>
               </View>
@@ -100,7 +108,16 @@ export const MJDetailBar: React.FC<AllViewBarProps> = ({
                   width: deviceWidth * 0.23,
                   marginLeft: deviceWidth * 0.06,
                 }}>
-                <Text style={AllTextStyles.medium13}>출석</Text>
+                <Text
+                  style={[
+                    AllTextStyles.medium13,
+                    {
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
+                  출석
+                </Text>
                 <View
                   style={{
                     width: deviceWidth * 0.002,
@@ -119,7 +136,16 @@ export const MJDetailBar: React.FC<AllViewBarProps> = ({
                   justifyContent: 'center',
                   width: deviceWidth * 0.23,
                 }}>
-                <Text style={AllTextStyles.medium13}>지각</Text>
+                <Text
+                  style={[
+                    AllTextStyles.medium13,
+                    {
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
+                  지각
+                </Text>
                 <View
                   style={{
                     width: deviceWidth * 0.002,
@@ -138,7 +164,16 @@ export const MJDetailBar: React.FC<AllViewBarProps> = ({
                   justifyContent: 'center',
                   width: deviceWidth * 0.2,
                 }}>
-                <Text style={AllTextStyles.medium13}>결석</Text>
+                <Text
+                  style={[
+                    AllTextStyles.medium13,
+                    {
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
+                  결석
+                </Text>
                 <View
                   style={{
                     width: deviceWidth * 0.002,
@@ -209,7 +244,15 @@ export const RDDetailBar: React.FC<AllViewBarProps> = ({
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Text style={[AllTextStyles.SemiBold15, {color: '#009B64'}]}>
+                <Text
+                  style={[
+                    AllTextStyles.SemiBold15,
+                    {
+                      color: '#009B64',
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
                   {Titletext}
                 </Text>
               </View>
@@ -221,7 +264,8 @@ export const RDDetailBar: React.FC<AllViewBarProps> = ({
                       {
                         marginLeft: deviceWidth * 0.03,
                         marginTop: deviceWidth * -0.01,
-                        marginBottom: deviceWidth * 0.006,
+                        marginBottom:
+                          Platform.OS === 'ios' ? deviceHeight * 0.006 : null,
                       },
                     ]}>
                     {SBNtext}
@@ -251,7 +295,16 @@ export const RDDetailBar: React.FC<AllViewBarProps> = ({
                   width: deviceWidth * 0.23,
                   marginLeft: deviceWidth * 0.06,
                 }}>
-                <Text style={AllTextStyles.medium13}>출석</Text>
+                <Text
+                  style={[
+                    AllTextStyles.medium13,
+                    {
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
+                  출석
+                </Text>
                 <View
                   style={{
                     width: deviceWidth * 0.002,
@@ -270,7 +323,16 @@ export const RDDetailBar: React.FC<AllViewBarProps> = ({
                   justifyContent: 'center',
                   width: deviceWidth * 0.23,
                 }}>
-                <Text style={AllTextStyles.medium13}>지각</Text>
+                <Text
+                  style={[
+                    AllTextStyles.medium13,
+                    {
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
+                  지각
+                </Text>
                 <View
                   style={{
                     width: deviceWidth * 0.002,
@@ -289,7 +351,16 @@ export const RDDetailBar: React.FC<AllViewBarProps> = ({
                   justifyContent: 'center',
                   width: deviceWidth * 0.2,
                 }}>
-                <Text style={AllTextStyles.medium13}>결석</Text>
+                <Text
+                  style={[
+                    AllTextStyles.medium13,
+                    {
+                      marginBottom:
+                        Platform.OS === 'ios' ? null : deviceHeight * 0.005,
+                    },
+                  ]}>
+                  결석
+                </Text>
                 <View
                   style={{
                     width: deviceWidth * 0.002,
