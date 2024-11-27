@@ -28,16 +28,15 @@ const RegiPass: React.FC<RegiPassProp> = ({navigation, route}) => {
 
   return (
     <AllBackground>
-      <KeyboardAwareScrollView>
-        <RegiCommonScreen
-          value={pass}
-          onChangeText={text => setPass(text)}
-          mediumtext="비밀번호"
-          smalltext="를 입력해주세요."
-          inputtext="비밀번호"
-          onPress={handlenext}
-        />
-      </KeyboardAwareScrollView>
+      <RegiCommonScreen
+        value={pass}
+        onChangeText={text => setPass(text)}
+        mediumtext="비밀번호"
+        smalltext="를 입력해주세요."
+        inputtext="비밀번호"
+        securetext={true}
+        onPress={handlenext}
+      />
     </AllBackground>
   );
 };

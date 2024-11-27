@@ -1,13 +1,14 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconPlus from 'react-native-vector-icons/Entypo';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 interface AllBackgroundProps {
   children?: React.ReactNode;
   text?: string;
   onPress?: () => void;
   onPressplus?: () => void;
+  isLoading?: boolean; // 로딩 상태를 받아 처리
 }
 
 /**
@@ -62,6 +63,7 @@ export const AllAddTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
   text,
   onPress,
   onPressplus,
+  isLoading,
 }) => {
   return (
     <View style={styles.container}>
@@ -69,8 +71,15 @@ export const AllAddTitleTopBarCompo: React.FC<AllBackgroundProps> = ({
         <Icon name="chevron-back" size={25} color="#000000" />
       </TouchableOpacity>
       <Text style={styles.title}>{text}</Text>
-      <TouchableOpacity onPress={onPressplus}>
-        <Icon name="send-sharp" size={25} color="#000000" />
+      <TouchableOpacity
+        onPress={isLoading ? undefined : onPressplus} // 로딩 중에는 onPressplus 비활성화
+        disabled={isLoading} // 로딩 중 버튼 비활성화
+      >
+        {isLoading ? (
+          <ActivityIndicator size="small" color="#000000" />
+        ) : (
+          <Icon name="send-sharp" size={25} color="#000000" />
+        )}
       </TouchableOpacity>
     </View>
   );
